@@ -130,7 +130,37 @@ nav.navbar {
   overflow: visible;
 }
 
-// ── Hero section ──────────────────────────────────────────────────────────────
+// ── Landing page — fit everything above the fold ──────────────────────────────
+// Collapse HugoBlox's default 110px top/bottom section padding
+.home-section {
+  padding: 2rem 0 !important;
+}
+
+// Hero: keep the text column and image column the same height via flexbox,
+// then let the image fill that height with object-fit cover.
+.wg-hero.home-section {
+  padding: 1.5rem 0 !important;
+}
+
+.wg-hero .row {
+  align-items: stretch;
+}
+
+.wg-hero .hero-media {
+  display: flex;
+  align-items: stretch;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 3px;
+  }
+}
+
+// ── Hero typography ────────────────────────────────────────────────────────────
 .hero-title {
   font-family: 'Chivo Mono', monospace !important;
   font-weight: 700;
