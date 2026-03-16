@@ -9,26 +9,19 @@ sections:
       title: Research Areas
       subtitle: ''
       text: |
-        TSG Lab's research sits at the intersection of technical AI safety and AI governance. We work across three interconnected areas:
+        Our research spans four areas, connected by a common thread: understanding what's happening inside models, fixing what's wrong, and building the tools and standards that make AI systems trustworthy and empowering. Our work is published at top venues including NeurIPS, ICML, ICLR, ACL, EMNLP, and FAccT.
 
-        ## Mechanistic Interpretability
-        We study the internal workings of frontier AI systems — understanding what representations neural networks learn, how circuits implement behaviors, and how we can use this knowledge to build safer, more auditable models.
+        ## Interpretability
+        We build systems that make consequential decisions, but we often can't explain how or why they made them. We work on changing that — figuring out which parts of a model drive a decision, what it's actually doing when it fails, and what to do when something is wrong.
 
-        ## AI Governance Tools
-        We build technical and institutional tools for effective AI governance: evaluation frameworks, deployment monitoring systems, and policy-relevant benchmarks that allow regulators and developers to make informed decisions.
+        ## Safety & Alignment
+        Seeing inside a model could help catch what testing alone can miss. A model can pass existing evaluations and still behave differently in practice — retaining behaviours we thought we'd removed, or producing confident answers that aren't grounded in what the model actually processed. We study how that gap emerges and how to close it.
 
-        ## Societal Impact & Policy
-        We analyze how AI systems affect society — from economic displacement to geopolitical risk — and translate empirical findings into actionable policy recommendations at the national and international level.
+        ## Technical Governance
+        Understanding models matters more when it's actionable. We work on translating what we find inside models into structured methods that regulators and auditors can use to evaluate safety claims, verify that interventions worked, and hold those responsible accountable.
 
-        ---
-
-        ## Our Approach
-        As systems become more capable and agentic, surface-level evaluations and informal checks will not be enough. We need tools that allow us to:
-        - **Inspect models before deployment** — understanding internal representations and detecting dangerous capabilities
-        - **Monitor them during deployment** — detecting behavioral drift and emergent risks
-        - **Intervene when things go wrong** — technical and governance mechanisms for course correction
-
-        TSG provides the empirical and policy expertise to deliver this capacity.
+        ## Societal Impact
+        As AI systems become more capable, there's a risk that humans gradually lose agency — over decisions, institutions, and the systems that shape society. We study how these dynamics emerge and what technical and institutional interventions can keep humans in charge.
     design:
       columns: '1'
 ---
