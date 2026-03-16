@@ -1,0 +1,17 @@
+---
+title: "Verification for International AI Governance"
+date: 2025-01-01
+authors:
+  - "B. Harack"
+  - "Robert Trager"
+  - "A. Reuel"
+  - "D. Manheim"
+  - "M. Brundage"
+  - "O. Aarne"
+  - "et al."
+publication_types: ["article"]
+publication: "AI Governance Initiative, Oxford"
+abstract: ""
+tags:
+  - Technical Governance
+---

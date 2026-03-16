@@ -8,7 +8,7 @@ organizations:
   - name: TSG Lab, University of Oxford
     url: ''
 bio: Research Assistant at TSG Lab, University of Oxford.
-highlight_name: false
+highlight_name: true
 user_groups:
   - Research Assistants
 ---

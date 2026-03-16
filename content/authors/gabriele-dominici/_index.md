@@ -8,7 +8,7 @@ organizations:
   - name: USI Università della Svizzera italiana
     url: ''
 bio: Visiting PhD Student from USI Università della Svizzera italiana.
-highlight_name: false
+highlight_name: true
 user_groups:
   - Visitors
 ---

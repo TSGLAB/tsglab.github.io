@@ -8,7 +8,7 @@ organizations:
   - name: University of Oxford
     url: ''
 bio: Postdoctoral Researcher at TSG Lab, co-supervised with Prof Robert Trager.
-highlight_name: false
+highlight_name: true
 user_groups:
   - Research Fellows
 ---

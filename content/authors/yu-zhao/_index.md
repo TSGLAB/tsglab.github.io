@@ -8,7 +8,7 @@ organizations:
   - name: University of Edinburgh
     url: ''
 bio: PhD Student at the University of Edinburgh, co-advised with Pasquale Minervini.
-highlight_name: false
+highlight_name: true
 user_groups:
   - Graduate Students
 ---

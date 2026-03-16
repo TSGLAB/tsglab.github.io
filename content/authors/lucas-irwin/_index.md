@@ -8,7 +8,7 @@ organizations:
   - name: University of Oxford
     url: ''
 bio: PhD Student at the University of Oxford, co-supervised with Michael Osborne & Philip Torr.
-highlight_name: false
+highlight_name: true
 user_groups:
   - Graduate Students
 ---

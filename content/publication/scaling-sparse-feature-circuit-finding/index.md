@@ -1,0 +1,16 @@
+---
+title: "Scaling Sparse Feature Circuit Finding for In-Context Learning"
+date: 2025-07-01
+authors:
+  - "D. Kharlapenko"
+  - "S. Shabalin"
+  - "Fazl Barez"
+  - "A. Conmy"
+  - "N. Nanda"
+publication_types: ["paper-conference"]
+publication: "ICML 2025"
+abstract: ""
+tags:
+  - Interpretability
+  - ICML
+---
