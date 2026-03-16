@@ -1,0 +1,20 @@
+# TSG Lab — Oxford Blue Theme
+
+[light]
+  # Primary
+  primary = "#002147"
+  # Links
+  link = "#002147"
+  link_hover = "#1a3a6b"
+  # Headings
+  heading_1 = "#002147"
+  heading_2 = "#002147"
+  heading_3 = "#002147"
+  # Background
+  bg = "#ffffff"
+  # Text
+  body = "#2c2c2c"
+  # Navbar
+  navbar_bg = "#002147"
+  navbar_text = "#ffffff"
+  navbar_active = "#ffffff"

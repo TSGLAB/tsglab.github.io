@@ -25,11 +25,7 @@ sections:
       autolink: true
 
       form:
-        provider: formspree
-        formspree:
-          id:
-        netlify:
-          captcha: false
+        provider: ''
     design:
       columns: '1'
 ---

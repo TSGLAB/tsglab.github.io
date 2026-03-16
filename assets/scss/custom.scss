@@ -1,0 +1,253 @@
+// TSG Lab — Brand Guide Implementation
+// Fonts: Chivo Mono (headings) + Chivo (body)
+// Colors: #E7E1DA cream / #000000 black / #FFFFFF white / #22CB58 green accent
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;700&family=Chivo:wght@300;400;700&display=swap');
+
+// ── Variables ─────────────────────────────────────────────────────────────────
+$black:   #000000;
+$cream:   #E7E1DA;
+$white:   #FFFFFF;
+$green:   #22CB58;
+$gray:    #f4f4f2;
+$mid:     #555555;
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+body {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 400;
+  color: $black;
+  background-color: $white;
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6,
+.article-title,
+.section-heading {
+  font-family: 'Chivo Mono', monospace !important;
+  font-weight: 700;
+  color: $black;
+  letter-spacing: -0.01em;
+}
+
+p, li, td, th, blockquote {
+  font-family: 'Chivo', sans-serif;
+}
+
+// ── Navbar ────────────────────────────────────────────────────────────────────
+.navbar,
+nav.navbar {
+  background-color: $black !important;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar .nav-link,
+.navbar .nav-link:visited {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: $green !important;
+}
+
+// ── Logo scroll swap ──────────────────────────────────────────────────────────
+.tsg-navbar-brand {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-height: 56px;
+}
+
+.navbar-logo-full {
+  height: 28px;
+  width: auto;
+  max-width: 180px;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navbar-logo-icon {
+  height: 32px;
+  width: 0;
+  max-width: 0;
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, width 0.3s ease, max-width 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navbar-scrolled .navbar-logo-full {
+  opacity: 0;
+  width: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+
+.navbar-scrolled .navbar-logo-icon {
+  opacity: 1;
+  width: 32px;
+  max-width: 32px;
+  overflow: visible;
+}
+
+// ── Hero section ──────────────────────────────────────────────────────────────
+.hero-title {
+  font-family: 'Chivo Mono', monospace !important;
+  font-weight: 700;
+  color: $black !important;
+  text-shadow: none;
+}
+
+.hero-lead {
+  font-family: 'Chivo', sans-serif;
+  color: $mid !important;
+}
+
+// Hero block on homepage — cream background
+.home-section:first-of-type,
+.wg-hero {
+  background-color: $cream !important;
+}
+
+// ── Section alternation ───────────────────────────────────────────────────────
+.home-section {
+  background-color: $white;
+}
+
+.home-section:nth-child(even) {
+  background-color: $cream;
+}
+
+// ── Section titles with green left accent ─────────────────────────────────────
+.section-heading h1,
+.section-heading h2,
+section.home-section h2.section-title,
+.section-title {
+  font-family: 'Chivo Mono', monospace !important;
+  color: $black;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid $green;
+  margin-bottom: 2rem;
+}
+
+// ── Buttons / CTAs ────────────────────────────────────────────────────────────
+.btn-primary,
+.cta-btn,
+.btn-outline-primary {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background-color: $black !important;
+  border-color: $black !important;
+  color: $white !important;
+  border-radius: 2px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: $green !important;
+    border-color: $green !important;
+    color: $black !important;
+  }
+}
+
+// ── Cards ─────────────────────────────────────────────────────────────────────
+.card {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 2px;
+  box-shadow: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: $green;
+    transform: translateY(-2px);
+  }
+}
+
+// ── Links ─────────────────────────────────────────────────────────────────────
+a {
+  color: $black;
+  text-decoration: none;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+// ── Publication buttons ───────────────────────────────────────────────────────
+.btn-links .btn {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.7rem;
+  border-color: $black;
+  color: $black;
+  border-radius: 2px;
+  background: transparent;
+
+  &:hover {
+    background-color: $green;
+    border-color: $green;
+    color: $black;
+  }
+}
+
+// ── People cards ──────────────────────────────────────────────────────────────
+.portrait-title h2 {
+  font-family: 'Chivo Mono', monospace;
+  color: $black;
+  font-size: 0.95rem;
+}
+
+.portrait-title h3 {
+  font-family: 'Chivo', sans-serif;
+  color: $mid;
+  font-size: 0.8rem;
+}
+
+// ── Arrow motif on section labels (from brand guide) ─────────────────────────
+.section-heading::before {
+  content: '→ ';
+  color: $green;
+  font-family: 'Chivo Mono', monospace;
+}
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+.page-footer {
+  background-color: #1a1a1a !important;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.75rem;
+  padding: 1rem 0 !important;
+
+  a {
+    color: rgba(255,255,255,0.5);
+    &:hover { color: $green; }
+  }
+
+  // Hide Hugo Blox Builder branding but keep copyright
+  .powered-by:not(.copyright-license-text) { display: none; }
+}
+
+// ── Search icon ───────────────────────────────────────────────────────────────
+.navbar .fas.fa-search {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+// ── Tree canvas ───────────────────────────────────────────────────────────────
+#tsg-tree-canvas,
+#tsg-tree-canvas canvas {
+  background: transparent !important;
+}
+
+// ── Scrollbar accent ──────────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: $green; border-radius: 2px; }

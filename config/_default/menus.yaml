@@ -15,6 +15,9 @@ main:
   - name: Events
     url: event
     weight: 50
+  - name: Vacancies
+    url: vacancies
+    weight: 55
   - name: Contact
     url: contact
     weight: 60
