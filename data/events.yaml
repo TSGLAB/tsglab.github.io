@@ -1,0 +1,42 @@
+- title: "LLM Interpretability: Faithful Reasoning and Controllable Knowledge"
+  speaker: "Peter Hase"
+  affiliation: "Postdoc, Stanford University; AI Institute Fellow, Schmidt Sciences"
+  date: "2026-03-20"
+  date_display: "Friday 20 March 2026"
+  time_gmt: "3:00 PM – 4:00 PM GMT"
+  time_et: "10:00 AM – 11:00 AM ET"
+  format: "virtual"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    AI models often learn problematic reasoning processes due to misspecified
+    training objectives. Interpretability helps us detect, and often fix, such
+    reasoning. For example, inspecting Chain-of-Thought reasoning in LLMs is
+    perhaps the single most common approach to understanding how a model got
+    to its answer. This practice has proven effective for identifying model
+    reasoning failures, mistaken background knowledge, and misinterpretation
+    of user instructions. Yet whether Chain-of-Thought is a faithful reflection
+    of a model's true reasoning remains a subject of debate. On this point,
+    I present work on the CoT faithfulness problem, including evaluations for
+    explanation faithfulness and methods for improving the faithfulness of CoT
+    explanations. Process supervision, and not merely outcome supervision,
+    significantly improves CoT faithfulness, opening up important applications
+    in monitoring model reasoning for safety. From here, I argue that in order
+    to obtain a complete picture of model interpretability, we must also sharpen
+    our understanding of how internal model representations drive external
+    behavior. I show that, by determining how models represent knowledge, we
+    can control what facts are encoded in models and detect when they output
+    claims that they know are untrue or misleading. With more faithful textual
+    reasoning and better interpretability of model representations, we will be
+    able to efficiently identify and fix safety failures in LLMs.
+  bio: |
+    Peter Hase is a Postdoc at Stanford University and an AI Institute Fellow
+    at Schmidt Sciences. His research focuses on LLM safety and interpretability,
+    with the goal of enabling human understanding, validation, and control of
+    model reasoning. This work has earned multiple spotlight awards at top AI
+    conferences and appeared in publications including Nature magazine and the
+    International AI Safety Report. Previously, he has worked at Anthropic,
+    Google, Meta, and the Allen Institute for AI. He has served as an Area Chair
+    six times, receiving two Outstanding AC awards, and as a Senior Area Chair
+    for ACL and EMNLP. He received his PhD from the University of North Carolina
+    at Chapel Hill, supported by a Google PhD Fellowship.

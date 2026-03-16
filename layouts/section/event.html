@@ -1,0 +1,136 @@
+{{- define "main" -}}
+
+{{ $allEvents := site.Data.events | default slice }}
+
+{{/* ── Partition by section ─────────────────────────────────────────────── */}}
+{{ $sections := slice
+  (dict "key" "talks"       "label" "Talks")
+  (dict "key" "conferences" "label" "Conferences")
+  (dict "key" "workshops"   "label" "Workshops")
+  (dict "key" "other"       "label" "Other Events")
+}}
+
+<div class="universal-wrapper">
+<div class="events-page">
+
+  <h1 class="events-page-heading">Events</h1>
+
+  {{ range $sections }}
+    {{ $skey   := .key }}
+    {{ $slabel := .label }}
+
+    {{ $inSection := slice }}
+    {{ range $allEvents }}
+      {{ if eq .section $skey }}
+        {{ $inSection = $inSection | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $inSection) 0 }}
+
+      {{/* ── Split upcoming / past ──────────────────────────────────────── */}}
+      {{ $upcoming := slice }}
+      {{ $past     := slice }}
+      {{ range $inSection }}
+        {{ if eq .status "upcoming" }}
+          {{ $upcoming = $upcoming | append . }}
+        {{ else }}
+          {{ $past = $past | append . }}
+        {{ end }}
+      {{ end }}
+
+      <section class="events-section">
+        <h2 class="events-section-heading">{{ $slabel }}</h2>
+
+        {{/* ── Upcoming ──────────────────────────────────────────────────── */}}
+        {{ range $upcoming }}
+          {{ partial "events/card.html" (dict "event" . "muted" false) }}
+        {{ end }}
+
+        {{/* ── Past (collapsible) ───────────────────────────────────────── */}}
+        {{ if gt (len $past) 0 }}
+          <div class="events-past-wrap">
+            <button
+              class="events-past-toggle"
+              aria-expanded="false"
+              onclick="tsgPastToggle(this)"
+            >Past Events <span class="events-past-count">({{ len $past }})</span></button>
+            <div class="events-past-list" aria-hidden="true" style="max-height:0;overflow:hidden;">
+              {{ range $past }}
+                {{ partial "events/card.html" (dict "event" . "muted" true) }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+      </section>
+
+    {{ end }}
+  {{ end }}
+
+  {{ if eq (len $allEvents) 0 }}
+    <p class="events-empty">No events scheduled yet. Check back soon.</p>
+  {{ end }}
+
+</div>{{/* .events-page */}}
+</div>{{/* .universal-wrapper */}}
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Past-events section toggle ────────────────────────────────────── */
+  function tsgPastToggle(btn) {
+    var list = btn.nextElementSibling;
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    if (open) {
+      list.style.maxHeight = list.scrollHeight + 'px';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          list.style.maxHeight = '0';
+        });
+      });
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('open');
+    } else {
+      list.style.maxHeight = list.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.classList.add('open');
+      list.addEventListener('transitionend', function onEnd() {
+        list.style.maxHeight = 'none';
+        list.removeEventListener('transitionend', onEnd);
+      });
+    }
+    list.setAttribute('aria-hidden', open ? 'true' : 'false');
+  }
+  window.tsgPastToggle = tsgPastToggle;
+
+  /* ── Abstract / bio expand toggle ──────────────────────────────────── */
+  document.querySelectorAll('.evt-read-more').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card  = btn.closest('.evt-card');
+      var body  = card.querySelector('.evt-abstract-body');
+      var open  = btn.getAttribute('aria-expanded') === 'true';
+      if (open) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { body.style.maxHeight = '3.2em'; });
+        });
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Read more';
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Read less';
+        body.addEventListener('transitionend', function onEnd() {
+          body.style.maxHeight = 'none';
+          body.removeEventListener('transitionend', onEnd);
+        });
+      }
+    });
+  });
+
+}());
+</script>
+
+{{- end -}}

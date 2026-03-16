@@ -1,0 +1,54 @@
+{{ $e     := .event }}
+{{ $muted := .muted }}
+
+<article class="evt-card{{ if $muted }} evt-card--past{{ end }}">
+
+  {{/* ── Header row: format badge + title ─────────────────────────────── */}}
+  <div class="evt-header">
+    {{ if $e.format }}
+      {{ $fmt := $e.format }}
+      {{ $fmtLabel := "Virtual" }}
+      {{ if eq $fmt "in-person" }}{{ $fmtLabel = "In-Person" }}{{ end }}
+      <span class="evt-format-badge evt-format-{{ $fmt }}" title="{{ $fmtLabel }}">{{ $fmtLabel }}</span>
+    {{ end }}
+    <h3 class="evt-title">{{ $e.title }}</h3>
+  </div>
+
+  {{/* ── Speaker + affiliation ─────────────────────────────────────────── */}}
+  {{ if $e.speaker }}
+    <div class="evt-speaker">
+      <span class="evt-speaker-name">{{ $e.speaker }}</span>
+      {{ if $e.affiliation }}
+        <span class="evt-speaker-sep">·</span>
+        <span class="evt-speaker-affil">{{ $e.affiliation }}</span>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* ── Date / time ───────────────────────────────────────────────────── */}}
+  <div class="evt-meta">
+    {{ with $e.date_display }}<span class="evt-date">{{ . }}</span>{{ end }}
+    {{ if or $e.time_gmt $e.time_et }}
+      <span class="evt-meta-sep">·</span>
+      {{ with $e.time_gmt }}<span class="evt-time">{{ . }}</span>{{ end }}
+      {{ if and $e.time_gmt $e.time_et }}<span class="evt-time-alt"> ({{ $e.time_et }})</span>{{ end }}
+    {{ end }}
+  </div>
+
+  {{/* ── Abstract (collapsed by default) ──────────────────────────────── */}}
+  {{ if $e.abstract }}
+    <div class="evt-abstract">
+      <div class="evt-abstract-body" style="max-height:3.2em;overflow:hidden;transition:max-height 0.35s ease;">
+        <p class="evt-abstract-text">{{ $e.abstract | markdownify }}</p>
+        {{ if $e.bio }}
+          <div class="evt-bio">
+            <p class="evt-bio-label">About the Speaker</p>
+            <p class="evt-bio-text">{{ $e.bio | markdownify }}</p>
+          </div>
+        {{ end }}
+      </div>
+      <button class="evt-read-more" aria-expanded="false">Read more</button>
+    </div>
+  {{ end }}
+
+</article>

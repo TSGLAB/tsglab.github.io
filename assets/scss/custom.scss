@@ -699,3 +699,215 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   .support-form { max-width: 100%; }
   .sf-checkboxes { gap: 0.5rem 1rem; }
 }
+
+// ── Events page ────────────────────────────────────────────────────────────────
+.events-page {
+  padding: 3.5rem 0 5rem;
+}
+
+.events-page-heading {
+  font-family: 'Chivo Mono', monospace !important;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: $black;
+  margin-bottom: 3rem;
+  border-bottom: none !important;
+}
+
+.events-section {
+  margin-bottom: 3.5rem;
+}
+
+.events-section-heading {
+  font-family: 'Chivo Mono', monospace !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $black;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.events-empty {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.88rem;
+  color: $mid;
+}
+
+// ── Event card ─────────────────────────────────────────────────────────────────
+.evt-card {
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 3px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.18s ease;
+
+  &:hover { border-color: rgba(0,0,0,0.15); }
+}
+
+.evt-card--past {
+  opacity: 0.55;
+  background: transparent;
+}
+
+// Header: badge + title
+.evt-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.evt-format-badge {
+  flex-shrink: 0;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 7px;
+  border-radius: 2px;
+  margin-top: 3px; // align with title cap height
+}
+
+.evt-format-virtual   { color: $warm-brown; background: $warm-tag-bg; }
+.evt-format-in-person { color: darken($warm-brown, 8%); background: darken($warm-tag-bg, 5%); }
+
+.evt-title {
+  font-family: 'Chivo', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: $black;
+  line-height: 1.45;
+  margin: 0;
+  border-bottom: none !important;
+}
+
+// Speaker
+.evt-speaker {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.82rem;
+  color: $mid;
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.evt-speaker-name   { font-weight: 600; color: darken($mid, 10%); }
+.evt-speaker-sep    { color: rgba(0,0,0,0.25); }
+.evt-speaker-affil  { font-style: italic; }
+
+// Meta (date / time)
+.evt-meta {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.72rem;
+  color: $mid;
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.evt-meta-sep  { color: rgba(0,0,0,0.25); }
+.evt-time-alt  { color: rgba(0,0,0,0.38); }
+
+// Abstract collapse
+.evt-abstract { margin-top: 0.1rem; }
+
+.evt-abstract-body {
+  transition: max-height 0.35s ease;
+}
+
+.evt-abstract-text {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.83rem;
+  color: $mid;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.evt-bio {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.evt-bio-label {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(0,0,0,0.38);
+  margin: 0 0 0.35rem;
+}
+
+.evt-bio-text {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.8rem;
+  color: $mid;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.evt-read-more {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $warm-brown;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 0.25rem;
+
+  &:hover { color: $black; }
+}
+
+// ── Past-events toggle ─────────────────────────────────────────────────────────
+.events-past-wrap {
+  margin-top: 1.25rem;
+}
+
+.events-past-toggle {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: $mid;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 20px;
+  padding: 4px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  margin-bottom: 0.75rem;
+
+  &:hover, &.open {
+    background: $warm-tag-bg;
+    color: $black;
+    border-color: rgba(0,0,0,0.22);
+  }
+}
+
+.events-past-count {
+  opacity: 0.6;
+}
+
+.events-past-list {
+  transition: max-height 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .evt-header {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .evt-format-badge { margin-top: 0; }
+}
