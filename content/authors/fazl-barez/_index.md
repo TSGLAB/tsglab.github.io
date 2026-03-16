@@ -1,5 +1,5 @@
 ---
-title: Fazl Barez
+title: Dr Fazl Barez
 first_name: Fazl
 last_name: Barez
 
