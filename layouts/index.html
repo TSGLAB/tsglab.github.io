@@ -154,17 +154,14 @@
         wrap.style.maxHeight = wrap.scrollHeight + 'px';
         btn.setAttribute('aria-expanded', 'true');
         btn.classList.add('open');
-        // After transition, remove fixed max-height so form can resize
         wrap.addEventListener('transitionend', function onEnd() {
           wrap.style.maxHeight = 'none';
           wrap.removeEventListener('transitionend', onEnd);
         });
       }
     }
-    // Expose to onclick attribute
     window.tsgSupportToggle = tsgSupportToggle;
 
-    // Formspree AJAX submission
     var form = document.getElementById('support-form');
     if (form) {
       form.addEventListener('submit', function (e) {
