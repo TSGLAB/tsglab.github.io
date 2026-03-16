@@ -25,6 +25,14 @@ sections:
         ### Visiting Researchers
         We welcome visiting researchers and PhD students for stays of 3–12 months. Funding is typically secured by the visitor, but we can support visa applications and provide workspace.
 
+        ### Oxford Undergraduates & Master's Students
+        If you are a current Oxford student — whether reading for an undergraduate degree, an MSc, or an MPhil — we are keen to hear from you. There are several ways to get involved:
+
+        - **Part IV / 4th-year projects (MEng/BA):** We supervise final-year engineering and computer science projects on topics spanning interpretability, AI evaluation, and governance. If you are looking for a project supervisor, get in touch early (ideally at the start of Michaelmas term).
+        - **MSc & MPhil dissertations:** We can co-supervise dissertations for students on the Oxford MSc in Statistical Science, MSc in Advanced Computer Science, MPhil in Economics, and related programmes. Reach out with a short description of your research question.
+        - **Internships & vacation research:** We occasionally have short paid research placements during the summer or vacation periods for Oxford students who want to gain hands-on research experience.
+        - **Just curious?** You are welcome to come to our reading groups and seminars. Drop us a line and we will add you to the mailing list.
+
         ---
 
         ## How to Apply
