@@ -13,16 +13,30 @@ $gray:    #f4f4f2;
 $mid:     #555555;
 
 // ── Base ──────────────────────────────────────────────────────────────────────
+// Fixed split background: cream on the left, white on the right.
+// 100px soft gradient zone centred at ~170px from the right edge,
+// which is exactly where the tree trunk sits — making it grow across the divide.
 body {
   font-family: 'Chivo', sans-serif;
   font-weight: 400;
   color: $black;
-  background-color: $white;
+  background-image: linear-gradient(
+    to right,
+    $cream 0,
+    $cream calc(100% - 220px),
+    $white calc(100% - 120px),
+    $white 100%
+  );
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   // Reserve right side for tree
   padding-right: 220px !important;
 
   @media (max-width: 768px) {
     padding-right: 0 !important;
+    background-image: none;
+    background-color: $cream;
   }
 }
 
@@ -119,19 +133,14 @@ nav.navbar {
   color: $mid !important;
 }
 
-// Hero block on homepage — cream background
+// All sections transparent — body fixed gradient shows through on every page
+.home-section,
+.home-section:nth-child(even),
 .home-section:first-of-type,
-.wg-hero {
-  background-color: $cream !important;
-}
-
-// ── Section alternation ───────────────────────────────────────────────────────
-.home-section {
-  background-color: $white;
-}
-
-.home-section:nth-child(even) {
-  background-color: $cream;
+.wg-hero,
+.page-body {
+  background-color: transparent !important;
+  // Note: inline background-image on the hero (oxford photo) is NOT overridden here
 }
 
 // ── Section titles with green left accent ─────────────────────────────────────
