@@ -5,27 +5,28 @@ date: 2024-01-01
 type: landing
 
 sections:
-  - block: contact
+  - block: markdown
     content:
       title: Contact
-      text: |-
-        We welcome inquiries about research collaborations, PhD and postdoc opportunities, and policy partnerships. Please reach out via email.
-      email: tsglab@eng.ox.ac.uk
-      address:
-        street: Parks Road
-        city: Oxford
-        postcode: 'OX1 3PJ'
-        country: United Kingdom
-        country_code: GB
-      coordinates:
-        latitude: '51.7595'
-        longitude: '-1.2584'
-      directions: Department of Engineering Science, University of Oxford
+      subtitle: ''
+      text: |
+        We welcome enquiries about research collaborations, PhD and postdoc opportunities, and policy partnerships.
 
-      autolink: true
+        **Email:** [tsglab@eng.ox.ac.uk](mailto:tsglab@eng.ox.ac.uk)
 
-      form:
-        provider: ''
+        ---
+
+        **Department of Engineering Science**
+        University of Oxford
+        Parks Road, Oxford, OX1 3PJ
+        United Kingdom
+
+        ---
+
+        **Oxford Martin AI Governance Initiative**
+        Oxford Martin School, University of Oxford
+        34 Broad Street, Oxford, OX1 3BD
+        United Kingdom
     design:
       columns: '1'
 ---

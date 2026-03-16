@@ -2,6 +2,8 @@
   {{ partial "landing_page.html" . }}
 
   {{/* ── Support Our Research ────────────────────────────────────────────── */}}
+  {{/* This file is landing/index.html — used ONLY for the root homepage     */}}
+  {{/* (kind=home with type:landing). It does not affect other landing pages. */}}
   <section id="support" class="support-section home-section">
     <div class="universal-wrapper">
 
@@ -22,8 +24,8 @@
 
       <div id="support-form-wrap" class="support-form-wrap" aria-hidden="true">
 
-        {{/* TODO: Replace REPLACE_WITH_YOUR_ID with your Formspree form ID */}}
-        {{/* Sign up free at formspree.io, create a form, and paste the ID here */}}
+        <!-- TODO: Replace REPLACE_WITH_YOUR_ID with your Formspree form ID.
+             Sign up free at formspree.io, create a form, and paste the ID here. -->
         <form
           id="support-form"
           class="support-form"
@@ -34,40 +36,20 @@
 
           <div class="sf-row">
             <label for="sf-name" class="sf-label">Name <span aria-hidden="true">*</span></label>
-            <input
-              id="sf-name"
-              type="text"
-              name="name"
-              class="sf-input"
-              required
-              autocomplete="name"
-              placeholder="Your name"
-            />
+            <input id="sf-name" type="text" name="name" class="sf-input"
+              required autocomplete="name" placeholder="Your name" />
           </div>
 
           <div class="sf-row">
             <label for="sf-org" class="sf-label">Organisation <span class="sf-optional">(optional)</span></label>
-            <input
-              id="sf-org"
-              type="text"
-              name="organisation"
-              class="sf-input"
-              autocomplete="organization"
-              placeholder="University, foundation, or company"
-            />
+            <input id="sf-org" type="text" name="organisation" class="sf-input"
+              autocomplete="organization" placeholder="University, foundation, or company" />
           </div>
 
           <div class="sf-row">
             <label for="sf-email" class="sf-label">Email <span aria-hidden="true">*</span></label>
-            <input
-              id="sf-email"
-              type="email"
-              name="email"
-              class="sf-input"
-              required
-              autocomplete="email"
-              placeholder="you@example.com"
-            />
+            <input id="sf-email" type="email" name="email" class="sf-input"
+              required autocomplete="email" placeholder="you@example.com" />
           </div>
 
           <div class="sf-row">
@@ -89,7 +71,7 @@
                 Interpretability
               </label>
               <label class="sf-check-label">
-                <input type="checkbox" name="directions[]" value="Safety & Alignment" class="sf-check" />
+                <input type="checkbox" name="directions[]" value="Safety &amp; Alignment" class="sf-check" />
                 Safety &amp; Alignment
               </label>
               <label class="sf-check-label">
@@ -105,13 +87,8 @@
 
           <div class="sf-row">
             <label for="sf-message" class="sf-label">Message <span class="sf-optional">(optional)</span></label>
-            <textarea
-              id="sf-message"
-              name="message"
-              class="sf-input sf-textarea"
-              rows="4"
-              placeholder="Tell us a bit about your interest or any questions you have."
-            ></textarea>
+            <textarea id="sf-message" name="message" class="sf-input sf-textarea" rows="4"
+              placeholder="Tell us a bit about your interest or any questions you have."></textarea>
           </div>
 
           <div class="sf-row sf-actions">
