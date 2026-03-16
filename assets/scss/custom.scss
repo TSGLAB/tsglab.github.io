@@ -18,6 +18,12 @@ body {
   font-weight: 400;
   color: $black;
   background-color: $white;
+  // Reserve right side for tree
+  padding-right: 220px !important;
+
+  @media (max-width: 768px) {
+    padding-right: 0 !important;
+  }
 }
 
 // ── Typography ────────────────────────────────────────────────────────────────
