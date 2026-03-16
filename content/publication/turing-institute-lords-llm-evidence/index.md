@@ -2,7 +2,7 @@
 title: "The Alan Turing Institute's Response to the House of Lords Large Language Models Call for Evidence"
 date: 2023-01-01
 authors:
-  - "Fazl Barez"
+  - "F. Barez"
   - "P. H. S. Torr"
   - "A. Petrov"
   - "C. Ashurst"

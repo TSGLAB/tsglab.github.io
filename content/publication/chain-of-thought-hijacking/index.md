@@ -6,7 +6,7 @@ authors:
   - "T. Fu"
   - "R. Schaeffer"
   - "M. Sharma"
-  - "Fazl Barez"
+  - "F. Barez"
 publication_types: ["article"]
 publication: "arXiv:2510.26418"
 abstract: ""

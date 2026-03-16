@@ -4,8 +4,8 @@ date: 2025-12-01
 authors:
   - "J. Perlo"
   - "A. Robey"
-  - "Fazl Barez"
-  - "J. Mokander"
+  - "F. Barez"
+  - "J. Mökander"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025"
 abstract: ""

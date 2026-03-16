@@ -6,8 +6,8 @@ authors:
   - "H. Frase"
   - "A. Williams"
   - "S. Luger"
-  - "P. Rottger"
-  - "Fazl Barez"
+  - "P. Röttger"
+  - "F. Barez"
   - "S. McGregor"
   - "et al."
 publication_types: ["article"]

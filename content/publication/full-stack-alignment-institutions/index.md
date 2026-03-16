@@ -9,6 +9,7 @@ authors:
   - "E. Hain"
   - "V. Wang"
   - "A. Sarkar"
+  - "F. Barez"
   - "et al."
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025 Workshop"

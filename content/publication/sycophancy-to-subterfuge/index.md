@@ -4,7 +4,7 @@ date: 2024-06-01
 authors:
   - "C. Denison"
   - "M. MacDiarmid"
-  - "Fazl Barez"
+  - "F. Barez"
   - "D. Duvenaud"
   - "S. Kravec"
   - "S. Marks"

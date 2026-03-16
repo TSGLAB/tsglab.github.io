@@ -5,7 +5,7 @@ authors:
   - "C. Li"
   - "P. Lu"
   - "X. Pan"
-  - "Fazl Barez"
+  - "F. Barez"
   - "M. Yang"
 publication_types: ["article"]
 publication: "arXiv:2603.07427"

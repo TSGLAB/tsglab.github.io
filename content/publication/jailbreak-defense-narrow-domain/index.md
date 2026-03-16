@@ -7,7 +7,7 @@ authors:
   - "H. Sleight"
   - "R. Schaeffer"
   - "R. Agrawal"
-  - "Fazl Barez"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2412.02159"

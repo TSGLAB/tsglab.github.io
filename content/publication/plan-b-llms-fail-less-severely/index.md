@@ -6,7 +6,7 @@ authors:
   - "N. Warncke"
   - "D. Xu"
   - "A. Lynch"
-  - "Fazl Barez"
+  - "F. Barez"
   - "H. Sleight"
   - "E. Perez"
 publication_types: ["article"]

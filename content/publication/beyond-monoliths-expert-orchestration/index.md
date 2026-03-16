@@ -7,6 +7,7 @@ authors:
   - "C. Bandi"
   - "A. Abdullah"
   - "J. Hoelscher-Obermaier"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2506.00051"

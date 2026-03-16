@@ -2,7 +2,7 @@
 title: "System III: Learning with Domain Knowledge for Safety Constraints"
 date: 2022-12-01
 authors:
-  - "Fazl Barez"
+  - "F. Barez"
   - "H. Hasanbieg"
   - "A. Abbate"
 publication_types: ["paper-conference"]

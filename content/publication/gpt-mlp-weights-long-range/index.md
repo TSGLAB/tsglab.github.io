@@ -3,8 +3,8 @@ title: "What Does GPT Store in Its MLP Weights? A Case Study of Long-Range Depen
 date: 2024-01-01
 authors:
   - "T. Clark"
-  - "Shay B. Cohen"
-  - "Fazl Barez"
+  - "S. B. Cohen"
+  - "F. Barez"
 publication_types: ["article"]
 publication: "Preprint"
 abstract: ""

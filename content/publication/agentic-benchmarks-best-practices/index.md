@@ -9,6 +9,7 @@ authors:
   - "S. Liu"
   - "S. Cui"
   - "S. Kapoor"
+  - "F. Barez"
   - "et al."
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025"

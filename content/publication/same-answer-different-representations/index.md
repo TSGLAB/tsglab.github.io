@@ -7,8 +7,7 @@ authors:
   - "R. Saxena"
   - "A. P. Gema"
   - "W. C. Kwan"
-  - "Fazl Barez"
-  - "M. S. Bucarelli"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2602.06652"

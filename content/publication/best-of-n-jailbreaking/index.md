@@ -6,10 +6,11 @@ authors:
   - "S. Price"
   - "A. Lynch"
   - "R. Schaeffer"
-  - "Fazl Barez"
+  - "F. Barez"
   - "S. Koyejo"
   - "H. Sleight"
-  - "et al."
+  - "E. Jones"
+  - "E. Perez"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025"
 abstract: ""

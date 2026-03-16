@@ -8,6 +8,7 @@ authors:
   - "C. McGurk"
   - "B. Harack"
   - "A. Reuel"
+  - "F. Barez"
   - "et al."
 publication_types: ["paper-conference"]
 publication: "FAccT 2025"

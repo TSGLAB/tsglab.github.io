@@ -2,15 +2,15 @@
 title: "Toward Resisting AI-Enabled Authoritarianism"
 date: 2025-01-01
 authors:
-  - "Fazl Barez"
-  - "Isaac Friend"
-  - "Keir Reid"
+  - "F. Barez"
+  - "I. Friend"
+  - "K. Reid"
   - "I. Krawczuk"
   - "V. Wang"
-  - "J. Mokander"
-  - "Philip Torr"
+  - "J. Mökander"
+  - "P. Torr"
   - "J. Morse"
-  - "Robert Trager"
+  - "R. Trager"
 publication_types: ["article"]
 publication: "Under Review"
 abstract: ""

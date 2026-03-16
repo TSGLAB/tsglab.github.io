@@ -9,6 +9,7 @@ authors:
   - "D. Song"
   - "M. Tegmark"
   - "L. Xue"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2506.20702"

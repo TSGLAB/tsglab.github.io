@@ -5,7 +5,7 @@ authors:
   - "Y. Gur-Arieh"
   - "C. Suslik"
   - "Y. Hong"
-  - "Fazl Barez"
+  - "F. Barez"
   - "M. Geva"
 publication_types: ["paper-conference"]
 publication: "EMNLP 2025"

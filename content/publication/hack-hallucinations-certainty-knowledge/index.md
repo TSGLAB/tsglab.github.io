@@ -8,7 +8,7 @@ authors:
   - "D. Arad"
   - "Z. Gekhman"
   - "R. Reichart"
-  - "Fazl Barez"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2510.24222"

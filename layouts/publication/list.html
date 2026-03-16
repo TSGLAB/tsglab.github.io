@@ -2,19 +2,18 @@
 
 {{/* TSG Lab current members — names must match authors[] in publication frontmatter exactly */}}
 {{ $tsgMembers := slice
-  "Fazl Barez"
-  "Robert Trager"
-  "Isaac Friend"
-  "Rivka Mitchell"
-  "Lucy Farnik"
-  "Lucas Irwin"
-  "Elias Kempf"
-  "Yu Zhao"
-  "Peter Jordan"
-  "Keir Reid"
-  "Tung-Yu Wu"
-  "Tung-Yu (Tony) Wu"
-  "Gabriele Dominici"
+  "Fazl Barez" "F. Barez" "F. Barez*" "F. Barez†"
+  "Robert Trager" "R. Trager"
+  "Isaac Friend" "I. Friend"
+  "Rivka Mitchell" "R. Mitchell"
+  "Lucy Farnik" "L. Farnik"
+  "Lucas Irwin" "L. Irwin"
+  "Elias Kempf" "E. Kempf"
+  "Yu Zhao" "Y. Zhao"
+  "Peter Jordan" "P. Jordan"
+  "Keir Reid" "K. Reid"
+  "Tung-Yu Wu" "Tung-Yu (Tony) Wu" "T.-Y. Wu"
+  "Gabriele Dominici" "G. Dominici"
 }}
 
 {{/* Clean up venue strings for display in the tag badge */}}
@@ -53,7 +52,9 @@
         {{ else if eq $venue "Policy Response" }}
           {{ $venueDisplay = "Policy" }}
         {{ else if eq $venue "Workshop 2024" }}
-          {{ $venueDisplay = "Workshop" }}
+          {{ $venueDisplay = "WS 2024" }}
+        {{ else if strings.HasSuffix $venue " Workshop" }}
+          {{ $venueDisplay = replace $venue " Workshop" " WS" }}
         {{ end }}
 
         {{ $tags := .Params.tags | default slice }}

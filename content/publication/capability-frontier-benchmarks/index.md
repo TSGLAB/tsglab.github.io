@@ -8,7 +8,7 @@ authors:
   - "W. Myers"
   - "J. Greaves"
   - "N. F. Oozeer"
-  - "A. Garcia"
+  - "A. García"
   - "et al."
 publication_types: ["article"]
 publication: "Preprint"

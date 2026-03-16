@@ -5,7 +5,7 @@ authors:
   - "N. Wichers"
   - "V. Tao"
   - "R. Volpato"
-  - "Fazl Barez"
+  - "F. Barez"
 publication_types: ["paper-conference"]
 publication: "ICML 2024 Workshop"
 abstract: ""

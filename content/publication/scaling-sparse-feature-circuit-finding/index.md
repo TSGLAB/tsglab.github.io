@@ -4,7 +4,7 @@ date: 2025-07-01
 authors:
   - "D. Kharlapenko"
   - "S. Shabalin"
-  - "Fazl Barez"
+  - "F. Barez"
   - "A. Conmy"
   - "N. Nanda"
 publication_types: ["paper-conference"]

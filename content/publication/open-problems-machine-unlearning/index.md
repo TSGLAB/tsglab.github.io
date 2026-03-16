@@ -2,7 +2,7 @@
 title: "Open Problems in Machine Unlearning for AI Safety"
 date: 2025-01-01
 authors:
-  - "Fazl Barez"
+  - "F. Barez"
   - "T. Fu"
   - "A. Prabhu"
   - "S. Casper"
@@ -13,13 +13,13 @@ authors:
   - "B. Bucknall"
   - "T. Fist"
   - "L. Ong"
-  - "Philip Torr"
+  - "P. Torr"
   - "K.-Y. Lam"
-  - "Robert Trager"
-  - "David Krueger"
+  - "R. Trager"
+  - "D. Krueger"
   - "S. Mindermann"
-  - "J. Hernandez-Orallo"
-  - "Mor Geva"
+  - "J. Hernández-Orallo"
+  - "M. Geva"
   - "Y. Gal"
 publication_types: ["article"]
 publication: "Under Review"

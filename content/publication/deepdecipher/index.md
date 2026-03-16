@@ -4,7 +4,7 @@ date: 2023-12-01
 authors:
   - "A. Garde"
   - "E. Kran"
-  - "Fazl Barez"
+  - "F. Barez"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2023 Workshop"
 abstract: ""

@@ -8,7 +8,7 @@ authors:
   - "M. Lambert"
   - "M. Tong"
   - "M. MacDiarmid"
-  - "Fazl Barez"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2401.05566"

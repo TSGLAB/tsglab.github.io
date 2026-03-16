@@ -8,7 +8,7 @@ authors:
   - "C. S. de Witt"
   - "F. Pizzati"
   - "K. Elkins"
-  - "Fazl Barez"
+  - "F. Barez"
   - "et al."
 publication_types: ["paper-conference"]
 publication: "ICML 2024"

@@ -3,7 +3,7 @@ title: "Verification for International AI Governance"
 date: 2025-01-01
 authors:
   - "B. Harack"
-  - "Robert Trager"
+  - "R. Trager"
   - "A. Reuel"
   - "D. Manheim"
   - "M. Brundage"

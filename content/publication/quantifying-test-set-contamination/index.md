@@ -8,7 +8,7 @@ authors:
   - "K. Z. Liu"
   - "B. Miranda"
   - "A. Ahmed"
-  - "Fazl Barez"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2601.04301"

@@ -4,7 +4,7 @@ date: 2025-10-01
 authors:
   - "A. Gupta"
   - "D. O'Shea"
-  - "Fazl Barez"
+  - "F. Barez"
 publication_types: ["article"]
 publication: "arXiv:2510.05465"
 abstract: ""

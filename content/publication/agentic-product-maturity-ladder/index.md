@@ -5,7 +5,7 @@ authors:
   - "S. McGregor"
   - "D. Nathani"
   - "L. Saouma"
-  - "Fazl Barez"
+  - "F. Barez"
   - "A. Foundjem"
   - "et al."
 publication_types: ["report"]

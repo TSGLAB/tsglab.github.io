@@ -8,6 +8,7 @@ authors:
   - "D. Kossack"
   - "S. Campos"
   - "L. Saouma"
+  - "F. Barez"
   - "et al."
 publication_types: ["article"]
 publication: "Preprint"

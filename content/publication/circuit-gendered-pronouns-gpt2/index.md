@@ -5,8 +5,8 @@ authors:
   - "C. Mathwin"
   - "G. Corlouer"
   - "E. Kran"
-  - "Fazl Barez"
-  - "Neel Nanda"
+  - "F. Barez"
+  - "N. Nanda"
 publication_types: ["article"]
 publication: "Preprint"
 abstract: ""

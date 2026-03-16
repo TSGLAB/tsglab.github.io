@@ -4,7 +4,7 @@ date: 2025-12-01
 authors:
   - "I. Agarwal"
   - "S. Navani"
-  - "Fazl Barez"
+  - "F. Barez"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025 Workshop"
 abstract: ""

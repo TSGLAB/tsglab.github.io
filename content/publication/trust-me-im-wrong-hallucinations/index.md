@@ -4,7 +4,7 @@ date: 2025-11-01
 authors:
   - "A. Simhi"
   - "I. Itzhak"
-  - "Fazl Barez"
+  - "F. Barez"
   - "G. Stanovsky"
   - "Y. Belinkov"
 publication_types: ["paper-conference"]

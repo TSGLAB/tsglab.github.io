@@ -2,10 +2,10 @@
 title: "Fairness in AI and Its Long-Term Implications on Society"
 date: 2023-01-01
 authors:
-  - "O. Bohdal"
+  - "O. Bohdal*"
   - "T. Hospedales"
   - "P. H. S. Torr"
-  - "Fazl Barez"
+  - "F. Barez*"
 publication_types: ["article"]
 publication: "Stanford Existential Safety Journal"
 abstract: ""
