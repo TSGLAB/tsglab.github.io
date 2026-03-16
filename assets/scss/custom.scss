@@ -236,15 +236,18 @@ a {
 }
 
 // ── Footer ────────────────────────────────────────────────────────────────────
+// Transparent so the split body gradient shows through.
+// Text is dark to stay readable on the light (cream/white) background.
 .page-footer {
-  background-color: #1a1a1a !important;
-  color: rgba(255,255,255,0.4);
+  background: transparent !important;
+  color: rgba(0,0,0,0.4);
   font-family: 'Chivo Mono', monospace;
   font-size: 0.75rem;
   padding: 1rem 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.08);
 
   a {
-    color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.45);
     &:hover { color: $green; }
   }
 

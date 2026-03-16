@@ -10,6 +10,10 @@
 
   function initTree() {
     var W = 320, H = window.innerHeight;
+    // Extra canvas height above the viewport so the canopy never hits the canvas boundary.
+    // The container extends EXTRA px above the viewport; those pixels are off-screen but
+    // prevent the canvas from clipping branches that grow into the upper portion of the view.
+    var EXTRA = 200;
 
     var container = document.createElement('div');
     container.id = 'tsg-tree-canvas';
@@ -18,7 +22,7 @@
       'right:-30px',
       'bottom:0',
       'width:' + W + 'px',
-      'height:' + H + 'px',
+      'height:' + (H + EXTRA) + 'px',
       'pointer-events:none',
       'z-index:10',
       'opacity:0.18',
@@ -51,9 +55,9 @@
       };
 
       p.setup = function () {
-        var cnv = p.createCanvas(W, window.innerHeight);
+        H = window.innerHeight;
+        var cnv = p.createCanvas(W, H + EXTRA);
         cnv.parent('tsg-tree-canvas');
-        // Force transparent canvas background
         cnv.elt.style.background = 'transparent';
         p.frameRate(30);
         resetTree();
@@ -61,8 +65,8 @@
 
       p.windowResized = function () {
         H = window.innerHeight;
-        container.style.height = H + 'px';
-        p.resizeCanvas(W, H);
+        container.style.height = (H + EXTRA) + 'px';
+        p.resizeCanvas(W, H + EXTRA);
       };
 
       function resetTree() {
@@ -95,7 +99,7 @@
         // Draw tree
         p.randomSeed(seed);
         p.push();
-        branch(p, pal, W / 2 - 40, H + 10, -p.HALF_PI, 0, 105);
+        branch(p, pal, W / 2 - 40, H + EXTRA + 10, -p.HALF_PI, 0, 105);
         p.pop();
 
         // Animate leaves
