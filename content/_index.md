@@ -1,22 +1,39 @@
 ---
 # Leave the homepage title empty to use the site title
 title:
-date: 2022-10-24
+date: 2024-01-01
 type: landing
 
 sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+        Technical Safety &
+        Governance Lab
       image:
         filename: welcome.jpg
       text: |
         <br>
-        
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
-  
+
+        **TSG Lab** · Department of Engineering Science & AI Governance Initiative, **University of Oxford**
+
+        We study how frontier AI systems work internally, build tools for effective governance, and analyze their societal impact — from neural mechanisms to policy implementation to social outcomes.
+
+        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+
+  - block: markdown
+    content:
+      title: Why TSG?
+      subtitle: ''
+      text: |
+        As AI systems become more capable and agentic, surface-level evaluations, red-teaming, and informal checks will not be enough. We need tools that allow us to **inspect models before deployment**, **monitor them during deployment**, and **intervene when things go wrong**.
+
+        TSG provides the empirical and policy expertise to deliver this capacity. We're building for both **scientific rigor** and **real-world impact**. You'll get strong technical mentorship, opportunities to publish at top venues, and pathways into academia, industry, policy, or safety institutes.
+
+        We value good research and good people. We support researchers from underrepresented backgrounds. We care about the humans behind the papers.
+    design:
+      columns: '1'
+
   - block: collection
     content:
       title: Latest News
@@ -35,30 +52,10 @@ sections:
     design:
       view: card
       columns: '1'
-  
-  - block: markdown
-    content:
-      title:
-      subtitle: ''
-      text:
-    design:
-      columns: '1'
-      background:
-        image: 
-          filename: coders.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
-      spacing:
-        padding: ['20px', '0', '20px', '0']
-      css_class: fullscreen
 
   - block: collection
     content:
-      title: Latest Preprints
+      title: Latest Publications
       text: ""
       count: 5
       filters:
