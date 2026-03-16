@@ -1,0 +1,128 @@
+{{ define "main" }}
+
+{{/* TSG Lab current members — names must match authors[] in publication frontmatter exactly */}}
+{{ $tsgMembers := slice
+  "Fazl Barez"
+  "Robert Trager"
+  "Isaac Friend"
+  "Rivka Mitchell"
+  "Lucy Farnik"
+  "Lucas Irwin"
+  "Elias Kempf"
+  "Yu Zhao"
+  "Peter Jordan"
+  "Keir Reid"
+  "Tung-Yu Wu"
+  "Tung-Yu (Tony) Wu"
+  "Gabriele Dominici"
+}}
+
+{{/* Clean up venue strings for display in the tag badge */}}
+{{ $pubs := .Pages.ByDate.Reverse }}
+
+<div class="pub-page">
+  <div class="container">
+
+    <h1 class="pub-page-heading">Publications</h1>
+
+    {{/* ── Filter pills ──────────────────────────────────────────────── */}}
+    <div class="pub-filter-row" role="group" aria-label="Filter by research direction">
+      <button class="pub-pill active" data-filter="all">All</button>
+      <button class="pub-pill" data-filter="Interpretability">Interpretability</button>
+      <button class="pub-pill" data-filter="Safety &amp; Alignment">Safety &amp; Alignment</button>
+      <button class="pub-pill" data-filter="Technical Governance">Technical Governance</button>
+      <button class="pub-pill" data-filter="Societal Impact">Societal Impact</button>
+    </div>
+
+    {{/* ── Publication list ──────────────────────────────────────────── */}}
+    <div class="pub-list" id="pub-list">
+
+      {{ range $pubs }}
+
+        {{/* Build a short display label for the venue badge */}}
+        {{ $venue := .Params.publication | default "Preprint" }}
+        {{ $venueDisplay := $venue }}
+        {{ if hasPrefix $venue "arXiv:" }}
+          {{ $venueDisplay = "arXiv" }}
+        {{ else if eq $venue "Stanford Existential Safety Journal" }}
+          {{ $venueDisplay = "ESJ" }}
+        {{ else if eq $venue "AI Governance Initiative, Oxford" }}
+          {{ $venueDisplay = "OGI Oxford" }}
+        {{ else if eq $venue "SSRN 4937924" }}
+          {{ $venueDisplay = "SSRN" }}
+        {{ else if eq $venue "Policy Response" }}
+          {{ $venueDisplay = "Policy" }}
+        {{ else if eq $venue "Workshop 2024" }}
+          {{ $venueDisplay = "Workshop" }}
+        {{ end }}
+
+        {{ $tags := .Params.tags | default slice }}
+
+        <div class="pub-entry" data-tags='{{ $tags | jsonify }}'>
+
+          {{/* Line 1: venue badge + title */}}
+          <div class="pub-row">
+            <span class="pub-venue-tag" title="{{ $venue }}">{{ $venueDisplay }}</span>
+            <span class="pub-title-text">{{ .Title }}</span>
+          </div>
+
+          {{/* Line 2: author list, TSG members bolded */}}
+          <div class="pub-authors">
+            {{- range $i, $a := .Params.authors -}}
+              {{- if $i }}, {{ end -}}
+              {{- if in $tsgMembers $a -}}<strong class="pub-member">{{ $a }}</strong>{{- else -}}{{ $a }}{{- end -}}
+            {{- end -}}
+          </div>
+
+        </div>
+
+      {{ end }}
+
+    </div>{{/* .pub-list */}}
+
+  </div>{{/* .container */}}
+</div>{{/* .pub-page */}}
+
+<script>
+(function () {
+  'use strict';
+  var active  = new Set();
+  var pills   = Array.prototype.slice.call(document.querySelectorAll('.pub-pill'));
+  var entries = Array.prototype.slice.call(document.querySelectorAll('.pub-entry'));
+  var allPill = document.querySelector('.pub-pill[data-filter="all"]');
+
+  function applyFilter() {
+    entries.forEach(function (e) {
+      if (active.size === 0) { e.style.display = ''; return; }
+      var tags = JSON.parse(e.dataset.tags || '[]');
+      var show = false;
+      active.forEach(function (f) { if (tags.indexOf(f) !== -1) show = true; });
+      e.style.display = show ? '' : 'none';
+    });
+  }
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var f = this.dataset.filter;
+      if (f === 'all') {
+        active.clear();
+        pills.forEach(function (p) { p.classList.remove('active'); });
+        allPill.classList.add('active');
+      } else {
+        allPill.classList.remove('active');
+        if (active.has(f)) {
+          active.delete(f);
+          this.classList.remove('active');
+          if (active.size === 0) { allPill.classList.add('active'); }
+        } else {
+          active.add(f);
+          this.classList.add('active');
+        }
+      }
+      applyFilter();
+    });
+  });
+}());
+</script>
+
+{{ end }}
