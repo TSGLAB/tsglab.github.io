@@ -230,9 +230,7 @@ a {
 }
 
 .portrait-title h3 {
-  font-family: 'Chivo', sans-serif;
-  color: $mid;
-  font-size: 0.8rem;
+  display: none;
 }
 
 
@@ -245,7 +243,8 @@ a {
   font-family: 'Chivo Mono', monospace;
   font-size: 0.75rem;
   padding: 1rem 0 !important;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: none !important;
+  box-shadow: none !important;
 
   a {
     color: rgba(0,0,0,0.45);
