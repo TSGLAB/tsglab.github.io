@@ -9,7 +9,9 @@
   document.head.appendChild(script);
 
   function initTree() {
-    var W = 320, H = window.innerHeight;
+    // W widened from 320→500 so leftmost branches have 300px of canvas before clipping.
+    // Trunk x stays at viewport-right minus 170px (the gradient boundary) by using W/2+50.
+    var W = 500, H = window.innerHeight;
     // Extra canvas height above the viewport so the canopy never hits the canvas boundary.
     // The container extends EXTRA px above the viewport; those pixels are off-screen but
     // prevent the canvas from clipping branches that grow into the upper portion of the view.
@@ -99,7 +101,7 @@
         // Draw tree
         p.randomSeed(seed);
         p.push();
-        branch(p, pal, W / 2 - 40, H + EXTRA + 10, -p.HALF_PI, 0, 105);
+        branch(p, pal, W / 2 + 50, H + EXTRA + 10, -p.HALF_PI, 0, 105);
         p.pop();
 
         // Animate leaves
