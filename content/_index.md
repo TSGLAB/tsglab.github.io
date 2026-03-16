@@ -12,23 +12,22 @@ sections:
       image:
         filename: oxford_hero.jpg
       text: |
-        <br>
-        Department of Engineering Science & AI Governance Initiative, **University of Oxford**
+        <p style="font-size:0.95rem;font-weight:300;color:#555;margin-bottom:1.2rem;">
+        Co-located at the Department of Engineering Science &amp; the AI Governance Initiative, Oxford Martin School — University of Oxford
+        </p>
 
-        We study how frontier AI systems work internally, build tools for effective governance, and analyze their societal impact — from neural mechanisms to policy implementation to social outcomes.
-
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact: from the mechanisms inside neural networks, to policy implementation, to real-world social outcomes.
 
   - block: markdown
     content:
       title: About TSG
       subtitle: ''
       text: |
-        As AI systems become more capable and agentic, surface-level evaluations, red-teaming, and informal checks will not be enough. We need tools that allow us to **inspect models before deployment**, **monitor them during deployment**, and **intervene when things go wrong**.
+        We are a small, interdisciplinary team working at the intersection of technical AI research and governance. We value rigour, intellectual honesty, and work that matters beyond the lab.
 
-        TSG provides the empirical and policy expertise to deliver this capacity. We're building for both **scientific rigor** and **real-world impact**.
+        Whether you are a researcher, policymaker, journalist, or prospective student — we are glad you are here. We believe good science and good policy need each other, and we try to embody that in everything we do.
 
-        You'll get strong technical mentorship, opportunities to publish at top venues, and pathways into academia, industry, policy, or safety institutes. We value good research and good people. We support researchers from underrepresented backgrounds. We care about the humans behind the papers.
+        We are committed to supporting researchers from underrepresented backgrounds, and we care about the humans behind the papers.
     design:
       columns: '1'
 
@@ -62,14 +61,5 @@ sections:
         publication_type: 'article'
     design:
       view: citation
-      columns: '1'
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
-    design:
       columns: '1'
 ---
