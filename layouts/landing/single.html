@@ -1,0 +1,199 @@
+{{- define "main" -}}
+  {{ partial "landing_page.html" . }}
+
+  {{/* ── Support Our Research ────────────────────────────────────────────── */}}
+  <section id="support" class="support-section home-section">
+    <div class="universal-wrapper">
+
+      <h2 class="support-heading">Support Our Research</h2>
+
+      <p class="support-body">
+        TSG Lab is an independent research group working on some of the most consequential
+        questions in AI. If our work resonates with you — whether as an individual, a
+        foundation, or an institution — we would love to hear from you.
+      </p>
+
+      <button
+        class="support-toggle-btn"
+        aria-expanded="false"
+        aria-controls="support-form-wrap"
+        onclick="tsgSupportToggle(this)"
+      >Get in Touch</button>
+
+      <div id="support-form-wrap" class="support-form-wrap" aria-hidden="true">
+
+        {{/* TODO: Replace REPLACE_WITH_YOUR_ID with your Formspree form ID */}}
+        {{/* Sign up free at formspree.io, create a form, and paste the ID here */}}
+        <form
+          id="support-form"
+          class="support-form"
+          action="https://formspree.io/f/REPLACE_WITH_YOUR_ID"
+          method="POST"
+          novalidate
+        >
+
+          <div class="sf-row">
+            <label for="sf-name" class="sf-label">Name <span aria-hidden="true">*</span></label>
+            <input
+              id="sf-name"
+              type="text"
+              name="name"
+              class="sf-input"
+              required
+              autocomplete="name"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="sf-row">
+            <label for="sf-org" class="sf-label">Organisation <span class="sf-optional">(optional)</span></label>
+            <input
+              id="sf-org"
+              type="text"
+              name="organisation"
+              class="sf-input"
+              autocomplete="organization"
+              placeholder="University, foundation, or company"
+            />
+          </div>
+
+          <div class="sf-row">
+            <label for="sf-email" class="sf-label">Email <span aria-hidden="true">*</span></label>
+            <input
+              id="sf-email"
+              type="email"
+              name="email"
+              class="sf-input"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="sf-row">
+            <label for="sf-type" class="sf-label">Type of interest</label>
+            <select id="sf-type" name="interest_type" class="sf-input sf-select">
+              <option value="">— Select —</option>
+              <option value="Individual donation">Individual donation</option>
+              <option value="Institutional or philanthropic grant">Institutional or philanthropic grant</option>
+              <option value="Sponsoring a specific research direction">Sponsoring a specific research direction</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <fieldset class="sf-row sf-fieldset">
+            <legend class="sf-label">Research direction(s) <span class="sf-optional">(optional)</span></legend>
+            <div class="sf-checkboxes">
+              <label class="sf-check-label">
+                <input type="checkbox" name="directions[]" value="Interpretability" class="sf-check" />
+                Interpretability
+              </label>
+              <label class="sf-check-label">
+                <input type="checkbox" name="directions[]" value="Safety & Alignment" class="sf-check" />
+                Safety &amp; Alignment
+              </label>
+              <label class="sf-check-label">
+                <input type="checkbox" name="directions[]" value="Technical Governance" class="sf-check" />
+                Technical Governance
+              </label>
+              <label class="sf-check-label">
+                <input type="checkbox" name="directions[]" value="Societal Impact" class="sf-check" />
+                Societal Impact
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="sf-row">
+            <label for="sf-message" class="sf-label">Message <span class="sf-optional">(optional)</span></label>
+            <textarea
+              id="sf-message"
+              name="message"
+              class="sf-input sf-textarea"
+              rows="4"
+              placeholder="Tell us a bit about your interest or any questions you have."
+            ></textarea>
+          </div>
+
+          <div class="sf-row sf-actions">
+            <button type="submit" class="sf-submit-btn">Send</button>
+          </div>
+
+          <div id="sf-success" class="sf-feedback sf-success" aria-live="polite" hidden>
+            Thank you — we will be in touch soon.
+          </div>
+          <div id="sf-error" class="sf-feedback sf-error" aria-live="polite" hidden>
+            Something went wrong. Please email us directly at
+            <a href="mailto:tsglab@eng.ox.ac.uk">tsglab@eng.ox.ac.uk</a>.
+          </div>
+
+        </form>
+      </div>{{/* .support-form-wrap */}}
+
+    </div>{{/* .universal-wrapper */}}
+  </section>
+
+  <script>
+  (function () {
+    'use strict';
+
+    function tsgSupportToggle(btn) {
+      var wrap = document.getElementById('support-form-wrap');
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        wrap.style.maxHeight = wrap.scrollHeight + 'px';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            wrap.style.maxHeight = '0';
+            wrap.setAttribute('aria-hidden', 'true');
+          });
+        });
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('open');
+      } else {
+        wrap.setAttribute('aria-hidden', 'false');
+        wrap.style.maxHeight = wrap.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+        btn.classList.add('open');
+        // After transition, remove fixed max-height so form can resize
+        wrap.addEventListener('transitionend', function onEnd() {
+          wrap.style.maxHeight = 'none';
+          wrap.removeEventListener('transitionend', onEnd);
+        });
+      }
+    }
+    // Expose to onclick attribute
+    window.tsgSupportToggle = tsgSupportToggle;
+
+    // Formspree AJAX submission
+    var form = document.getElementById('support-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        var submitBtn = form.querySelector('.sf-submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('sf-success').hidden = false;
+          } else {
+            throw new Error('not ok');
+          }
+        })
+        .catch(function () {
+          document.getElementById('sf-error').hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send';
+        });
+      });
+    }
+  }());
+  </script>
+
+{{- end -}}

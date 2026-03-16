@@ -501,3 +501,201 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
     row-gap: 0.3rem;
   }
 }
+
+// ── Support Our Research section ───────────────────────────────────────────────
+.support-section {
+  padding: 3rem 0 4rem;
+}
+
+.support-heading {
+  font-family: 'Chivo Mono', monospace !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: $black;
+  margin-bottom: 1rem;
+  border-bottom: none !important;
+}
+
+.support-body {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.92rem;
+  color: $mid;
+  max-width: 600px;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+// Toggle button — understated, monospace, warm
+.support-toggle-btn {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 7px 20px;
+  border: 1px solid rgba(0,0,0,0.22);
+  border-radius: 2px;
+  background: transparent;
+  color: $mid;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+
+  &:hover,
+  &.open {
+    background: $warm-tag-bg;
+    border-color: rgba(0,0,0,0.32);
+    color: $black;
+  }
+}
+
+// Collapsible wrapper — height animated via JS
+.support-form-wrap {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  margin-top: 1.5rem;
+}
+
+// ── The form itself ─────────────────────────────────────────────────────────
+.support-form {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.sf-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sf-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sf-label {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $mid;
+}
+
+.sf-optional {
+  font-family: 'Chivo', sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.7rem;
+  color: rgba(0,0,0,0.35);
+}
+
+.sf-input {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.88rem;
+  color: $black;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.16);
+  border-radius: 2px;
+  padding: 8px 11px;
+  outline: none;
+  transition: border-color 0.18s ease;
+  width: 100%;
+  box-sizing: border-box;
+
+  &::placeholder { color: rgba(0,0,0,0.3); }
+
+  &:focus {
+    border-color: rgba(0,0,0,0.38);
+    background: rgba(255,255,255,0.8);
+  }
+}
+
+.sf-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
+.sf-textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.55;
+}
+
+.sf-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.sf-check-label {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.82rem;
+  color: $mid;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.sf-check {
+  accent-color: $black;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.sf-actions {
+  margin-top: 0.25rem;
+}
+
+.sf-submit-btn {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 7px 24px;
+  border: 1px solid $black;
+  border-radius: 2px;
+  background: $black;
+  color: $white;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+
+  &:hover {
+    background: $green;
+    border-color: $green;
+    color: $black;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.sf-feedback {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  line-height: 1.55;
+
+  &.sf-success { color: darken($green, 20%); }
+  &.sf-error   { color: #8b3a3a; }
+
+  a { color: inherit; text-decoration: underline; }
+}
+
+@media (max-width: 768px) {
+  .support-form { max-width: 100%; }
+  .sf-checkboxes { gap: 0.5rem 1rem; }
+}

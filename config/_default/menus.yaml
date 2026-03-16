@@ -21,6 +21,9 @@ main:
   - name: Vacancies
     url: vacancies
     weight: 55
+  - name: Support
+    url: /#support
+    weight: 58
   - name: Contact
     url: contact
     weight: 60
