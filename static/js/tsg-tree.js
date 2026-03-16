@@ -142,8 +142,10 @@
         var ny = y + p.sin(angle) * len;
         p.line(x, y, nx, ny);
 
-        // Spawn leaves at tips when grown enough
-        if (level >= maxLevel - 2 && prog > maxLevel - 1 && pal.leaves.length > 0) {
+        // Spawn leaves only on branches in the cream zone (left of gradient→white boundary).
+        // Trunk is at x = W/2+50 = 300; pure white starts at canvas x ≈ 350.
+        // Right-side branches (in the white zone) stay bare.
+        if (level >= maxLevel - 2 && prog > maxLevel - 1 && pal.leaves.length > 0 && nx < W / 2 + 100) {
           if (p.random() < 0.35 && leaves.length < 300) {
             var hexCol = pal.leaves[p.floor(p.random(pal.leaves.length))];
             leaves.push({
