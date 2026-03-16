@@ -13,6 +13,23 @@ sections:
 
         ## Open Positions
 
+        ### Postdoctoral Researcher in AI & Risk — Oxford Martin AIGI Oxford
+        **Grade 8 · £49,119–£58,265 p.a. · 2-year fixed term · Closing 8 April 2026, 12:00 noon BST**
+
+        We have an exciting opportunity to join the Oxford Martin AI Governance Initiative as a Postdoctoral Researcher in AI and Risk. The postholder will contribute and lead research on AI risk, governance, and the societal impacts of advanced AI systems. A strong record of independent scholarship and engagement with public policy and international institutions is highly desirable.
+
+        The role combines high-quality academic research with policy-facing activity, supporting the translation of scholarly work into practical governance frameworks and contributing to the strategic development of the Initiative's research programme, including engagement with policymakers, international organisations, and other stakeholders.
+
+        **Location:** Oxford Martin School, 34 Broad Street, Oxford, OX1 3BD
+        **Vacancy ID:** 185217
+        **Contact:** [recruitment@oxfordmartin.ox.ac.uk](mailto:recruitment@oxfordmartin.ox.ac.uk)
+
+        To apply, visit the [University of Oxford recruitment portal](https://www.jobs.ox.ac.uk/vacancy/185217) and upload your CV and a supporting statement addressing the selection criteria in the job description.
+
+        *We expect to hold interviews week commencing 27 April 2026.*
+
+        ---
+
         ### PhD Students
         We are recruiting DPhil (PhD) students through the University of Oxford's Engineering Science and Computer Science doctoral programmes. Strong candidates will have a background in machine learning, AI safety, or related fields, and a genuine interest in the safety and governance of frontier AI systems.
 

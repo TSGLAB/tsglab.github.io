@@ -38,4 +38,4 @@ user_groups:
   - Principal Investigators
 ---
 
-Fazl Barez is a Principal Investigator at the Technical Safety & Governance Lab (TSG), Department of Engineering Science, University of Oxford. His research focuses on understanding how frontier AI systems work internally through mechanistic interpretability, developing tools for effective AI governance, and analyzing the societal impact of advanced AI.
+Fazl Barez is a Principal Investigator at the Technical Safety & Governance Lab (TSG), Department of Engineering Science, University of Oxford. His research focuses on understanding how frontier AI systems work internally through interpretability, developing tools for effective AI governance, and analyzing the societal impact of advanced AI.
