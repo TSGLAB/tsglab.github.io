@@ -3,14 +3,19 @@
 
 <article class="evt-card{{ if $muted }} evt-card--past{{ end }}">
 
-  {{/* ── Header row: format badge + title ─────────────────────────────── */}}
+  {{/* ── Header row: badges + title ──────────────────────────────────── */}}
   <div class="evt-header">
-    {{ if $e.format }}
-      {{ $fmt := $e.format }}
-      {{ $fmtLabel := "Virtual" }}
-      {{ if eq $fmt "in-person" }}{{ $fmtLabel = "In-Person" }}{{ end }}
-      <span class="evt-format-badge evt-format-{{ $fmt }}" title="{{ $fmtLabel }}">{{ $fmtLabel }}</span>
-    {{ end }}
+    <div class="evt-badges">
+      {{ if $e.type }}
+        <span class="evt-type-badge">{{ $e.type }}</span>
+      {{ end }}
+      {{ if $e.format }}
+        {{ $fmt := $e.format }}
+        {{ $fmtLabel := "Virtual" }}
+        {{ if eq $fmt "in-person" }}{{ $fmtLabel = "In-Person" }}{{ end }}
+        <span class="evt-format-badge evt-format-{{ $fmt }}" title="{{ $fmtLabel }}">{{ $fmtLabel }}</span>
+      {{ end }}
+    </div>
     <h3 class="evt-title">{{ $e.title }}</h3>
   </div>
 

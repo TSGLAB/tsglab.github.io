@@ -40,3 +40,15 @@
     six times, receiving two Outstanding AC awards, and as a Senior Area Chair
     for ACL and EMNLP. He received his PhD from the University of North Carolina
     at Chapel Hill, supported by a Google PhD Fellowship.
+
+- title: "Model Introspection"
+  speaker: "Belinda Li"
+  affiliation: "MIT"
+  date: "2025-11-01" # TODO: update with exact date
+  date_display: "2025"
+  format: "virtual"
+  type: "Invited Talk"
+  section: "talks"
+  status: "past"
+  abstract: "" # TODO: add abstract
+  bio: "" # TODO: add bio

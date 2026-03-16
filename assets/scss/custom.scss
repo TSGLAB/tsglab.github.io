@@ -762,18 +762,36 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
 }
 
 .evt-format-badge {
-  flex-shrink: 0;
   font-family: 'Chivo Mono', monospace;
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 3px 7px;
   border-radius: 2px;
-  margin-top: 3px; // align with title cap height
 }
 
 .evt-format-virtual   { color: $warm-brown; background: $warm-tag-bg; }
 .evt-format-in-person { color: darken($warm-brown, 8%); background: darken($warm-tag-bg, 5%); }
+
+.evt-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  margin-top: 3px; // align with title cap height
+}
+
+.evt-type-badge {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 7px;
+  border-radius: 2px;
+  color: $mid;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+}
 
 .evt-title {
   font-family: 'Chivo', sans-serif !important;
