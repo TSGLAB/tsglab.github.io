@@ -50,6 +50,16 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.01em;
 }
 
+// Nuke any heading underline from any source — border, text-decoration, or pseudo-elements
+h1, h2, h3, h4, h5, h6,
+.section-title, .section-heading,
+.section-heading h1, .section-heading h2,
+.universal-wrapper h1, .universal-wrapper h2 {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  &::after, &::before { border-bottom: none !important; }
+}
+
 p, li, td, th, blockquote {
   font-family: 'Chivo', sans-serif;
 }
