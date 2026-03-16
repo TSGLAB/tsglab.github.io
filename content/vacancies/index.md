@@ -33,8 +33,6 @@ sections:
         - **Internships & vacation research:** We occasionally have short paid research placements during the summer or vacation periods for Oxford students who want to gain hands-on research experience.
         - **Just curious?** You are welcome to come to our reading groups and seminars. Drop us a line and we will add you to the mailing list.
 
-        ---
-
         ## How to Apply
 
         For all enquiries, please email [tsglab@eng.ox.ac.uk](mailto:tsglab@eng.ox.ac.uk) with:
