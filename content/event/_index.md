@@ -1,11 +1,12 @@
 ---
-title: Recent & Upcoming Events
+title: Events
 
 # Listing view
 view: compact
 
-# Optional header image (relative to `assets/media/` folder).
 banner:
   caption: ''
   image: ''
 ---
+
+No upcoming events.
