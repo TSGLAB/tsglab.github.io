@@ -8,6 +8,7 @@ authors:
   - "V. Thost"
 publication_types: ["paper-conference"]
 publication: "ICML 2025 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability

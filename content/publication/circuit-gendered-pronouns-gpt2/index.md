@@ -9,6 +9,7 @@ authors:
   - "N. Nanda"
 publication_types: ["article"]
 publication: "Preprint"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Interpretability

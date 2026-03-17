@@ -23,25 +23,43 @@
 
   <h1 class="pub-page-heading">Publications</h1>
 
-  {{/* ── Filter pills ────────────────────────────────────────────────────── */}}
-  <div class="pub-filter-row" role="group" aria-label="Filter by research direction">
-    <button class="pub-pill active" data-filter="all">All</button>
-    <button class="pub-pill" data-filter="Interpretability">Interpretability</button>
-    <button class="pub-pill" data-filter="Safety &amp; Alignment">Safety &amp; Alignment</button>
-    <button class="pub-pill" data-filter="Technical Governance">Technical Governance</button>
-    <button class="pub-pill" data-filter="Societal Impact">Societal Impact</button>
-  </div>
+  {{/* ── Filter rows ──────────────────────────────────────────────────────── */}}
+  <div class="pub-filters">
+
+    <div class="pub-filter-row" role="group" aria-label="Filter by research topic">
+      <span class="pub-filter-label">Topic</span>
+      <button class="pub-pill active" data-row="topic" data-filter="all">All</button>
+      <button class="pub-pill" data-row="topic" data-filter="Interpretability">Interpretability</button>
+      <button class="pub-pill" data-row="topic" data-filter="Safety &amp; Alignment">Safety &amp; Alignment</button>
+      <button class="pub-pill" data-row="topic" data-filter="Technical Governance">Technical Governance</button>
+      <button class="pub-pill" data-row="topic" data-filter="Societal Impact">Societal Impact</button>
+    </div>
+
+    <div class="pub-filter-row" role="group" aria-label="Filter by publication type">
+      <span class="pub-filter-label">Type</span>
+      <button class="pub-pill active" data-row="type" data-filter="all">All</button>
+      <button class="pub-pill" data-row="type" data-filter="Conference">Conference</button>
+      <button class="pub-pill" data-row="type" data-filter="Workshop">Workshop</button>
+      <button class="pub-pill" data-row="type" data-filter="Preprint">Preprint</button>
+      <button class="pub-pill" data-row="type" data-filter="Journal">Journal</button>
+      <button class="pub-pill" data-row="type" data-filter="Policy">Policy</button>
+      <button class="pub-pill" data-row="type" data-filter="Book Chapter">Book Chapter</button>
+    </div>
+
+  </div>{{/* .pub-filters */}}
+
+  <p class="pub-result-count" id="pub-result-count" aria-live="polite"></p>
 
   {{/* ── Publication list ─────────────────────────────────────────────────── */}}
-  <div class="pub-list">
+  <div class="pub-list" id="pub-list">
 
     {{ range $pubs }}
 
       {{/* Short display label for the venue badge */}}
       {{ $venue := .Params.publication | default "Preprint" }}
       {{ $venueDisplay := $venue }}
-      {{ if hasPrefix $venue "arXiv:" }}
-        {{ $venueDisplay = "arXiv" }}
+      {{ if or (hasPrefix $venue "arXiv:") (eq $venue "Preprint") (eq $venue "Under Review") }}
+        {{ $venueDisplay = "Preprint" }}
       {{ else if eq $venue "Stanford Existential Safety Journal" }}
         {{ $venueDisplay = "ESJ" }}
       {{ else if eq $venue "AI Governance Initiative, Oxford" }}
@@ -58,9 +76,12 @@
         {{ $venueDisplay = replace $venue " Workshop" " WS" }}
       {{ end }}
 
-      {{ $tags := .Params.tags | default slice }}
+      {{ $tags    := .Params.tags     | default slice }}
+      {{ $pubType := .Params.pub_type | default "Preprint" }}
 
-      <div class="pub-entry" data-tags='{{ $tags | jsonify }}'>
+      <div class="pub-entry"
+           data-tags='{{ $tags | jsonify }}'
+           data-type="{{ $pubType }}">
 
         {{/* Line 1: venue badge + title */}}
         <div class="pub-row">
@@ -88,39 +109,72 @@
 <script>
 (function () {
   'use strict';
-  var active  = new Set();
-  var pills   = Array.prototype.slice.call(document.querySelectorAll('.pub-pill'));
-  var entries = Array.prototype.slice.call(document.querySelectorAll('.pub-entry'));
-  var allPill = document.querySelector('.pub-pill[data-filter="all"]');
+
+  var entries  = Array.prototype.slice.call(document.querySelectorAll('.pub-entry'));
+  var countEl  = document.getElementById('pub-result-count');
+
+  // State: one active Set per row
+  var state = { topic: new Set(), type: new Set() };
+
+  // All-pills per row
+  var allPills = {
+    topic: document.querySelector('.pub-pill[data-row="topic"][data-filter="all"]'),
+    type:  document.querySelector('.pub-pill[data-row="type"][data-filter="all"]'),
+  };
+
+  var totalCount = entries.length;
 
   function applyFilter() {
+    var topicActive = state.topic;
+    var typeActive  = state.type;
+    var visible = 0;
+
     entries.forEach(function (e) {
-      if (active.size === 0) { e.style.display = ''; return; }
-      var tags = JSON.parse(e.dataset.tags || '[]');
-      var show = false;
-      active.forEach(function (f) { if (tags.indexOf(f) !== -1) show = true; });
+      var tags    = JSON.parse(e.dataset.tags || '[]');
+      var pubType = e.dataset.type || '';
+
+      var topicOk = topicActive.size === 0 ||
+        Array.from(topicActive).some(function (f) { return tags.indexOf(f) !== -1; });
+      var typeOk  = typeActive.size === 0 ||
+        typeActive.has(pubType);
+
+      var show = topicOk && typeOk;
       e.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+
+    // Update result count — only show when at least one filter is active
+    var filtered = topicActive.size > 0 || typeActive.size > 0;
+    if (filtered) {
+      countEl.textContent = 'Showing ' + visible + ' of ' + totalCount + ' publications';
+    } else {
+      countEl.textContent = '';
+    }
   }
 
-  pills.forEach(function (pill) {
+  document.querySelectorAll('.pub-pill').forEach(function (pill) {
     pill.addEventListener('click', function () {
-      var f = this.dataset.filter;
+      var row = this.dataset.row;   // 'topic' or 'type'
+      var f   = this.dataset.filter;
+
       if (f === 'all') {
-        active.clear();
-        pills.forEach(function (p) { p.classList.remove('active'); });
-        allPill.classList.add('active');
+        state[row].clear();
+        // deactivate all pills in this row, activate All
+        document.querySelectorAll('.pub-pill[data-row="' + row + '"]')
+          .forEach(function (p) { p.classList.remove('active'); });
+        allPills[row].classList.add('active');
       } else {
-        allPill.classList.remove('active');
-        if (active.has(f)) {
-          active.delete(f);
+        allPills[row].classList.remove('active');
+        if (state[row].has(f)) {
+          state[row].delete(f);
           this.classList.remove('active');
-          if (active.size === 0) { allPill.classList.add('active'); }
+          if (state[row].size === 0) { allPills[row].classList.add('active'); }
         } else {
-          active.add(f);
+          state[row].add(f);
           this.classList.add('active');
         }
       }
+
       applyFilter();
     });
   });

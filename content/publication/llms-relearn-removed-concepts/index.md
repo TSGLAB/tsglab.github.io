@@ -7,6 +7,7 @@ authors:
   - "F. Barez*"
 publication_types: ["paper-conference"]
 publication: "ACL 2024"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Safety & Alignment

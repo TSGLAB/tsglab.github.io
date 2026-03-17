@@ -12,6 +12,7 @@ authors:
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2601.04301"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Interpretability

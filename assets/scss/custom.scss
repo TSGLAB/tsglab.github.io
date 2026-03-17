@@ -318,12 +318,39 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   border-bottom: none !important;
 }
 
-// ── Filter pills ──────────────────────────────────────────────────────────────
+// ── Filter rows ───────────────────────────────────────────────────────────────
+.pub-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2.5rem;
+}
+
 .pub-filter-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.45rem;
-  margin-bottom: 2.75rem;
+}
+
+.pub-filter-label {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(0,0,0,0.32);
+  min-width: 3.2rem;   // align labels vertically
+  flex-shrink: 0;
+}
+
+.pub-result-count {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(0,0,0,0.38);
+  letter-spacing: 0.03em;
+  margin-top: -1.25rem;   // tuck up close under filter rows
+  margin-bottom: 1.75rem;
+  min-height: 1.2em;      // prevent layout jump when text appears/disappears
 }
 
 .pub-pill {

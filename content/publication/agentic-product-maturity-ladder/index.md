@@ -10,6 +10,7 @@ authors:
   - "et al."
 publication_types: ["report"]
 publication: "MLCommons"
+pub_type: "Policy"
 abstract: ""
 tags:
   - Technical Governance

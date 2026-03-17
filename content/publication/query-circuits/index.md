@@ -6,6 +6,7 @@ authors:
   - "F. Barez"
 publication_types: ["article"]
 publication: "arXiv:2509.24808"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Interpretability

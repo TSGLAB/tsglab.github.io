@@ -10,6 +10,7 @@ authors:
   - "M. Lukasik"
 publication_types: ["paper-conference"]
 publication: "Workshop 2024"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability

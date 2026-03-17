@@ -7,6 +7,7 @@ authors:
   - "F. Barez"
 publication_types: ["article"]
 publication: "arXiv:2603.04555"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Societal Impact

@@ -8,6 +8,7 @@ authors:
   - "F. Barez"
 publication_types: ["paper-conference"]
 publication: "ICML 2024 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability

@@ -12,6 +12,7 @@ authors:
   - "A. Bibi†"
 publication_types: ["paper-conference"]
 publication: "COLM 2025"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Safety & Alignment

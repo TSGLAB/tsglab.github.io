@@ -8,6 +8,7 @@ authors:
   - "T. Brox"
 publication_types: ["article"]
 publication: "arXiv:2509.23886"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Interpretability

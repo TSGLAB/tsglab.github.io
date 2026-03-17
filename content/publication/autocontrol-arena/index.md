@@ -9,6 +9,7 @@ authors:
   - "M. Yang"
 publication_types: ["article"]
 publication: "arXiv:2603.07427"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Technical Governance

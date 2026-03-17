@@ -11,6 +11,7 @@ authors:
   - "et al."
 publication_types: ["article"]
 publication: "AI Governance Initiative, Oxford"
+pub_type: "Policy"
 abstract: ""
 tags:
   - Technical Governance

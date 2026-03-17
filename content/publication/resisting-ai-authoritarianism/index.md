@@ -13,6 +13,7 @@ authors:
   - "R. Trager"
 publication_types: ["article"]
 publication: "Under Review"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Societal Impact

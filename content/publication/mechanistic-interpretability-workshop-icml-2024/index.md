@@ -11,6 +11,7 @@ authors:
   - "et al."
 publication_types: ["paper-conference"]
 publication: "ICML 2024"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability

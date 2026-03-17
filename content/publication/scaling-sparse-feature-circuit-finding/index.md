@@ -9,6 +9,7 @@ authors:
   - "N. Nanda"
 publication_types: ["paper-conference"]
 publication: "ICML 2025"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability

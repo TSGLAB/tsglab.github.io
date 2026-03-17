@@ -13,6 +13,7 @@ authors:
   - "et al."
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Societal Impact

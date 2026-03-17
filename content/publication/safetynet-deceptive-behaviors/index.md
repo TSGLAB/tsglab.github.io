@@ -6,6 +6,7 @@ authors:
   - "F. Barez"
 publication_types: ["article"]
 publication: "arXiv:2505.14300"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Safety & Alignment

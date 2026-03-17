@@ -6,6 +6,7 @@ authors:
   - "L. Marks"
 publication_types: ["article"]
 publication: "SSRN 4937924"
+pub_type: "Policy"
 abstract: ""
 tags:
   - Technical Governance

@@ -12,6 +12,7 @@ authors:
   - "et al."
 publication_types: ["paper-conference"]
 publication: "FAccT 2025"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Technical Governance

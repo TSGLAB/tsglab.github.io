@@ -9,6 +9,7 @@ authors:
   - "Y. Belinkov"
 publication_types: ["paper-conference"]
 publication: "EMNLP 2025"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Safety & Alignment

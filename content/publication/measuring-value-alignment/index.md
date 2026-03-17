@@ -6,6 +6,7 @@ authors:
   - "P. Torr"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2023 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Safety & Alignment

@@ -23,6 +23,7 @@ authors:
   - "Y. Gal"
 publication_types: ["article"]
 publication: "Under Review"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Safety & Alignment

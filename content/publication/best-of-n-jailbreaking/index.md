@@ -13,6 +13,7 @@ authors:
   - "E. Perez"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2025"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Safety & Alignment

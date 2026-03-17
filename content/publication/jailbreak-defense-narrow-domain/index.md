@@ -11,6 +11,7 @@ authors:
   - "et al."
 publication_types: ["article"]
 publication: "arXiv:2412.02159"
+pub_type: "Preprint"
 abstract: ""
 tags:
   - Safety & Alignment

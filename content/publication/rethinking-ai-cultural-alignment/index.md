@@ -7,6 +7,7 @@ authors:
   - "F. Barez"
 publication_types: ["paper-conference"]
 publication: "ICLR 2025 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Societal Impact

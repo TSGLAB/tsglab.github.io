@@ -7,6 +7,7 @@ authors:
   - "A. Abbate"
 publication_types: ["paper-conference"]
 publication: "NeurIPS 2022 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Safety & Alignment

@@ -10,6 +10,7 @@ authors:
   - "F. Barez*"
 publication_types: ["paper-conference"]
 publication: "ICLR 2023 Workshop"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability
