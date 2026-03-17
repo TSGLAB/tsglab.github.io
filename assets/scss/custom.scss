@@ -173,6 +173,24 @@ nav.navbar {
   color: $mid !important;
 }
 
+// ── Tree poem — the tagline that sits alongside the tree illustration ─────────
+.tree-poem-col {
+  display: flex;
+  align-items: center;
+}
+
+.tree-poem {
+  font-family: 'Chivo', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.12rem;
+  line-height: 2.1;
+  color: #8a8276;
+  max-width: 380px;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
 // All sections transparent — body fixed gradient shows through on every page
 .home-section,
 .home-section:nth-child(even),
@@ -1100,6 +1118,20 @@ html {
   // ── Support form ─────────────────────────────────────────────────────────
   .support-body { max-width: 100%; }
   .support-form { max-width: 100%; }
+
+  // ── Tree poem — stack below support content, centered ─────────────────────
+  .tree-poem-col {
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  .tree-poem {
+    max-width: 100%;
+    padding-left: 0;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
 
   .support-toggle-btn {
     min-height: 44px;
