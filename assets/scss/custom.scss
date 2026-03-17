@@ -929,3 +929,214 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
 
   .evt-format-badge { margin-top: 0; }
 }
+
+// ══════════════════════════════════════════════════════════════════════════════
+// RESPONSIVE / MOBILE
+// Approach: existing base styles target desktop; queries below progressively
+// simplify layout as the viewport narrows.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Hard overflow guard (all viewports) ───────────────────────────────────────
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+// ── Tablet (769px – 1024px): reduce tree gutter ───────────────────────────────
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding-right: 140px !important;
+    background-image: linear-gradient(
+      to right,
+      $cream 0,
+      $cream calc(100% - 160px),
+      $white calc(100% - 80px),
+      $white 100%
+    );
+  }
+
+  #tsg-tree-canvas {
+    opacity: 0.12 !important;
+    transform: scaleX(0.65);
+    transform-origin: bottom right;
+  }
+}
+
+// ── Mobile (≤ 768px) ──────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+
+  // Prevent any child from causing horizontal scroll
+  body { overflow-x: hidden; }
+
+  // ── Tree: hide entirely on mobile ─────────────────────────────────────────
+  #tsg-tree-canvas { display: none !important; }
+
+  // ── Navbar ────────────────────────────────────────────────────────────────
+  // Mobile logo: same height as icon variant, don't overflow
+  .navbar-logo-mobile {
+    height: 26px;
+    width: auto;
+    max-width: 140px;
+    display: block;
+  }
+
+  // Hamburger button: visible against dark navbar background
+  .navbar-toggler {
+    border-color: rgba(255,255,255,0.3) !important;
+    padding: 6px 10px;
+    min-width: 44px;
+    min-height: 44px;
+
+    .fas.fa-bars,
+    i.fas { color: rgba(255,255,255,0.85) !important; }
+  }
+
+  // Collapsed nav dropdown: dark background matches navbar
+  #navbar-content {
+    background-color: $black;
+    padding: 0.4rem 0 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    .navbar-nav { width: 100%; }
+
+    .nav-item { width: 100%; }
+
+    .nav-link {
+      padding: 0.7rem 1.25rem !important;
+      font-size: 0.8rem;
+      min-height: 44px;
+      display: flex !important;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+
+      &:last-child { border-bottom: none; }
+    }
+  }
+
+  // Search icon in nav icons
+  .nav-icons {
+    margin-left: auto;
+    padding-left: 0 !important;
+  }
+
+  // ── Content container horizontal padding ──────────────────────────────────
+  .universal-wrapper {
+    padding-left: 1.1rem !important;
+    padding-right: 1.1rem !important;
+  }
+
+  .container, .container-xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  // ── Hero / homepage ───────────────────────────────────────────────────────
+  // Stack two-column hero: text above, image below
+  .wg-hero .row {
+    flex-direction: column !important;
+  }
+
+  .wg-hero .hero-media {
+    margin-top: 1rem;
+    img { max-height: 200px; }
+  }
+
+  // Section vertical padding
+  .home-section { padding: 1.5rem 0 !important; }
+
+  // ── Page headings: scale down ─────────────────────────────────────────────
+  .pub-page-heading,
+  .events-page-heading,
+  .media-page-heading {
+    font-size: 1.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .support-heading { font-size: 1.25rem; }
+
+  // ── Publications ─────────────────────────────────────────────────────────
+  // Filter pills: wrap, ensure tap targets
+  .pub-filter-row { gap: 0.4rem; }
+
+  .pub-pill {
+    padding: 7px 13px;
+    font-size: 0.7rem;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // Pub and media fixed-column grids already collapse via earlier rules;
+  // ensure no orphaned padding-left on author line
+  .pub-authors { padding-left: 0 !important; }
+
+  // ── Support form ─────────────────────────────────────────────────────────
+  .support-body { max-width: 100%; }
+  .support-form { max-width: 100%; }
+
+  .support-toggle-btn {
+    min-height: 44px;
+    padding: 10px 20px;
+  }
+
+  .sf-submit-btn {
+    min-height: 44px;
+    padding: 10px 24px;
+  }
+
+  // ── Events ────────────────────────────────────────────────────────────────
+  .evt-card { padding: 1rem 1.1rem; }
+
+  .evt-badges { flex-wrap: wrap; gap: 0.25rem; }
+
+  .events-past-toggle {
+    min-height: 36px;
+    padding: 8px 14px;
+  }
+
+  // ── People page ───────────────────────────────────────────────────────────
+  // HugoBlox people widget uses Bootstrap grid; override column widths
+  .isotope .isotope-item,
+  .row .col-6,
+  [class*="col-md-4"],
+  [class*="col-lg-3"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  // PI cards: single column
+  .row .col-12.col-sm-6.col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+// ── Small mobile (≤ 480px) ────────────────────────────────────────────────────
+@media (max-width: 480px) {
+  // Heading sizes
+  .pub-page-heading,
+  .events-page-heading,
+  .media-page-heading {
+    font-size: 1.2rem;
+  }
+
+  .support-heading   { font-size: 1.1rem; }
+  .events-section-heading { font-size: 0.9rem; }
+
+  // Tighter page padding
+  .pub-page, .events-page, .media-page { padding: 2rem 0 3rem; }
+  .support-section { padding: 2rem 0 3rem; }
+
+  // Event card
+  .evt-card { padding: 0.85rem 0.9rem; }
+  .evt-title { font-size: 0.9rem; }
+
+  // People: single column on very small screens
+  .isotope .isotope-item,
+  .row .col-6,
+  [class*="col-md-4"],
+  [class*="col-lg-3"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
