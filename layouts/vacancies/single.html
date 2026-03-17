@@ -1,0 +1,136 @@
+{{- define "main" -}}
+
+<div class="universal-wrapper">
+<div class="vac-page">
+
+  <h1 class="vac-page-heading">Vacancies</h1>
+
+  <p class="vac-intro">
+    Open positions at TSG Lab are listed below. For instructions on how to get in touch —
+    including what to include in your email and subject line codes —
+    see our <a href="{{ "contact" | relURL }}">Contact page</a>.
+  </p>
+
+  {{/* ── TAIG Programme ──────────────────────────────────────────────────── */}}
+  <section class="vac-section vac-taig-box">
+    <h2 class="vac-section-heading">TAIG Funded Studentships &amp; Fellowships</h2>
+    <p>
+      The <strong>Technical AI Governance (TAIG) Programme</strong> is Oxford's dedicated
+      funding vehicle for research at the intersection of technical AI safety and governance.
+      TAIG offers funded studentships and fellowships for exceptional candidates — this is one
+      of the few routes to fully funded doctoral and postdoctoral research in this space at Oxford.
+    </p>
+    <p>
+      If you are applying for a DPhil or postdoctoral position at TSG Lab, we strongly encourage
+      you to explore TAIG funding — particularly if you are an overseas student concerned about fees.
+    </p>
+    <a class="vac-taig-link" href="https://aigi.ox.ac.uk/technical-ai-governance-programme/" target="_blank" rel="noopener">
+      Explore the TAIG Programme →
+    </a>
+  </section>
+
+  {{/* ── Open Positions ──────────────────────────────────────────────────── */}}
+  <section class="vac-section">
+    <h2 class="vac-section-heading">Open Positions</h2>
+
+    <div class="job-card">
+      <div class="job-card-header">
+        <span class="job-status-badge">Now Open</span>
+        <h3 class="job-title">Postdoctoral Researcher in AI &amp; Risk — Oxford Martin AIGI</h3>
+      </div>
+      <div class="job-meta-grid">
+        <div class="job-meta-item">
+          <span class="job-meta-label">Grade &amp; Salary</span>
+          <span class="job-meta-value">Grade 8 · £49,119–£58,265 p.a.</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Contract</span>
+          <span class="job-meta-value">2-year fixed term</span>
+        </div>
+        <div class="job-meta-item job-meta-deadline">
+          <span class="job-meta-label">Closing Date</span>
+          <span class="job-meta-value job-deadline">8 April 2026, 12:00 noon BST</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Location</span>
+          <span class="job-meta-value">Oxford Martin School, 34 Broad Street, Oxford OX1 3BD</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Vacancy ID</span>
+          <span class="job-meta-value job-vacancy-id">185217</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Contact</span>
+          <span class="job-meta-value"><a href="mailto:recruitment@oxfordmartin.ox.ac.uk">recruitment@oxfordmartin.ox.ac.uk</a></span>
+        </div>
+      </div>
+      <p class="job-description">
+        We have an exciting opportunity to join the Oxford Martin AI Governance Initiative as a
+        Postdoctoral Researcher in AI and Risk. The postholder will lead research on AI risk,
+        governance, and the societal impacts of advanced AI systems, combining high-quality
+        academic research with policy-facing activity and engagement with policymakers and
+        international organisations.
+      </p>
+      <a class="job-apply-btn"
+         href="https://www.jobs.ox.ac.uk/vacancy/185217"
+         target="_blank" rel="noopener">Apply →</a>
+    </div>
+
+  </section>
+
+  {{/* ── Doctoral Programmes ─────────────────────────────────────────────── */}}
+  <section class="vac-section">
+    <h2 class="vac-section-heading">Doctoral Programmes</h2>
+    <p class="vac-section-intro">
+      TSG Lab accepts DPhil students through the following Oxford programmes.
+      TAIG studentships can fund any of these routes.
+    </p>
+    <ul class="vac-programme-list">
+      <li>
+        <span class="vac-programme-name">Engineering Science DPhil</span>
+        <span class="vac-programme-deadline">Deadline: early December</span>
+      </li>
+      <li>
+        <span class="vac-programme-name">Computer Science DPhil</span>
+      </li>
+      <li>
+        <span class="vac-programme-name">AIMS CDT</span>
+        <span class="vac-programme-deadline">Deadline: mid January</span>
+      </li>
+      <li>
+        <span class="vac-programme-name">TAIG Funded Studentships</span>
+        <a class="vac-inline-link" href="https://aigi.ox.ac.uk/technical-ai-governance-programme/" target="_blank" rel="noopener">aigi.ox.ac.uk →</a>
+      </li>
+    </ul>
+    <p class="vac-crosslink">
+      For guidance on how to apply and what to include in your email, see our
+      <a href="{{ "contact" | relURL }}">Contact page →</a>
+    </p>
+  </section>
+
+  {{/* ── Other Opportunities ─────────────────────────────────────────────── */}}
+  <section class="vac-section">
+    <h2 class="vac-section-heading">Other Opportunities</h2>
+    <ul class="vac-other-list">
+      <li>
+        <span class="vac-other-role">Research Assistants</span>
+        Periodically hired for short-term projects.
+        <a class="vac-crosslink-inline" href="{{ "contact" | relURL }}">→ See Contact page</a>
+      </li>
+      <li>
+        <span class="vac-other-role">Visiting Researchers</span>
+        Stays of 3–12 months welcomed; funding typically secured by the visitor.
+        <a class="vac-crosslink-inline" href="{{ "contact" | relURL }}">→ See Contact page</a>
+      </li>
+      <li>
+        <span class="vac-other-role">Oxford Students</span>
+        Part IV projects, dissertations, internships, and reading groups.
+        <a class="vac-crosslink-inline" href="{{ "contact" | relURL }}">→ See Contact page</a>
+      </li>
+    </ul>
+  </section>
+
+</div>{{/* .vac-page */}}
+</div>{{/* .universal-wrapper */}}
+
+{{- end -}}

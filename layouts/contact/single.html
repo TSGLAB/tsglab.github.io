@@ -1,0 +1,292 @@
+{{- define "main" -}}
+
+<div class="universal-wrapper">
+<div class="contact-page">
+
+  <h1 class="contact-page-heading">Contact</h1>
+
+  <p class="contact-intro">
+    We get a lot of email. These instructions help us respond to the right people faster —
+    please read the section relevant to you before getting in touch.
+  </p>
+
+  <div class="contact-sections" id="contact-sections">
+
+    {{/* ── Section 1: PhD / DPhil ─────────────────────────────────────── */}}
+    <div class="cta-section open" id="cta-phd">
+      <button class="cta-header" aria-expanded="true" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">PhD &amp; DPhil Applications</span>
+          <span class="cta-summary">Applying for a DPhil at Oxford with TSG Lab as your supervisor</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body">
+        <p>Before emailing, please:</p>
+        <ul>
+          <li>Browse our <a href="{{ "publication" | relURL }}">Publications page</a> to confirm TSG's research is the right fit for your interests.</li>
+          <li>Check the <a href="{{ "vacancies" | relURL }}">Vacancies page</a> for currently funded doctoral positions and TAIG studentships — these are your best route to full funding.</li>
+          <li>Apply through one of Oxford's doctoral programmes:
+            <ul>
+              <li>Engineering Science DPhil (deadline: early December)</li>
+              <li>Computer Science DPhil</li>
+              <li>AIMS CDT (deadline: mid January)</li>
+            </ul>
+            List one or both TSG PIs (Fazl Barez, Robert Trager) as your proposed supervisors — you do not need to list both.
+          </li>
+          <li>Funding: Oxford fees are substantial, especially for overseas students. Before emailing us about funding concerns, please explore <a href="https://aigi.ox.ac.uk/technical-ai-governance-programme/" target="_blank" rel="noopener">TAIG studentships</a>, third-party scholarships (CAIF, Future of Life Institute, Rhodes, Clarendon), and whether your current employer offers PhD sponsorship.</li>
+        </ul>
+        <p>Only email us if you have specific questions not answered by the website. We cannot respond to generic expressions of interest.</p>
+        <p>If you do email, please include:</p>
+        <ul>
+          <li>Which TSG research direction interests you and why — be specific</li>
+          <li>One non-obvious insight or question from a paper of ours</li>
+          <li>Your CV and links to any publications or code</li>
+          <li>Your funding situation and what you have already explored</li>
+        </ul>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-DPHIL]</code>
+          <span class="cta-code-note">Emails without this code may not receive a response.</span>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 2: Postdocs ─────────────────────────────────────────── */}}
+    <div class="cta-section" id="cta-postdoc">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Postdoctoral &amp; Fellowship Enquiries</span>
+          <span class="cta-summary">Interest in postdoc or research fellowship positions</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>Check the <a href="{{ "vacancies" | relURL }}">Vacancies page</a> first — postdoctoral positions are listed there as they arise, including TAIG-funded fellowships.</p>
+        <p>If no position is currently advertised and you want to make a speculative enquiry, please send:</p>
+        <ul>
+          <li>Your CV</li>
+          <li>A statement of max 300 words on your research interests and how they connect to TSG's work</li>
+          <li>Fellowship schemes you are eligible for or applying to (e.g. Marie Curie, Newton, Leverhulme, RAEng, TAIG)</li>
+        </ul>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-POSTDOC]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 3: Visiting Researchers ───────────────────────────── */}}
+    <div class="cta-section" id="cta-visit">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Visiting Researchers &amp; PhD Students</span>
+          <span class="cta-summary">Research visits of 3–12 months</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>We welcome visiting researchers and PhD students. Funding is typically secured by the visitor, but we can support visa applications and provide workspace.</p>
+        <p>Please send:</p>
+        <ol>
+          <li>CV</li>
+          <li>Current programme (MSc / PhD / Postdoc / other)</li>
+          <li>Right to work in the UK (yes / no / requires visa)</li>
+          <li>Proposed start and end dates</li>
+          <li>Research interest or project proposal referencing specific TSG work you would like to build on</li>
+        </ol>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-VISIT]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 4: Oxford Students ─────────────────────────────────── */}}
+    <div class="cta-section" id="cta-oxford">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Oxford Students</span>
+          <span class="cta-summary">Part IV projects, dissertations, internships, reading groups</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>If you are a current Oxford student there are several ways to get involved — see the <a href="{{ "vacancies" | relURL }}">Vacancies page</a> for a summary of options.</p>
+        <p>Please email from your Oxford address and include:</p>
+        <ul>
+          <li>Your programme and year</li>
+          <li>Availability and proposed timeline</li>
+          <li>A short description of your research interest referencing TSG's current work</li>
+        </ul>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-OXFORD]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 5: Collaborations ───────────────────────────────────── */}}
+    <div class="cta-section" id="cta-collab">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Collaborations &amp; Policy Partnerships</span>
+          <span class="cta-summary">Academic collaborations, policy partnerships, joint projects</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>We actively collaborate with researchers, think tanks, government bodies, and civil society organisations. Please tell us:</p>
+        <ul>
+          <li>Your organisation and role</li>
+          <li>The nature of the collaboration</li>
+          <li>Relevant timelines or constraints</li>
+        </ul>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-COLLAB]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 5b: Funders & Donors ──────────────────────────────── */}}
+    <div class="cta-section" id="cta-fund">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Funders &amp; Donors</span>
+          <span class="cta-summary">Supporting TSG Lab's research financially or institutionally</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>We are grateful for support from individuals, foundations, and institutions who share our belief that rigorous, independent research on AI safety and governance matters.</p>
+        <p>We welcome enquiries about:</p>
+        <ul>
+          <li>Individual donations</li>
+          <li>Institutional or philanthropic grants</li>
+          <li>Sponsoring a specific research direction (Interpretability, Safety &amp; Alignment, Technical Governance, or Societal Impact)</li>
+        </ul>
+        <p>Before emailing, you are also welcome to use the <a href="{{ "/" | relURL }}#support">support form on our homepage</a> — it is the quickest way to tell us about your interest and we will follow up personally.</p>
+        <p>If you prefer to email directly, please include:</p>
+        <ul>
+          <li>Your name and organisation</li>
+          <li>The nature of your interest (individual / institutional / direction-specific)</li>
+          <li>Any relevant timelines or constraints</li>
+        </ul>
+        <p class="cta-note">TSG Lab is based at the University of Oxford. Formal donations are processed through Oxford's giving infrastructure — we will discuss the right mechanism with you directly.</p>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-FUND]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 6: Press ────────────────────────────────────────────── */}}
+    <div class="cta-section" id="cta-press">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">Press &amp; Media</span>
+          <span class="cta-summary">Interview requests, expert commentary, media appearances</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <p>Please include your publication or outlet, your deadline, and the topic you would like to discuss.</p>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-PRESS]</code>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Section 7: General ──────────────────────────────────────────── */}}
+    <div class="cta-section" id="cta-general">
+      <button class="cta-header" aria-expanded="false" onclick="ctaToggle(this)">
+        <div class="cta-header-text">
+          <span class="cta-title">General Enquiries</span>
+          <span class="cta-summary">Anything not covered above</span>
+        </div>
+        <span class="cta-chevron" aria-hidden="true">›</span>
+      </button>
+      <div class="cta-body" hidden>
+        <div class="cta-code-row">
+          <span class="cta-code-label">Subject line</span>
+          <code class="subject-code">[TSG-GENERAL]</code>
+        </div>
+      </div>
+    </div>
+
+  </div>{{/* .contact-sections */}}
+
+  {{/* ── Static address footer ─────────────────────────────────────────── */}}
+  <div class="contact-addresses">
+    <a class="contact-email" href="mailto:tsglab@eng.ox.ac.uk">tsglab@eng.ox.ac.uk</a>
+    <div class="contact-addr-grid">
+      <div class="contact-addr-block">
+        <span class="contact-addr-name">Department of Engineering Science</span>
+        University of Oxford
+        Parks Road, Oxford OX1 3PJ
+      </div>
+      <div class="contact-addr-block">
+        <span class="contact-addr-name">Oxford Martin AI Governance Initiative</span>
+        Oxford Martin School
+        34 Broad Street, Oxford OX1 3BD
+      </div>
+    </div>
+  </div>
+
+</div>{{/* .contact-page */}}
+</div>{{/* .universal-wrapper */}}
+
+<script>
+(function () {
+  'use strict';
+
+  function ctaToggle(btn) {
+    var section = btn.closest('.cta-section');
+    var body    = section.querySelector('.cta-body');
+    var open    = section.classList.contains('open');
+
+    if (open) {
+      // Collapse
+      body.style.maxHeight = body.scrollHeight + 'px';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          body.style.maxHeight = '0';
+        });
+      });
+      body.addEventListener('transitionend', function onEnd() {
+        body.hidden = true;
+        body.style.maxHeight = '';
+        body.removeEventListener('transitionend', onEnd);
+      });
+      section.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      // Expand
+      body.hidden = false;
+      body.style.maxHeight = '0';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          body.style.maxHeight = body.scrollHeight + 'px';
+        });
+      });
+      body.addEventListener('transitionend', function onEnd() {
+        body.style.maxHeight = 'none';
+        body.removeEventListener('transitionend', onEnd);
+      });
+      section.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  window.ctaToggle = ctaToggle;
+
+  // Initialise: ensure first section body is visible (it has class "open" already)
+  document.querySelectorAll('.cta-section.open .cta-body').forEach(function (b) {
+    b.hidden = false;
+  });
+}());
+</script>
+
+{{- end -}}
