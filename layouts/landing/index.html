@@ -130,8 +130,8 @@
       function updatePoem() {
         var scrolled = window.scrollY || window.pageYOffset;
         var total    = document.body.scrollHeight - window.innerHeight;
-        // Reveal when within 280px of the page bottom
-        poem.classList.toggle('is-visible', total > 0 && (total - scrolled) < 280);
+        // Reveal only when very close to the page bottom (within 80px)
+        poem.classList.toggle('is-visible', total > 0 && (total - scrolled) < 80);
       }
       window.addEventListener('scroll', updatePoem, { passive: true });
       updatePoem();
