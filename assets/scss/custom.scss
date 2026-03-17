@@ -183,23 +183,14 @@ nav.navbar {
   bottom: 36%;
   z-index: 9;
   pointer-events: none;
-  text-align: right;
-  max-width: 260px;
+  text-align: left;
+  max-width: 240px;
 
   font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
-  font-size: 0.78rem;
-  line-height: 1.75;
-  color: #7a5c40; // warm trunk brown
-
-  .tp-line {
-    display: block;
-    &:first-child { margin-bottom: 0.5em; }
-  }
-
-  .tp-branches {
-    color: #5f7a5a; // muted sage green — foliage tone
-  }
+  font-size: 0.76rem;
+  line-height: 1.85;
+  color: #9a8470; // warm muted tan — echoes the tree's soft palette
 }
 
 // All sections transparent — body fixed gradient shows through on every page
