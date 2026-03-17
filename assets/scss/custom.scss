@@ -173,6 +173,14 @@ nav.navbar {
   color: $mid !important;
 }
 
+// ── Tree zone — empty spacer below the last content section ──────────────────
+// Provides blank vertical space equal to the poem's bottom offset, so the
+// poem (position:fixed) never appears over text content.
+.tree-zone {
+  min-height: 280px;   // must be at least as tall as (poem bottom% * max-viewport-height)
+  pointer-events: none;
+}
+
 // ── Tree poem — fixed alongside the p5.js tree illustration ──────────────────
 // Paired with the tree: hidden on mobile at the same breakpoint the tree scales.
 // Position: to the left of the tree canvas (right:-30px, width:500px →
@@ -1144,8 +1152,9 @@ html {
   .support-body { max-width: 100%; }
   .support-form { max-width: 100%; }
 
-  // ── Tree poem — hidden at mobile (paired with tree scaling at ≤768px) ───────
+  // ── Tree poem + zone — hidden at mobile (no tree poem on mobile) ────────────
   .tree-poem { display: none; }
+  .tree-zone  { display: none; }
 
   .support-toggle-btn {
     min-height: 44px;
