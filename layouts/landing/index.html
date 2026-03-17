@@ -5,10 +5,7 @@
   {{/* This file is landing/index.html — used ONLY for the root homepage     */}}
   {{/* (kind=home with type:landing). It does not affect other landing pages. */}}
   <section id="support" class="support-section home-section">
-    <div class="container">
-      <div class="row align-items-center">
-
-      <div class="col-12 col-md-6">
+    <div class="universal-wrapper">
 
       <h2 class="support-heading">Support Our Research</h2>
 
@@ -109,19 +106,15 @@
         </form>
       </div>{{/* .support-form-wrap */}}
 
-      </div>{{/* col-12 col-md-6 (support content) */}}
-
-      <div class="col-12 col-md-6 tree-poem-col">
-        <p class="tree-poem">
-          Technical safety and governance often grow in isolation.<br>
-          We are the tree that connects them&nbsp;—<br>
-          roots in research, branches in policy.
-        </p>
-      </div>
-
-      </div>{{/* .row */}}
-    </div>{{/* .container */}}
+    </div>{{/* .universal-wrapper */}}
   </section>
+
+  {{/* ── Tree poem — fixed alongside the tree illustration ──────────────────── */}}
+  {{/* Paired with the p5.js tree: appears to its left, hidden on mobile.       */}}
+  <div class="tree-poem" aria-hidden="true">
+    <span class="tp-line">Technical safety and governance often grow in isolation.</span>
+    <span class="tp-line">We are the tree that connects them — <span class="tp-roots">roots in AI</span>, <span class="tp-branches">branches in Governance</span>.</span>
+  </div>
 
   <script>
   (function () {

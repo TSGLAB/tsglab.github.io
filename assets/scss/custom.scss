@@ -173,22 +173,33 @@ nav.navbar {
   color: $mid !important;
 }
 
-// ── Tree poem — the tagline that sits alongside the tree illustration ─────────
-.tree-poem-col {
-  display: flex;
-  align-items: center;
-}
-
+// ── Tree poem — fixed alongside the p5.js tree illustration ──────────────────
+// Paired with the tree: hidden on mobile at the same breakpoint the tree scales.
+// Position: to the left of the tree canvas (right:-30px, width:500px →
+//   left edge at right:470px). We sit at right:490px with a ~20px gap.
 .tree-poem {
-  font-family: 'Chivo', sans-serif;
+  position: fixed;
+  right: 490px;
+  bottom: 36%;
+  z-index: 9;
+  pointer-events: none;
+  text-align: right;
+  max-width: 260px;
+
+  font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
-  font-weight: 300;
-  font-size: 1.12rem;
-  line-height: 2.1;
-  color: #8a8276;
-  max-width: 380px;
-  margin: 0;
-  padding-left: 1.5rem;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: #7a5c40; // warm trunk brown
+
+  .tp-line {
+    display: block;
+    &:first-child { margin-bottom: 0.5em; }
+  }
+
+  .tp-branches {
+    color: #5f7a5a; // muted sage green — foliage tone
+  }
 }
 
 // All sections transparent — body fixed gradient shows through on every page
@@ -1005,6 +1016,13 @@ html {
     transform: scaleX(0.65);
     transform-origin: bottom right;
   }
+
+  // Tree poem: scaled-down tree means less room — reduce size and shift left
+  .tree-poem {
+    right: 340px;
+    font-size: 0.68rem;
+    max-width: 200px;
+  }
 }
 
 // ── Mobile (≤ 768px) ──────────────────────────────────────────────────────────
@@ -1119,19 +1137,8 @@ html {
   .support-body { max-width: 100%; }
   .support-form { max-width: 100%; }
 
-  // ── Tree poem — stack below support content, centered ─────────────────────
-  .tree-poem-col {
-    justify-content: center;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
-  }
-  .tree-poem {
-    max-width: 100%;
-    padding-left: 0;
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.9;
-  }
+  // ── Tree poem — hidden at mobile (paired with tree scaling at ≤768px) ───────
+  .tree-poem { display: none; }
 
   .support-toggle-btn {
     min-height: 44px;
