@@ -995,8 +995,8 @@ html {
   // Prevent any child from causing horizontal scroll
   body { overflow-x: hidden; }
 
-  // ── Tree: hide entirely on mobile ─────────────────────────────────────────
-  #tsg-tree-canvas { display: none !important; }
+  // ── Tree: JS handles mobile sizing (220px wide, 0.13 opacity) ────────────
+  // tsg-tree.js sets width/opacity on init and resize; no CSS hide needed
 
   // ── Navbar ────────────────────────────────────────────────────────────────
   // Mobile logo: same height as icon variant, don't overflow

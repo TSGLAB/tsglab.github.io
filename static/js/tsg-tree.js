@@ -9,13 +9,16 @@
   document.head.appendChild(script);
 
   function initTree() {
-    // W widened from 320→500 so leftmost branches have 300px of canvas before clipping.
-    // Trunk x stays at viewport-right minus 170px (the gradient boundary) by using W/2+50.
-    var W = 500, H = window.innerHeight;
-    // Extra canvas height above the viewport so the canopy never hits the canvas boundary.
-    // The container extends EXTRA px above the viewport; those pixels are off-screen but
-    // prevent the canvas from clipping branches that grow into the upper portion of the view.
     var EXTRA = 200;
+    var W = 500, H = window.innerHeight;
+
+    // On mobile (≤768px) use a smaller canvas so the tree is visible
+    // but doesn't overlap content. Width 220px, reduced opacity.
+    function isMobile() { return window.innerWidth <= 768; }
+    function treeWidth() { return isMobile() ? 220 : 500; }
+    function treeOpacity() { return isMobile() ? 0.13 : 0.18; }
+
+    W = treeWidth();
 
     var container = document.createElement('div');
     container.id = 'tsg-tree-canvas';
@@ -27,7 +30,7 @@
       'height:' + (H + EXTRA) + 'px',
       'pointer-events:none',
       'z-index:10',
-      'opacity:0.18',
+      'opacity:' + treeOpacity(),
       'background:transparent',
       'overflow:visible',
     ].join(';');
@@ -67,7 +70,10 @@
 
       p.windowResized = function () {
         H = window.innerHeight;
-        container.style.height = (H + EXTRA) + 'px';
+        W = treeWidth();
+        container.style.width   = W + 'px';
+        container.style.height  = (H + EXTRA) + 'px';
+        container.style.opacity = treeOpacity();
         p.resizeCanvas(W, H + EXTRA);
       };
 
