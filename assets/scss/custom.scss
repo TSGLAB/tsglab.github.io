@@ -180,17 +180,24 @@ nav.navbar {
 .tree-poem {
   position: fixed;
   right: 490px;
-  bottom: 36%;
+  bottom: 18%;          // sits in the lower viewport alongside tree branches
   z-index: 9;
   pointer-events: none;
   text-align: left;
-  max-width: 240px;
+  max-width: 220px;
 
   font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-size: 0.76rem;
   line-height: 1.85;
-  color: #9a8470; // warm muted tan — echoes the tree's soft palette
+  color: #9a8470;       // warm muted tan, echoes the tree's soft palette
+
+  // Fades in via JS only when user is near the bottom of the page,
+  // so it never overlaps mid-page content like the About TSG section.
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  &.is-visible { opacity: 1; }
 }
 
 // All sections transparent — body fixed gradient shows through on every page

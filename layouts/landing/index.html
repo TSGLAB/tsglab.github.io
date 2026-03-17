@@ -120,6 +120,20 @@
   (function () {
     'use strict';
 
+    // ── Tree poem: fade in only when near the bottom of the page ─────────────
+    // This prevents overlap with mid-page content (About TSG, etc.).
+    var poem = document.querySelector('.tree-poem');
+    if (poem) {
+      function updatePoem() {
+        var scrolled = window.scrollY || window.pageYOffset;
+        var total    = document.body.scrollHeight - window.innerHeight;
+        // Reveal when within 280px of the page bottom
+        poem.classList.toggle('is-visible', total > 0 && (total - scrolled) < 280);
+      }
+      window.addEventListener('scroll', updatePoem, { passive: true });
+      updatePoem();
+    }
+
     function tsgSupportToggle(btn) {
       var wrap = document.getElementById('support-form-wrap');
       var expanded = btn.getAttribute('aria-expanded') === 'true';
