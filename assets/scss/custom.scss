@@ -184,7 +184,7 @@ nav.navbar {
   z-index: 9;
   pointer-events: none;
   text-align: left;
-  max-width: 220px;
+  max-width: 260px;     // wide enough for all 4 lines without internal wrapping
 
   font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
@@ -561,6 +561,12 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   padding: 3rem 0 4rem;
 }
 
+.support-container {
+  // Left-align support content flush with the page left edge
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .support-heading {
   font-family: 'Chivo Mono', monospace !important;
   font-weight: 700;
@@ -600,6 +606,14 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
     border-color: rgba(0,0,0,0.32);
     color: $black;
   }
+}
+
+// Button row — centers the button within the support content block width
+.support-btn-row {
+  max-width: 600px;        // matches .support-body max-width
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
 }
 
 // Collapsible wrapper — height animated via JS

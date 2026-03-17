@@ -27,7 +27,7 @@ social:
     link: 'mailto:robert.trager@politics.ox.ac.uk'
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?user=rtrager
+    link: https://scholar.google.com/citations?user=LRmJzkgAAAAJ&hl=en
 
 highlight_name: true
 
