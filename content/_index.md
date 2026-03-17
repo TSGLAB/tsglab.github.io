@@ -16,7 +16,7 @@ sections:
         Co-located at the Department of Engineering Science &amp; the AI Governance Initiative, Oxford Martin School — University of Oxford
         </p>
 
-        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact: from the mechanisms inside neural networks, to policy implementation, to real-world social outcomes.
+        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact — from the mechanisms inside neural networks to real-world outcomes.
 
   - block: markdown
     content:
