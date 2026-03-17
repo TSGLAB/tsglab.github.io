@@ -16,7 +16,7 @@ organizations:
 bio: Fazl Barez is a PI at TSG Lab, University of Oxford, working on mechanistic interpretability, AI safety, and governance of frontier AI systems.
 
 interests:
-  - Mechanistic Interpretability
+  - Interpretability
   - AI Safety
   - AI Governance
   - Frontier AI Systems

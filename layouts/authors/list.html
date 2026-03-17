@@ -1,0 +1,100 @@
+{{- define "main" -}}
+
+{{/* ── Author profile page ──────────────────────────────────────────────────
+     Shows: profile card · publications by this author · upcoming events
+     Publications are matched by the author's last_name against the free-text
+     authors[] field used in each publication's frontmatter.
+  ──────────────────────────────────────────────────────────────────────────── */}}
+
+{{ if not .File }}
+<div class="universal-wrapper pt-3">
+  <h1>{{ .Title }}</h1>
+</div>
+{{ end }}
+
+<section id="profile-page" class="pt-5">
+  <div class="container">
+
+    {{/* ── Profile bio card ──────────────────────────────────────────────── */}}
+    {{ if .File }}
+      {{ $widget := "blocks/v1/about.html" }}
+      {{ $username := (path.Base .File.Dir) }}
+      {{ $params := dict "wcPage" $ "wcBlock" . "author" $username }}
+      {{ partial $widget $params }}
+    {{ end }}
+
+    {{/* ── Publications ──────────────────────────────────────────────────── */}}
+    {{- $lastName := .Params.last_name -}}
+    {{- if $lastName -}}
+      {{- $allPubs := where site.RegularPages "Section" "publication" -}}
+      {{- $authorPubs := slice -}}
+      {{- range $allPubs -}}
+        {{- $pub   := . -}}
+        {{- $match := false -}}
+        {{- range $pub.Params.authors -}}
+          {{- if in . $lastName -}}{{- $match = true -}}{{- end -}}
+        {{- end -}}
+        {{- if $match -}}{{- $authorPubs = $authorPubs | append $pub -}}{{- end -}}
+      {{- end -}}
+
+      {{- if $authorPubs -}}
+      <div class="article-widget content-widget-hr mt-4">
+        <h3>Publications</h3>
+        <ul>
+          {{- range sort $authorPubs ".Date" "desc" -}}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{- with .Params.pub_type -}}<span class="pub-type-badge ml-1">{{ . }}</span>{{- end -}}
+          </li>
+          {{- end -}}
+        </ul>
+      </div>
+      {{- end -}}
+    {{- end -}}
+
+    {{/* ── Events ────────────────────────────────────────────────────────── */}}
+    {{- $events := site.Data.events -}}
+    {{- if $events -}}
+      {{- $upcoming := slice -}}
+      {{- $past     := slice -}}
+      {{- range $events -}}
+        {{- if eq .status "upcoming" -}}{{- $upcoming = $upcoming | append . -}}
+        {{- else -}}{{- $past = $past | append . -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if or $upcoming $past -}}
+      <div class="article-widget content-widget-hr mt-4">
+        <h3>Events</h3>
+        {{- if $upcoming -}}
+        <p class="author-section-label">Upcoming</p>
+        <ul>
+          {{- range $upcoming -}}
+          <li>
+            <strong>{{ .title }}</strong><br>
+            <span class="text-muted">{{ .speaker }}{{ with .affiliation }} · {{ . }}{{ end }}</span><br>
+            <span class="text-muted">{{ .date_display }}{{ with .time_gmt }}, {{ . }}{{ end }}</span>
+          </li>
+          {{- end -}}
+        </ul>
+        {{- end -}}
+        {{- if $past -}}
+        <p class="author-section-label">Past</p>
+        <ul>
+          {{- range first 5 $past -}}
+          <li>
+            <strong>{{ .title }}</strong><br>
+            <span class="text-muted">{{ .speaker }}{{ with .affiliation }} · {{ . }}{{ end }}</span><br>
+            <span class="text-muted">{{ .date_display }}</span>
+          </li>
+          {{- end -}}
+        </ul>
+        {{- end -}}
+      </div>
+      {{- end -}}
+    {{- end -}}
+
+  </div>
+</section>
+
+{{- end -}}
