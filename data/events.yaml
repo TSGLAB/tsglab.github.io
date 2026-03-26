@@ -1,3 +1,30 @@
+- title: "LatentQA: Teaching LLMs to Decode Activations Into Natural Language"
+  speaker: "Alexander Pan"
+  affiliation: "xAI / UC Berkeley"
+  date: "2026-03-27"
+  date_display: "Friday 27 March 2026"
+  time_gmt: "4:00 PM – 5:00 PM GMT"
+  time_et: "12:00 PM – 1:00 PM ET"
+  zoom_url: "https://meet.google.com/pda-wkjj-baz"
+  format: "virtual"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    What is a language model actually representing when it processes text?
+    LatentQA reframes activation interpretation as a QA task: a decoder LLM
+    is trained to answer open-ended questions about the internal representations
+    of a subject model, enabling flexible, scalable probing of beliefs, intentions,
+    and attributes — without fixed concept vocabularies. Alexander will present
+    the method and its implications for interpretability and safety monitoring.
+    Based on ICLR 2026 work with Lijie Chen and Jacob Steinhardt.
+  bio: |
+    Alexander Pan leads posttraining for misuse, alignment, and robustness at xAI.
+    He completed his PhD at UC Berkeley (advised by Jacob Steinhardt, FLI Fellowship)
+    with research spanning interpretability, reward misspecification, and unlearning.
+    His prior work includes the WMDP benchmark (ICML 2024) and the MACHIAVELLI
+    benchmark for ethical behaviour in RL agents (ICML 2023 Oral).
+
 - title: "LLM Interpretability: Faithful Reasoning and Controllable Knowledge"
   speaker: "Peter Hase"
   affiliation: "Postdoc, Stanford University; AI Institute Fellow, Schmidt Sciences"
@@ -6,8 +33,9 @@
   time_gmt: "4:00 PM – 5:00 PM GMT"
   time_et: "12:00 PM – 1:00 PM ET"
   format: "virtual"
+  type: "Invited Talk"
   section: "talks"
-  status: "upcoming"
+  status: "past"
   abstract: |
     AI models often learn problematic reasoning processes due to misspecified
     training objectives. Interpretability helps us detect, and often fix, such

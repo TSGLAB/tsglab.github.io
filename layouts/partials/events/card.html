@@ -40,6 +40,13 @@
     {{ end }}
   </div>
 
+  {{/* ── Join link ────────────────────────────────────────────────────── */}}
+  {{ with $e.zoom_url }}
+    <div class="evt-join">
+      <a class="evt-join-link" href="{{ . }}" target="_blank" rel="noopener">Join (Google Meet)</a>
+    </div>
+  {{ end }}
+
   {{/* ── Abstract (collapsed by default) ──────────────────────────────── */}}
   {{ if $e.abstract }}
     <div class="evt-abstract">
