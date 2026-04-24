@@ -1,0 +1,82 @@
+{{/* Hide the tree canvas when the dark footer scrolls into view.
+     The canvas is created async (after p5.js loads), so we observe
+     the body for when it appears rather than querying immediately. */}}
+<script>
+(function () {
+  var footer = document.querySelector('.page-footer');
+  if (!footer) return;
+
+  function check(el) {
+    var footerTop = footer.getBoundingClientRect().top;
+    el.style.opacity = footerTop < window.innerHeight ? '0' : '';
+  }
+
+  function attach(el) {
+    el.style.transition = 'opacity 0.4s ease';
+    window.addEventListener('scroll', function () { check(el); }, { passive: true });
+    window.addEventListener('resize', function () { check(el); }, { passive: true });
+    check(el);
+  }
+
+  // Canvas may not exist yet — watch for it
+  var el = document.getElementById('tsg-tree-canvas');
+  if (el) { attach(el); return; }
+
+  var obs = new MutationObserver(function () {
+    var found = document.getElementById('tsg-tree-canvas');
+    if (found) { obs.disconnect(); attach(found); }
+  });
+  obs.observe(document.body, { childList: true, subtree: false });
+}());
+</script>
+
+<footer class="site-footer tsg-footer">
+  <div class="tsg-footer-inner">
+    <div class="row tsg-footer-row">
+
+      {{/* Left — lab identity + poem */}}
+      <div class="col-md-5 tsg-footer-brand">
+        <p class="tsg-footer-name">Technical Safety &amp; Governance Lab</p>
+        <p class="tsg-footer-affil">Department of Engineering Science<br>University of Oxford</p>
+        <p class="tsg-footer-poem">
+          Technical safety and governance<br>
+          often grow in isolation.<br>
+          We are the tree that connects them<br>
+          — roots in research, branches&nbsp;in&nbsp;policy.
+        </p>
+      </div>
+
+      {{/* Middle — socials */}}
+      <div class="col-md-3 tsg-footer-col">
+        <h4 class="tsg-footer-col-heading">Socials</h4>
+        <ul class="tsg-footer-links">
+          <li><a href="#" target="_blank" rel="noopener">BlueSky</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="/post/">Blog</a></li>
+        </ul>
+      </div>
+
+      {{/* Right — contact */}}
+      <div class="col-md-4 tsg-footer-col">
+        <h4 class="tsg-footer-col-heading">Contact</h4>
+        <ul class="tsg-footer-links">
+          <li><a href="mailto:tsglab@eng.ox.ac.uk">tsglab@eng.ox.ac.uk</a></li>
+          <li>Department of Engineering Science</li>
+          <li>Parks Road, Oxford OX1 3PJ</li>
+        </ul>
+      </div>
+
+    </div>
+
+    {{/* Legal / policy links */}}
+    <div class="tsg-footer-legal">
+      <a href="#">Legal</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+    <div class="tsg-footer-bottom">
+      <p>&copy; {{ now.Year }} Technical Safety &amp; Governance Lab, University of Oxford</p>
+    </div>
+  </div>
+</footer>

@@ -110,39 +110,9 @@
     </div>{{/* .support-container */}}
   </section>
 
-  {{/* ── Empty zone at the bottom — reserves space so tree poem never overlaps ── */}}
-  {{/* The poem is position:fixed; it shows only when this empty zone scrolls   */}}
-  {{/* into the same viewport position as the poem, guaranteeing no text overlap. */}}
-  <div class="tree-zone" aria-hidden="true"></div>
-
-  {{/* ── Tree poem — fixed alongside the tree illustration ──────────────────── */}}
-  {{/* Paired with the p5.js tree: appears to its left, hidden on mobile.       */}}
-  <div class="tree-poem" aria-hidden="true">
-    Technical safety and governance<br>
-    often grow in isolation.<br>
-    We are the tree that connects them<br>
-    — roots in research, branches&nbsp;in&nbsp;policy.
-  </div>
-
   <script>
   (function () {
     'use strict';
-
-    // ── Tree poem: show only when the empty tree-zone scrolls into the
-    // poem's fixed viewport position — guarantees no text overlap at any
-    // viewport size or page layout.
-    var poem = document.querySelector('.tree-poem');
-    var zone = document.querySelector('.tree-zone');
-    if (poem && zone) {
-      function updatePoem() {
-        var poemTop = poem.getBoundingClientRect().top;
-        var zoneTop = zone.getBoundingClientRect().top;
-        poem.classList.toggle('is-visible', zoneTop <= poemTop);
-      }
-      window.addEventListener('scroll', updatePoem, { passive: true });
-      window.addEventListener('resize', updatePoem, { passive: true });
-      updatePoem();
-    }
 
     function tsgSupportToggle(btn) {
       var wrap = document.getElementById('support-form-wrap');

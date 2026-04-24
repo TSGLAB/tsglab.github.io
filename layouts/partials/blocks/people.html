@@ -1,0 +1,42 @@
+{{/* TSG Lab — People block: VGG-style academic text list */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="people-text-list">
+  {{ with $block.content.title }}<h1 class="people-page-title">{{ . | markdownify | emojify }}</h1>{{ end }}
+
+  {{ range $block.content.user_groups }}
+  {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice .) }}
+  {{ $sort_by := $block.content.sort_by | default "Params.last_name" }}
+  {{ $sort_by = partial "blox-core/functions/get_sort_by_parameter" $sort_by }}
+  {{ $query = sort $query $sort_by "asc" }}
+  {{ if $query }}
+  <div class="people-group">
+    <h2 class="people-group-heading">{{ . | markdownify }}</h2>
+    <ul class="people-list-items">
+      {{ range $query }}
+      {{ $link := "" }}
+      {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
+        {{ $link = .RelPermalink }}
+      {{ end }}
+      <li class="people-list-item">
+        {{ if $link }}<a href="{{ $link }}" class="people-name-link">{{ end }}{{ .Title }}{{ if $link }}</a>{{ end }}
+        {{/* Email */}}
+        {{ range .Params.social }}{{ if eq .icon "envelope" }}
+          <a href="{{ .link }}" class="people-social-link">[email]</a>
+        {{ end }}{{ end }}
+        {{/* First non-email, non-scholar web link */}}
+        {{ $wwwLink := "" }}
+        {{ range .Params.social }}
+          {{ if and (eq $wwwLink "") (not (in (slice "envelope" "google-scholar" "graduation-cap" "graduation_cap") .icon)) }}
+            {{ $wwwLink = .link }}
+          {{ end }}
+        {{ end }}
+        {{ with $wwwLink }}<a href="{{ . }}" class="people-social-link" target="_blank" rel="noopener">[www]</a>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

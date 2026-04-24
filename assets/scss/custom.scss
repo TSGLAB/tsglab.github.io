@@ -13,12 +13,12 @@ $gray:    #f4f4f2;
 $mid:     #555555;
 
 // ── Base ──────────────────────────────────────────────────────────────────────
-// Fixed split background: cream on the left, white on the right.
-// 100px soft gradient zone centred at ~170px from the right edge,
-// which is exactly where the tree trunk sits — making it grow across the divide.
+// Split background: cream on the left, white on the right where the tree lives.
+// padding-right reserves the right 260px for the tree on all content sections.
 body {
   font-family: 'Chivo', sans-serif;
   font-weight: 400;
+  font-size: 15px;
   color: $black;
   background-image: linear-gradient(
     to right,
@@ -30,14 +30,70 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  // Reserve right side for tree
-  padding-right: 220px !important;
+  padding-right: 260px !important;
 
   @media (max-width: 768px) {
     padding-right: 0 !important;
     background-image: none;
     background-color: $cream;
   }
+}
+
+// ── Hero: full-bleed left — image bleeds from left edge, text on right ───────
+// The layout is flipped (design.flip: true), so the image column renders first
+// (left). margin-left: -3rem on the hero section and container padding-left: 0
+// make the image reach the true left viewport edge. Text column aligns with
+// the content sections below via consistent left padding on the container.
+.wg-hero.home-section {
+  margin-right: -260px !important;
+  margin-left: -3rem !important; // pull left edge to viewport boundary
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  overflow: hidden;
+
+  // Container: no left padding so image bleeds; right padding gives text room.
+  .container {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 3rem;
+  }
+
+  // Row: suppress gutter overflow on left (image side).
+  .row {
+    margin-left: 0 !important;
+  }
+
+  // Image column: no left gutter so image starts at x=0.
+  .hero-media {
+    padding-left: 0 !important;
+  }
+
+  // Flat left edge where image meets viewport; soft radius on right.
+  .hero-media img {
+    border-radius: 0 3px 3px 0;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible;
+
+    .container {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
+
+    .hero-media img {
+      border-radius: 3px;
+    }
+  }
+}
+
+// Section separation — subtle top rule between home sections (skip hero).
+.home-section:not(.wg-hero):not(:first-of-type) {
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 
 // ── Typography ────────────────────────────────────────────────────────────────
@@ -65,11 +121,18 @@ p, li, td, th, blockquote {
 }
 
 // ── Navbar ────────────────────────────────────────────────────────────────────
+// Negative margin-right cancels body padding-right so the navbar stretches
+// to the true viewport edge (same technique as the hero full-bleed).
 .navbar,
 nav.navbar {
   background-color: $black !important;
   box-shadow: none;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-right: -260px !important;
+
+  @media (max-width: 768px) {
+    margin-right: 0 !important;
+  }
 }
 
 .navbar .nav-link,
@@ -139,11 +202,12 @@ nav.navbar {
 // Hero: keep the text column and image column the same height via flexbox,
 // then let the image fill that height with object-fit cover.
 .wg-hero.home-section {
-  padding: 1.5rem 0 !important;
+  padding: 0 !important;
 }
 
 .wg-hero .row {
   align-items: stretch;
+  min-height: 430px;
 }
 
 .wg-hero .hero-media {
@@ -153,7 +217,8 @@ nav.navbar {
   img {
     width: 100%;
     height: 100%;
-    max-height: 340px;
+    min-height: 420px;
+    max-height: 560px;
     object-fit: cover;
     object-position: center top;
     border-radius: 3px;
@@ -162,6 +227,7 @@ nav.navbar {
 
 // ── Hero typography ────────────────────────────────────────────────────────────
 .hero-title {
+  padding-top: 0.6rem; // ~0.5cm gap between navbar and title
   font-family: 'Chivo Mono', monospace !important;
   font-weight: 700;
   color: $black !important;
@@ -173,40 +239,11 @@ nav.navbar {
   color: $mid !important;
 }
 
-// ── Tree zone — empty spacer below the last content section ──────────────────
-// Provides blank vertical space equal to the poem's bottom offset, so the
-// poem (position:fixed) never appears over text content.
-.tree-zone {
-  min-height: 280px;   // must be at least as tall as (poem bottom% * max-viewport-height)
-  pointer-events: none;
-}
-
-// ── Tree poem — fixed alongside the p5.js tree illustration ──────────────────
-// Paired with the tree: hidden on mobile at the same breakpoint the tree scales.
-// Position: to the left of the tree canvas (right:-30px, width:500px →
-//   left edge at right:470px). We sit at right:490px with a ~20px gap.
-.tree-poem {
-  position: fixed;
-  right: 490px;
-  bottom: 18%;          // sits in the lower viewport alongside tree branches
-  z-index: 9;
-  pointer-events: none;
-  text-align: left;
-  max-width: 260px;     // wide enough for all 4 lines without internal wrapping
-
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 0.76rem;
-  line-height: 1.85;
-  color: #9a8470;       // warm muted tan, echoes the tree's soft palette
-
-  // Fades in via JS only when user is near the bottom of the page,
-  // so it never overlaps mid-page content like the About TSG section.
-  opacity: 0;
-  transition: opacity 0.6s ease;
-
-  &.is-visible { opacity: 1; }
-}
+// .tree-zone and .tree-poem were previously used for a fixed-position poem;
+// poem is now part of the footer (.tsg-footer-poem). Keep rules empty to avoid
+// surprises if the classes are still referenced anywhere.
+.tree-zone { display: none; }
+.tree-poem  { display: none; }
 
 // All sections transparent — body fixed gradient shows through on every page
 .home-section,
@@ -218,7 +255,11 @@ nav.navbar {
   // Note: inline background-image on the hero (oxford photo) is NOT overridden here
 }
 
-// ── Section titles ─────────────────────────────────────────────────────────────
+// ── Section titles — left-aligned throughout ──────────────────────────────────
+// HugoBlox's parse_block_v1 template hardcodes .text-center on single-column
+// section headings. Override it and enforce left alignment everywhere.
+.section-heading,
+.section-heading.text-center,
 .section-heading h1,
 .section-heading h2,
 section.home-section h2.section-title,
@@ -226,6 +267,84 @@ section.home-section h2.section-title,
   font-family: 'Chivo Mono', monospace !important;
   color: $black;
   margin-bottom: 2rem;
+  text-align: left !important;
+}
+
+// ── People page — VGG-style text list ─────────────────────────────────────────
+.people-text-list {
+  .people-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .people-group-heading {
+    font-family: 'Chivo Mono', monospace !important;
+    font-weight: 700;
+    font-size: 1rem;
+    color: $black;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.4rem;
+    border-bottom: none !important;
+  }
+
+  .people-list-items {
+    list-style: disc;
+    padding-left: 1.4rem;
+    margin: 0;
+  }
+
+  .people-list-item {
+    font-family: 'Chivo', sans-serif;
+    font-size: 0.92rem;
+    color: $black;
+    margin-bottom: 0.4rem;
+    line-height: 1.55;
+  }
+
+  .people-name-link {
+    color: $black;
+    text-decoration: none;
+    font-weight: 400;
+
+    &:hover { color: $green; }
+  }
+
+  .people-social-link {
+    margin-left: 0.35rem;
+    color: $green;
+    font-family: 'Chivo Mono', monospace;
+    font-size: 0.78rem;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// People widget: left-align the grid so cards start from the left edge,
+// matching the section headings. Text inside each portrait card stays centred.
+.people-widget {
+  text-align: left !important;
+
+  // Pull the card grid to the left — override Bootstrap's row centering.
+  .row {
+    justify-content: flex-start !important;
+  }
+
+  // Keep individual portrait card content (name, role, icons) centred.
+  .col-12.col-sm-auto {
+    text-align: center !important;
+  }
+}
+
+// Author profile pages: left-align the bio block
+#profile {
+  text-align: left !important;
+}
+
+// Footer: left-align copyright (theme centres it by default)
+.page-footer {
+  text-align: left !important;
 }
 
 // ── Buttons / CTAs ────────────────────────────────────────────────────────────
@@ -299,25 +418,165 @@ a {
 }
 
 
-// ── Footer ────────────────────────────────────────────────────────────────────
-// Transparent so the split body gradient shows through.
-// Text is dark to stay readable on the light (cream/white) background.
+// ── Footer — dark VGG-style multi-column ─────────────────────────────────────
+// Full-width dark footer; breaks out of body padding-right (tree zone) the
+// same way the navbar does.
 .page-footer {
-  background: transparent !important;
-  color: rgba(0,0,0,0.4);
-  font-family: 'Chivo Mono', monospace;
-  font-size: 0.75rem;
-  padding: 1rem 0 !important;
+  background: $black !important;
+  margin-right: -260px !important; // escape body padding (same as navbar)
+  padding: 0 !important;
   border-top: none !important;
   box-shadow: none !important;
+  text-align: left !important;
 
-  a {
-    color: rgba(0,0,0,0.45);
-    &:hover { color: $green; }
+  // Undo the container max-width restriction — footer is full-bleed
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
-  // Hide Hugo Blox Builder branding but keep copyright
-  .powered-by:not(.copyright-license-text) { display: none; }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    margin-right: -140px !important;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0 !important;
+  }
+}
+
+.tsg-footer {
+  background: transparent; // parent .page-footer carries the colour
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.tsg-footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3rem 3rem 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
+
+.tsg-footer-row {
+  margin-bottom: 2rem;
+}
+
+// Left — lab identity
+.tsg-footer-brand {
+  margin-bottom: 1.5rem;
+}
+
+.tsg-footer-name {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.tsg-footer-affil {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.tsg-footer-poem {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 0.74rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.2);
+  margin: 0;
+}
+
+.tsg-footer-tagline {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+}
+
+// Middle / right — nav + contact columns
+.tsg-footer-col {
+  margin-bottom: 1.5rem;
+}
+
+.tsg-footer-col-heading {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.75rem;
+  border-bottom: none !important;
+}
+
+.tsg-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-family: 'Chivo', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.42);
+    margin-bottom: 0.45rem;
+    line-height: 1.45;
+  }
+
+  a {
+    color: rgba(255,255,255,0.62) !important;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover { color: $green !important; }
+  }
+}
+
+// Legal links row (above copyright)
+.tsg-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  margin-bottom: 0.75rem;
+
+  a {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.28) !important;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover { color: rgba(255,255,255,0.65) !important; }
+  }
+}
+
+// Bottom copyright bar
+.tsg-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1rem;
+
+  p {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.25);
+    margin: 0;
+  }
+}
+
+// Remove the old site-footer wrapper styles (no border, no padding)
+.site-footer {
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
 }
 
 // ── Search icon ───────────────────────────────────────────────────────────────
@@ -566,16 +825,15 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
 
 // ── Support Our Research section ───────────────────────────────────────────────
 .support-section {
-  padding: 3rem 0 4rem;
+  padding: 0.75rem 0 4rem !important;
 }
-
 
 .support-heading {
   font-family: 'Chivo Mono', monospace !important;
   font-weight: 700;
   font-size: 1.4rem;
   color: $black;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
   border-bottom: none !important;
 }
 
@@ -585,7 +843,7 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   color: $mid;
   max-width: 600px;
   line-height: 1.65;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.1rem;
 }
 
 // Toggle button — understated, monospace, warm
@@ -1026,18 +1284,23 @@ html {
     );
   }
 
+  // Navbar and hero margins must match the tablet body padding-right (140px),
+  // not the desktop value (260px) — otherwise they overflow and cause h-scroll.
+  .navbar, nav.navbar {
+    margin-right: -140px !important;
+  }
+
+  .wg-hero.home-section {
+    margin-right: -140px !important;
+    margin-left: 0 !important; // no left bleed on tablet — image sits inline
+  }
+
   #tsg-tree-canvas {
     opacity: 0.12 !important;
     transform: scaleX(0.65);
     transform-origin: bottom right;
   }
 
-  // Tree poem: scaled-down tree means less room — reduce size and shift left
-  .tree-poem {
-    right: 340px;
-    font-size: 0.68rem;
-    max-width: 200px;
-  }
 }
 
 // ── Mobile (≤ 768px) ──────────────────────────────────────────────────────────
@@ -1109,14 +1372,21 @@ html {
   }
 
   // ── Hero / homepage ───────────────────────────────────────────────────────
-  // Stack two-column hero: text above, image below
+  // Stack hero columns: text above, image below on mobile.
+  // Remove desktop min-height so the hero doesn't balloon on small screens.
   .wg-hero .row {
     flex-direction: column !important;
+    min-height: auto !important;
   }
 
   .wg-hero .hero-media {
     margin-top: 1rem;
-    img { max-height: 200px; }
+    img { max-height: 220px; }
+  }
+
+  // Hero title: scale down for small screens
+  .hero-title {
+    font-size: 2rem !important;
   }
 
   // Section vertical padding
@@ -1177,7 +1447,7 @@ html {
   }
 
   // ── People page ───────────────────────────────────────────────────────────
-  // HugoBlox people widget uses Bootstrap grid; override column widths
+  // Two-per-row for regular grid columns
   .isotope .isotope-item,
   .row .col-6,
   [class*="col-md-4"],
@@ -1190,6 +1460,13 @@ html {
   .row .col-12.col-sm-6.col-md-4 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
+  }
+
+  // People widget col-sm-auto cards: two per row on mobile
+  .people-widget .col-12.col-sm-auto {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    text-align: center !important;
   }
 }
 
@@ -1217,10 +1494,14 @@ html {
   .isotope .isotope-item,
   .row .col-6,
   [class*="col-md-4"],
-  [class*="col-lg-3"] {
+  [class*="col-lg-3"],
+  .people-widget .col-12.col-sm-auto {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
+
+  // Hero title: scale further on tiny screens
+  .hero-title { font-size: 1.5rem !important; }
 }
 
 // ══════════════════════════════════════════════════════════════════════════════

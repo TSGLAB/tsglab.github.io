@@ -16,7 +16,7 @@
     // but doesn't overlap content. Width 220px, reduced opacity.
     function isMobile() { return window.innerWidth <= 768; }
     function treeWidth() { return isMobile() ? 220 : 500; }
-    function treeOpacity() { return isMobile() ? 0.13 : 0.18; }
+    function treeOpacity() { return isMobile() ? 0.15 : 0.28; }
 
     W = treeWidth();
 
@@ -51,12 +51,12 @@
       var maxLevel = 10;
       var growing = true;
 
-      // Seasonal palettes
+      // Seasonal palettes — richer colour sets for denser, more varied foliage
       var PALETTES = {
-        spring:  { branch: [60, 35, 20],  leaves: ['#F9A8D4','#FCA5A5','#FBCFE8','#F472B6','#FFFFFF'], flowers: true  },
-        summer:  { branch: [40, 25, 10],  leaves: ['#22CB58','#16a34a','#4ade80','#86efac','#bbf7d0'], flowers: false },
-        fall:    { branch: [80, 50, 20],  leaves: ['#FB923C','#FBBF24','#F97316','#EF4444','#FDE68A'], flowers: false },
-        winter:  { branch: [30, 30, 35],  leaves: [],                                                 flowers: false },
+        spring:  { branch: [60, 35, 20],  leaves: ['#F9A8D4','#FCA5A5','#FBCFE8','#F472B6','#FFFFFF','#fdd5e8','#e879f9','#f0abfc','#fce7f3'], flowers: true  },
+        summer:  { branch: [40, 25, 10],  leaves: ['#22CB58','#16a34a','#4ade80','#86efac','#bbf7d0','#a3e635','#65a30d','#d9f99d','#052e16'], flowers: false },
+        fall:    { branch: [80, 50, 20],  leaves: ['#FB923C','#FBBF24','#F97316','#EF4444','#FDE68A','#dc2626','#b45309','#fef08a','#c2410c','#7c2d12'], flowers: false },
+        winter:  { branch: [30, 30, 35],  leaves: [],                                                                                                    flowers: false },
       };
 
       p.setup = function () {
@@ -132,7 +132,7 @@
           p.ellipse(0, 0, lf.w, lf.h);
           p.pop();
 
-          if (lf.age > 600) leaves.splice(i, 1);
+          if (lf.age > 1000) leaves.splice(i, 1);
         }
       };
 
@@ -148,23 +148,21 @@
         var ny = y + p.sin(angle) * len;
         p.line(x, y, nx, ny);
 
-        // Spawn leaves only on branches in the cream zone (left of gradient→white boundary).
-        // Trunk is at x = W/2+50 = 300; pure white starts at canvas x ≈ 350.
-        // Right-side branches (in the white zone) stay bare.
-        if (level >= maxLevel - 2 && prog > maxLevel - 1 && pal.leaves.length > 0 && nx < W / 2 + 100) {
-          if (p.random() < 0.35 && leaves.length < 300) {
+        // Spawn leaves across the full canopy (relaxed x constraint).
+        if (level >= maxLevel - 3 && prog > maxLevel - 1 && pal.leaves.length > 0) {
+          if (p.random() < 0.55 && leaves.length < 600) {
             var hexCol = pal.leaves[p.floor(p.random(pal.leaves.length))];
             leaves.push({
-              x: nx + p.random(-6, 6),
-              y: ny + p.random(-6, 6),
+              x: nx + p.random(-8, 8),
+              y: ny + p.random(-8, 8),
               angle: p.random(p.TWO_PI),
-              w: p.random(5, 11),
-              h: p.random(7, 15),
+              w: p.random(6, 14),
+              h: p.random(8, 18),
               freq: p.random(0.6, 1.4),
               phase: p.random(p.TWO_PI),
-              swayAmt: p.random(3, 8),
+              swayAmt: p.random(3, 9),
               col: p.color(hexCol),
-              maxAlpha: p.random(160, 220),
+              maxAlpha: p.random(210, 255),
               age: 0,
             });
           }
