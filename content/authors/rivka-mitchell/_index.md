@@ -1,5 +1,5 @@
 ---
-title: Rivka Mitchell
+title: Dr Rivka Mitchell
 first_name: Rivka
 last_name: Mitchell
 superuser: false

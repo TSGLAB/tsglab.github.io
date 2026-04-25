@@ -1,5 +1,5 @@
 ---
-title: Isaac Friend
+title: Dr Isaac Friend
 first_name: Isaac
 last_name: Friend
 superuser: false
