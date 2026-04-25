@@ -8,6 +8,13 @@ organizations:
   - name: TSG Lab, University of Oxford
     url: ''
 bio: Research Assistant at TSG Lab, University of Oxford.
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:tony10101105@gmail.com'
+  - icon: twitter
+    icon_pack: fab
+    link: 'https://x.com/TonyWu1105'
 highlight_name: true
 user_groups:
   - Research Assistants

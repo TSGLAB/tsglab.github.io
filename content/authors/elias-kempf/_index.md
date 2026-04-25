@@ -8,6 +8,13 @@ organizations:
   - name: University of Freiburg
     url: ''
 bio: PhD Student at the University of Freiburg, co-supervised with Thomas Brox.
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:kempfe@uni-freiburg.de'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://lmb.informatik.uni-freiburg.de/people/kempfe/'
 highlight_name: true
 user_groups:
   - Graduate Students
