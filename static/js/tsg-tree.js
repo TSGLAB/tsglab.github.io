@@ -40,7 +40,7 @@
 
       // ── Seasons ──────────────────────────────────────────────────────────────
       var SEASONS = ['spring', 'summer', 'fall', 'winter'];
-      var seasonIdx = 0;
+      var seasonIdx = Math.floor(Math.random() * SEASONS.length);
       var seasonTimer = 0;
       var SEASON_DURATION = 900; // frames per season
 
