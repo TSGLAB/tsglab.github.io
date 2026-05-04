@@ -16,6 +16,10 @@ social:
     icon_pack: fas
     link: 'https://yuzhaouoe.github.io/'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:yu.zhao@ed.ac.uk'
 user_groups:
   - Graduate Students
 ---

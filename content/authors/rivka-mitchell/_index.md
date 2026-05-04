@@ -16,6 +16,10 @@ social:
     icon_pack: fas
     link: 'https://www.oxfordmartin.ox.ac.uk/people/rivka-mitchell'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:rivka.mitchell@queens.ox.ac.uk'
 user_groups:
   - Research Fellows
 ---

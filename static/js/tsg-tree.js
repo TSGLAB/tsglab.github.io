@@ -16,7 +16,7 @@
     // but doesn't overlap content. Width 220px, reduced opacity.
     function isMobile() { return window.innerWidth <= 768; }
     function treeWidth() { return isMobile() ? 220 : 500; }
-    function treeOpacity() { return isMobile() ? 0.15 : 0.28; }
+    function treeOpacity() { return isMobile() ? 0.13 : 0.18; }
 
     W = treeWidth();
 
@@ -132,7 +132,7 @@
           p.ellipse(0, 0, lf.w, lf.h);
           p.pop();
 
-          if (lf.age > 1000) leaves.splice(i, 1);
+          if (lf.age > 600) leaves.splice(i, 1);
         }
       };
 
@@ -148,21 +148,23 @@
         var ny = y + p.sin(angle) * len;
         p.line(x, y, nx, ny);
 
-        // Spawn leaves across the full canopy (relaxed x constraint).
-        if (level >= maxLevel - 3 && prog > maxLevel - 1 && pal.leaves.length > 0) {
-          if (p.random() < 0.55 && leaves.length < 600) {
+        // Spawn leaves only on branches in the cream zone (left of gradient→white boundary).
+        // Trunk is at x = W/2+50 = 300; pure white starts at canvas x ≈ 350.
+        // Right-side branches (in the white zone) stay bare.
+        if (level >= maxLevel - 2 && prog > maxLevel - 1 && pal.leaves.length > 0 && nx < W / 2 + 100) {
+          if (p.random() < 0.35 && leaves.length < 300) {
             var hexCol = pal.leaves[p.floor(p.random(pal.leaves.length))];
             leaves.push({
-              x: nx + p.random(-8, 8),
-              y: ny + p.random(-8, 8),
+              x: nx + p.random(-6, 6),
+              y: ny + p.random(-6, 6),
               angle: p.random(p.TWO_PI),
-              w: p.random(6, 14),
-              h: p.random(8, 18),
+              w: p.random(5, 11),
+              h: p.random(7, 15),
               freq: p.random(0.6, 1.4),
               phase: p.random(p.TWO_PI),
-              swayAmt: p.random(3, 9),
+              swayAmt: p.random(3, 8),
               col: p.color(hexCol),
-              maxAlpha: p.random(210, 255),
+              maxAlpha: p.random(160, 220),
               age: 0,
             });
           }

@@ -16,6 +16,10 @@ social:
     icon_pack: fas
     link: 'https://gabriele-dominici.github.io/g-dominici/'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:gabriele.dominici@usi.ch'
 user_groups:
   - Visitors
 ---

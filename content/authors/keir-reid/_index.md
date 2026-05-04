@@ -13,6 +13,10 @@ social:
     icon_pack: fas
     link: 'mailto:reid.kja@gmail.com'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:reid.kja@gmail.com'
 user_groups:
   - Research Assistants
 ---

@@ -16,6 +16,10 @@ social:
     icon_pack: fas
     link: 'https://robots.ox.ac.uk/~bucknall/'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:ben.s.bucknall@gmail.com'
 user_groups:
   - Graduate Students
 ---

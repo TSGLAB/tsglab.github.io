@@ -16,6 +16,10 @@ social:
     icon_pack: fab
     link: 'https://x.com/lucasjamesirwin'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:lucas.irwin@stcatz.ox.ac.uk'
 user_groups:
   - Graduate Students
 ---

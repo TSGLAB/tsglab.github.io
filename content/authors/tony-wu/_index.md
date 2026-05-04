@@ -16,6 +16,10 @@ social:
     icon_pack: fab
     link: 'https://x.com/TonyWu1105'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:tony10101105@gmail.com'
 user_groups:
   - Research Assistants
 ---

@@ -16,6 +16,10 @@ social:
     icon_pack: fas
     link: 'https://aigi.ox.ac.uk/people/isaac-friend/'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:isaacfriend@gmail.com'
 user_groups:
   - Research Fellows
 ---

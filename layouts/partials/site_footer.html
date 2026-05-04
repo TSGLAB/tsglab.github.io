@@ -1,4 +1,7 @@
-{{/* Hide the tree canvas when the dark footer scrolls into view.
+{{/* Keep the tree canvas above the dark footer at all times.
+     Instead of hiding/clipping, we shift the canvas bottom up so the tree's
+     base always sits at the footer's top edge. This works on short pages
+     (footer always in view) and long pages (user scrolls down).
      The canvas is created async (after p5.js loads), so we observe
      the body for when it appears rather than querying immediately. */}}
 <script>
@@ -8,11 +11,17 @@
 
   function check(el) {
     var footerTop = footer.getBoundingClientRect().top;
-    el.style.opacity = footerTop < window.innerHeight ? '0' : '';
+    var viewportH = window.innerHeight;
+    // Lift the canvas bottom to the footer's top edge so the tree never
+    // renders over the dark footer background.
+    el.style.bottom = footerTop < viewportH
+      ? (viewportH - footerTop) + 'px'
+      : '0';
   }
 
   function attach(el) {
-    el.style.transition = 'opacity 0.4s ease';
+    el.style.transition = 'bottom 0.25s ease';
+    el.style.clipPath   = 'none'; // clear any previously set clip
     window.addEventListener('scroll', function () { check(el); }, { passive: true });
     window.addEventListener('resize', function () { check(el); }, { passive: true });
     check(el);
@@ -38,22 +47,6 @@
       <div class="col-md-5 tsg-footer-brand">
         <p class="tsg-footer-name">Technical Safety &amp; Governance Lab</p>
         <p class="tsg-footer-affil">Department of Engineering Science<br>University of Oxford</p>
-        <p class="tsg-footer-poem">
-          Technical safety and governance<br>
-          often grow in isolation.<br>
-          We are the tree that connects them<br>
-          — roots in research, branches&nbsp;in&nbsp;policy.
-        </p>
-      </div>
-
-      {{/* Middle — socials */}}
-      <div class="col-md-3 tsg-footer-col">
-        <h4 class="tsg-footer-col-heading">Socials</h4>
-        <ul class="tsg-footer-links">
-          <li><a href="#" target="_blank" rel="noopener">BlueSky</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="/post/">Blog</a></li>
-        </ul>
       </div>
 
       {{/* Right — contact */}}

@@ -13,6 +13,10 @@ social:
     icon_pack: fas
     link: 'mailto:peter.jordan@oxfordmartin.ox.ac.uk'
 highlight_name: true
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:peter.jordan@oxfordmartin.ox.ac.uk'
 user_groups:
   - Research Assistants
 ---
