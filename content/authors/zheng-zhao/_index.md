@@ -16,10 +16,6 @@ social:
     icon_pack: fas
     link: 'https://zsquaredz.github.io'
 highlight_name: true
-social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'mailto:Zheng.Zhao@ed.ac.uk'
 user_groups:
   - Research Fellows
 ---

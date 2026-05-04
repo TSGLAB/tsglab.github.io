@@ -16,10 +16,6 @@ social:
     icon_pack: fas
     link: 'https://lmb.informatik.uni-freiburg.de/people/kempfe/'
 highlight_name: true
-social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'mailto:kempfe@uni-freiburg.de'
 user_groups:
   - Graduate Students
 ---
