@@ -1,3 +1,20 @@
+- title: "You Know It or You Don’t: Categorical Differences in Language Model Behavior"
+  speaker: "Naomi Saphra"
+  affiliation: "Kempner Institute, Harvard University; Boston University"
+  date: "2026-06-12"
+  date_display: "Friday 12 June 2026"
+  time_gmt: "4:00 PM – 5:00 PM GMT"
+  time_et: "12:00 PM – 1:00 PM ET"
+  zoom_url: "https://meet.google.com/kbu-xwjb-ffv"
+  format: "virtual"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    While years of scientific research on model training and scaling assume that learning is a gradual and continuous process, breakthroughs on specific capabilities have drawn wide attention. Why are breakthroughs so exciting? Because humans don’t naturally think in continuous gradients, but in discrete conceptual categories. If artificial language models naturally learn discrete conceptual categories, perhaps model understanding is within our grasp. I will describe what we know of categorical learning in language models, and how discrete concepts are identifiable through empirical training dynamics and through random variation between training runs. These concepts involve syntax learning, weight mechanisms, and interpretable patterns---all of which can predict model behavior. By leveraging categorical learning, we can ultimately understand a model's natural conceptual structure and evaluate our understanding through testable predictions.
+  bio: |
+    Naomi Saphra is a research fellow at the Kempner Institute at Harvard University and incoming Assistant Professor in Boston University's faculty of Computing & Data Science. She is interested in NLP training dynamics: how models learn to encode linguistic patterns or other structure and how we can encode useful inductive biases into the training process. Recently, she has begun collaborating with natural and social scientists to use interpretability to understand the world around us. She has become particularly interested in fish. Previously, she earned a PhD from the University of Edinburgh on Training Dynamics of Neural Language Models; worked at NYU, Google and Facebook; and attended Johns Hopkins and Carnegie Mellon University. Outside of research, she plays roller derby under the name Gaussian Retribution and performs standup comedy.
+
 - title: "LatentQA: Teaching LLMs to Decode Activations Into Natural Language"
   speaker: "Alexander Pan"
   affiliation: "Meta"
@@ -9,7 +26,7 @@
   format: "virtual"
   type: "Invited Talk"
   section: "talks"
-  status: "upcoming"
+  status: "past"
   abstract: |
     What is a language model actually representing when it processes text?
     LatentQA reframes activation interpretation as a QA task: a decoder LLM
