@@ -51,7 +51,7 @@
     LatentQA reframes activation interpretation as a QA task: a decoder LLM
     is trained to answer open-ended questions about the internal representations
     of a subject model, enabling flexible, scalable probing of beliefs, intentions,
-    and attributes — without fixed concept vocabularies. Alexander will present
+    and attributes—without fixed concept vocabularies. Alexander will present
     the method and its implications for interpretability and safety monitoring.
     Based on ICLR 2026 work with Lijie Chen and Jacob Steinhardt.
   bio: |

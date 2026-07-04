@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-{{/* TSG Lab members — matched against authors[] in publication frontmatter */}}
+{{/* TSG Lab members—matched against authors[] in publication frontmatter */}}
 {{ $tsgMembers := slice
   "Fazl Barez" "F. Barez" "F. Barez*" "F. Barez†"
   "Robert Trager" "R. Trager"
@@ -88,7 +88,7 @@
           <span class="pub-title-text">{{ .Title }}</span>
         </div>
 
-        {{/* Line 2: authors — TSG members bolded */}}
+        {{/* Line 2: authors—TSG members bolded */}}
         <div class="pub-authors">
           {{- range $i, $a := .Params.authors -}}
             {{- if $i }}, {{ end -}}
@@ -142,7 +142,7 @@
       if (show) visible++;
     });
 
-    // Update result count — only show when at least one filter is active
+    // Update result count—only show when at least one filter is active
     var filtered = topicActive.size > 0 || typeActive.size > 0;
     if (filtered) {
       countEl.textContent = 'Showing ' + visible + ' of ' + totalCount + ' publications';

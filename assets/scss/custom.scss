@@ -1,4 +1,4 @@
-// TSG Lab — Brand Guide Implementation
+// TSG Lab—Brand Guide Implementation
 // Fonts: Chivo Mono (headings) + Chivo (body)
 // Colors: #E7E1DA cream / #000000 black / #FFFFFF white / #22CB58 green accent
 
@@ -39,7 +39,7 @@ body {
   }
 }
 
-// ── Hero: full-bleed left — image bleeds from left edge, text on right ───────
+// ── Hero: full-bleed left—image bleeds from left edge, text on right ───────
 // The layout is flipped (design.flip: true), so the image column renders first
 // (left). margin-left: -3rem on the hero section and container padding-left: 0
 // make the image reach the true left viewport edge. Text column aligns with
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.01em;
 }
 
-// Nuke any heading underline from any source — border, text-decoration, or pseudo-elements
+// Nuke any heading underline from any source—border, text-decoration, or pseudo-elements
 h1, h2, h3, h4, h5, h6,
 .section-title, .section-heading,
 .section-heading h1, .section-heading h2,
@@ -189,7 +189,7 @@ nav.navbar {
   overflow: visible;
 }
 
-// ── Landing page — fit everything above the fold ──────────────────────────────
+// ── Landing page—fit everything above the fold ──────────────────────────────
 // Collapse HugoBlox's default 110px top/bottom section padding
 .home-section {
   padding: 2rem 0 !important;
@@ -241,7 +241,7 @@ nav.navbar {
 .tree-zone { display: none; }
 .tree-poem  { display: none; }
 
-// All sections transparent — body fixed gradient shows through on every page
+// All sections transparent—body fixed gradient shows through on every page
 .home-section,
 .home-section:nth-child(even),
 .home-section:first-of-type,
@@ -251,7 +251,7 @@ nav.navbar {
   // Note: inline background-image on the hero (oxford photo) is NOT overridden here
 }
 
-// ── Section titles — left-aligned throughout ──────────────────────────────────
+// ── Section titles—left-aligned throughout ──────────────────────────────────
 // HugoBlox's parse_block_v1 template hardcodes .text-center on single-column
 // section headings. Override it and enforce left alignment everywhere.
 .section-heading,
@@ -266,7 +266,7 @@ section.home-section h2.section-title,
   text-align: left !important;
 }
 
-// ── People page — VGG-style text list ─────────────────────────────────────────
+// ── People page—VGG-style text list ─────────────────────────────────────────
 .people-text-list {
   .people-group {
     margin-bottom: 2.5rem;
@@ -322,7 +322,7 @@ section.home-section h2.section-title,
 .people-widget {
   text-align: left !important;
 
-  // Pull the card grid to the left — override Bootstrap's row centering.
+  // Pull the card grid to the left—override Bootstrap's row centering.
   .row {
     justify-content: flex-start !important;
   }
@@ -414,7 +414,7 @@ a {
 }
 
 
-// ── Footer — dark VGG-style multi-column ─────────────────────────────────────
+// ── Footer—dark VGG-style multi-column ─────────────────────────────────────
 // Full-width dark footer; breaks out of body padding-right (tree zone) the
 // same way the navbar does.
 .page-footer {
@@ -425,7 +425,7 @@ a {
   box-shadow: none !important;
   text-align: left !important;
 
-  // Undo the container max-width restriction — footer is full-bleed
+  // Undo the container max-width restriction—footer is full-bleed
   .container {
     max-width: 100% !important;
     padding: 0 !important;
@@ -461,7 +461,7 @@ a {
   margin-bottom: 2rem;
 }
 
-// Left — lab identity
+// Left—lab identity
 .tsg-footer-brand {
   margin-bottom: 1.5rem;
 }
@@ -499,7 +499,7 @@ a {
   margin-bottom: 0;
 }
 
-// Middle / right — nav + contact columns
+// Middle / right—nav + contact columns
 .tsg-footer-col {
   margin-bottom: 1.5rem;
 }
@@ -842,7 +842,7 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   margin-bottom: 1.1rem;
 }
 
-// Toggle button — understated, monospace, warm
+// Toggle button—understated, monospace, warm
 .support-toggle-btn {
   font-family: 'Chivo Mono', monospace;
   font-size: 0.75rem;
@@ -865,7 +865,7 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   }
 }
 
-// Button row — centers the button within the support content block width
+// Button row—centers the button within the support content block width
 .support-btn-row {
   max-width: 600px;        // matches .support-body max-width
   display: flex;
@@ -873,7 +873,7 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   margin-bottom: 0;
 }
 
-// Collapsible wrapper — height animated via JS
+// Collapsible wrapper—height animated via JS
 .support-form-wrap {
   overflow: hidden;
   max-height: 0;
@@ -1304,14 +1304,14 @@ html {
   }
 
   // Navbar and hero margins must match the tablet body padding-right (140px),
-  // not the desktop value (260px) — otherwise they overflow and cause h-scroll.
+  // not the desktop value (260px)—otherwise they overflow and cause h-scroll.
   .navbar, nav.navbar {
     margin-right: -140px !important;
   }
 
   .wg-hero.home-section {
     margin-right: -140px !important;
-    margin-left: 0 !important; // no left bleed on tablet — image sits inline
+    margin-left: 0 !important; // no left bleed on tablet—image sits inline
   }
 
   #tsg-tree-canvas {
@@ -1441,7 +1441,7 @@ html {
   .support-body { max-width: 100%; }
   .support-form { max-width: 100%; }
 
-  // ── Tree poem + zone — hidden at mobile (no tree poem on mobile) ────────────
+  // ── Tree poem + zone—hidden at mobile (no tree poem on mobile) ────────────
   .tree-poem { display: none; }
   .tree-zone  { display: none; }
 
@@ -1631,6 +1631,12 @@ html {
   border: 1px solid rgba(34,203,88,0.3);
   flex-shrink: 0;
   margin-top: 4px;
+}
+
+.job-status-closed {
+  background: rgba(150,150,150,0.1);
+  color: #888;
+  border-color: rgba(150,150,150,0.25);
 }
 
 .job-title {

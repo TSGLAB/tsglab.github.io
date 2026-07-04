@@ -14,7 +14,7 @@ sections:
       design:
         flip: true
       text: |
-        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact — from the mechanisms inside neural networks to real-world outcomes.
+        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact—from the mechanisms inside neural networks to real-world outcomes.
 
 
 ---

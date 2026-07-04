@@ -1,4 +1,4 @@
-// TSG Lab — Seasonal Growing Tree
+// TSG Lab—Seasonal Growing Tree
 // Fractal tree with animated swaying leaves, auto-cycling seasons
 // Fixed bottom-right on all pages
 
@@ -51,7 +51,7 @@
       var maxLevel = 10;
       var growing = true;
 
-      // Seasonal palettes — richer colour sets for denser, more varied foliage
+      // Seasonal palettes—richer colour sets for denser, more varied foliage
       var PALETTES = {
         spring:  { branch: [60, 35, 20],  leaves: ['#F9A8D4','#FCA5A5','#FBCFE8','#F472B6','#FFFFFF','#fdd5e8','#e879f9','#f0abfc','#fce7f3'], flowers: true  },
         summer:  { branch: [40, 25, 10],  leaves: ['#22CB58','#16a34a','#4ade80','#86efac','#bbf7d0','#a3e635','#65a30d','#d9f99d','#052e16'], flowers: false },
