@@ -1,6 +1,6 @@
 ---
 title: "Best-of-N Jailbreaking"
-date: 2024-12-01
+date: 2025-12-01
 authors:
   - "J. Hughes"
   - "S. Price"

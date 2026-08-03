@@ -1,6 +1,6 @@
 ---
 title: "Query Circuits: Explaining How Language Models Answer User Prompts"
-date: 2025-09-01
+date: 2026-07-01
 authors:
   - "T.-Y. Wu"
   - "F. Barez"

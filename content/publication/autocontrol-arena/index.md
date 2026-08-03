@@ -1,6 +1,6 @@
 ---
 title: "AutoControl Arena: Synthesizing Executable Test Environments for Frontier AI Risk Evaluation"
-date: 2026-03-01
+date: 2026-07-01
 authors:
   - "C. Li"
   - "P. Lu"

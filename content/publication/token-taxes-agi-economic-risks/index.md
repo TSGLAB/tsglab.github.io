@@ -1,6 +1,6 @@
 ---
 title: "Token Taxes: Mitigating AGI's Economic Risks"
-date: 2026-03-01
+date: 2026-07-01
 authors:
   - "L. Irwin"
   - "T.-Y. Wu"
