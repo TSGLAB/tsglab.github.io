@@ -3,11 +3,11 @@ title: Tung-Yu (Tony) Wu
 first_name: Tung-Yu
 last_name: Wu
 superuser: false
-role: Research Assistant
+role: PhD Student
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''
-bio: Research Assistant at TSG Lab, University of Oxford.
+bio: PhD Student at TSG Lab, University of Oxford.
 social:
   - icon: envelope
     icon_pack: fas
@@ -17,6 +17,7 @@ social:
     link: 'https://x.com/TonyWu1105'
 highlight_name: true
 user_groups:
-  - Research Assistants
+  - Graduate Students
 ---
-Research Fellow at TSG Lab, University of Oxford.
+PhD Student at TSG Lab, University of Oxford,
+co-supervised with Michael Osborne.
