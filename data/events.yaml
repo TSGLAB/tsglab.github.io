@@ -1,3 +1,15 @@
+- title: "TBD"
+  speaker: "Millicent Li"
+  affiliation: "Northeastern University"
+  date_display: "TBD"
+  format: "virtual"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: "" # TODO: add abstract
+  bio: "" # TODO: add bio
+
+
 - title: "LLMs Generate Harmful Responses Using a Distinct Mechanism, Shared Across Harm Types"
   speaker: "Hadas Orgad"
   affiliation: "Kempner Institute, Harvard University"
@@ -9,7 +21,7 @@
   format: "virtual"
   type: "Invited Talk"
   section: "talks"
-  status: "upcoming"
+  status: "past"
   abstract: |
     Large language models remain vulnerable to jailbreaks and other failures in which they comply with harmful requests, yet the internal organization of harmful response generation remains poorly understood. Here, we ask how the ability to comply with harmful requests is organized in the model’s parameters. We perform a mechanistic analysis directly on model parameters, identifying and pruning parameters that contribute strongly to harmful response generation while contributing minimally to general utility. We find that harmful response generation depends on a sparse set of critical parameters: pruning these parameters substantially reduces harmful compliance while causing only limited degradation to general model capabilities. This selective effect suggests that the mechanism supporting harmful response generation is at least partially separable from the one supporting benign capabilities. Moreover, parameters identified using one harm category often reduce harmful responses in other categories, indicating that harmful compliance relies on components shared across harm types. We observe this structure primarily in aligned models, suggesting that alignment reshapes harmful representations internally, even when their safeguards remain brittle. Notably, the capability to generate harmful responses is dissociated from the ability to recognize and reason about harmfulness. Finally, we extend the analysis to emergent misalignment, showing that pruning critical misalignment parameters can reduce misaligned behavior beyond the domain used to identify them. Together, these results reveal a coherent parameter-level structure underlying unsafe behaviors and suggest a path toward more principled safety interventions.
   bio: |
