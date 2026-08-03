@@ -7,10 +7,11 @@ authors:
   - "M. Tutek"
   - "Y. Belinkov"
   - "S. B. Cohen"
-publication_types: ["article"]
-publication: "arXiv:2603.03308"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICML 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
+  - ICML
 ---

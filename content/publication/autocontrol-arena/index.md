@@ -7,10 +7,11 @@ authors:
   - "X. Pan"
   - "F. Barez"
   - "M. Yang"
-publication_types: ["article"]
-publication: "arXiv:2603.07427"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICML 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Technical Governance
+  - ICML
 ---

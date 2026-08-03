@@ -4,10 +4,11 @@ date: 2025-09-01
 authors:
   - "T.-Y. Wu"
   - "F. Barez"
-publication_types: ["article"]
-publication: "arXiv:2509.24808"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICML 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
+  - ICML
 ---

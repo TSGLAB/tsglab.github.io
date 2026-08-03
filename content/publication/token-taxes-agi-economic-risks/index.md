@@ -5,10 +5,11 @@ authors:
   - "L. Irwin"
   - "T.-Y. Wu"
   - "F. Barez"
-publication_types: ["article"]
-publication: "arXiv:2603.04555"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICML 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Societal Impact
+  - ICML
 ---

@@ -7,10 +7,11 @@ authors:
   - "I. Patras"
   - "A. Bibi"
   - "F. Barez"
-publication_types: ["article"]
-publication: "arXiv:2509.26238"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICLR 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Safety & Alignment
+  - ICLR
 ---

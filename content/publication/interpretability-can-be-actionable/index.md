@@ -10,10 +10,11 @@ authors:
   - "A. Reusch"
   - "N. Saphra"
   - "et al."
-publication_types: ["article"]
-publication: "Preprint"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICML 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
+  - ICML
 ---

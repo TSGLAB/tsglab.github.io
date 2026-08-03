@@ -6,10 +6,11 @@ authors:
   - "E. Kempf"
   - "F. Barez"
   - "T. Brox"
-publication_types: ["article"]
-publication: "arXiv:2509.23886"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICLR 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
+  - ICLR
 ---
