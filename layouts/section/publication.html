@@ -75,6 +75,9 @@
         {{ $venueDisplay = replace $venue " Workshop" " WS" }}
       {{ end }}
 
+      {{/* Presentation format stays in the tooltip, not the compact badge */}}
+      {{ $venueDisplay = replace $venueDisplay " (Oral)" "" }}
+
       {{ $tags    := .Params.tags     | default slice }}
       {{ $pubType := .Params.pub_type | default "Preprint" }}
 

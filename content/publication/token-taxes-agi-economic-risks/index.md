@@ -1,5 +1,5 @@
 ---
-title: "Token Taxes: Mitigating AGI's Economic Risks"
+title: "Position: Token Taxes Can Mitigate AI's Economic Risks"
 date: 2026-07-01
 authors:
   - "L. Irwin"
