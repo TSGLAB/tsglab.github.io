@@ -12,9 +12,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:tony10101105@gmail.com'
-  - icon: twitter
-    icon_pack: fab
-    link: 'https://x.com/TonyWu1105'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://tony10101105.github.io/'
 highlight_name: true
 user_groups:
   - Graduate Students

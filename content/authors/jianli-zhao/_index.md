@@ -11,6 +11,6 @@ bio: Research Assistant at TSG Lab, University of Oxford.
 social: []
 highlight_name: true
 user_groups:
-  - Research Assistants
+  - Research Interns and Visitors
 ---
 Research Assistant at TSG Lab, University of Oxford.
