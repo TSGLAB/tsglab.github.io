@@ -23,16 +23,31 @@
       {{ partial $widget $params }}
     {{ end }}
 
-    {{/* ── Publications ──────────────────────────────────────────────────── */}}
-    {{- $lastName := .Params.last_name -}}
-    {{- if $lastName -}}
+    {{/* ── Publications ──────────────────────────────────────────────────────
+         Matched on the initialed form used in publication frontmatter
+         ("Tung-Yu" + "Wu" → "T.-Y. Wu"), not the bare last name—several lab
+         members share a surname. Authors whose publication byline differs from
+         the derived form can list extra spellings in a `pub_names` frontmatter
+         field.
+      ──────────────────────────────────────────────────────────────────────── */}}
+    {{- $lastName  := .Params.last_name -}}
+    {{- $firstName := .Params.first_name -}}
+    {{- if and $lastName $firstName -}}
+      {{- $initials := slice -}}
+      {{- range split $firstName "-" -}}
+        {{- with . -}}{{- $initials = $initials | append (upper (substr . 0 1)) -}}{{- end -}}
+      {{- end -}}
+      {{- $names := slice (printf "%s. %s" (delimit $initials ".-") $lastName) -}}
+      {{- range .Params.pub_names -}}{{- $names = $names | append . -}}{{- end -}}
+
       {{- $allPubs := where site.RegularPages "Section" "publication" -}}
       {{- $authorPubs := slice -}}
       {{- range $allPubs -}}
         {{- $pub   := . -}}
         {{- $match := false -}}
         {{- range $pub.Params.authors -}}
-          {{- if in . $lastName -}}{{- $match = true -}}{{- end -}}
+          {{/* Drop equal-contribution / corresponding-author markers */}}
+          {{- if in $names (replaceRE `[*†‡]+$` "" .) -}}{{- $match = true -}}{{- end -}}
         {{- end -}}
         {{- if $match -}}{{- $authorPubs = $authorPubs | append $pub -}}{{- end -}}
       {{- end -}}
