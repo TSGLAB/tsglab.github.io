@@ -8,7 +8,10 @@ organizations:
   - name: TSG Lab, University of Oxford
     url: ''
 bio: Research Intern at TSG Lab, University of Oxford.
-social: []
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:yingxilu512@gmail.com'
 highlight_name: true
 user_groups:
   - Research Interns and Visitors
