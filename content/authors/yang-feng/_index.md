@@ -12,6 +12,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:Y.Feng-85@sms.ed.ac.uk'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://yangfeng21.github.io/'
 highlight_name: true
 user_groups:
   - Research Interns and Visitors

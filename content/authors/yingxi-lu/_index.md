@@ -1,7 +1,7 @@
 ---
-title: Yingxi Li
+title: Yingxi Lu
 first_name: Yingxi
-last_name: Li
+last_name: Lu
 superuser: false
 role: Research Intern
 organizations:
@@ -12,6 +12,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:yingxilu512@gmail.com'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://luyingxi35.github.io/'
 highlight_name: true
 user_groups:
   - Research Interns and Visitors

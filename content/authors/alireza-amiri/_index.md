@@ -12,6 +12,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:alireza81.amiri@gmail.com'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://alireza-81.github.io'
 highlight_name: true
 user_groups:
   - Research Assistants
