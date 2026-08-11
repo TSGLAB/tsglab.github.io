@@ -1,12 +1,16 @@
-- title: "TBD"
+- title: "Do Activation Verbalization Methods Convey Privileged Information?"
   speaker: "Millicent Li"
   affiliation: "Northeastern University"
-  date_display: "TBD"
+  date: "2026-08-28"
+  date_display: "Friday 28 August 2026"
+  time_gmt: "4:00 PM – 5:00 PM BST"
+  time_et: "11:00 AM – 12:00 PM ET"
   format: "virtual"
   type: "Invited Talk"
   section: "talks"
   status: "upcoming"
-  abstract: "" # TODO: add abstract
+  abstract: |
+    Recent interpretability methods have proposed to translate LLM internal representations into natural language descriptions using a second verbalizer LLM. This is intended to illuminate how the target model represents and operates on inputs. But do such activation verbalization approaches actually provide privileged knowledge about the internal workings of the target model, or do they merely convey information about the inputs provided to it? We critically evaluate popular verbalization methods and datasets used in prior work and find that one can perform well on such benchmarks without access to target model internals, suggesting that these datasets are not ideal for evaluating verbalization methods. We then run controlled experiments which reveal that verbalizations often reflect the parametric knowledge of the verbalizer LLM that generated them, rather than the knowledge of the target LLM whose activations are decoded. Taken together, our results indicate a need for targeted benchmarks and experimental controls to rigorously assess whether verbalization methods provide meaningful insights into the operations of LLMs.
   bio: "" # TODO: add bio
 
 
