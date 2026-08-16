@@ -12,6 +12,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:sobhan.lotfi121@gmail.com'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://sobhan-lotfi.github.io/'
 highlight_name: true
 user_groups:
   - Research Interns and Visitors
