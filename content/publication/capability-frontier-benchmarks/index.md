@@ -10,9 +10,9 @@ authors:
   - "N. F. Oozeer"
   - "A. García"
   - "et al."
-publication_types: ["article"]
-publication: "Preprint"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "ICLR 2026 Workshop on Data-Centric Foundation Models (Oral)"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Technical Governance

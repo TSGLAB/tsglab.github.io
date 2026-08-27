@@ -10,9 +10,9 @@ authors:
   - "A. Ahmed"
   - "F. Barez"
   - "et al."
-publication_types: ["article"]
-publication: "arXiv:2601.04301"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "FoGen Workshop, ICML 2026"
+pub_type: "Workshop"
 abstract: ""
 tags:
   - Interpretability

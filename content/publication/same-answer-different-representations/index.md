@@ -9,9 +9,9 @@ authors:
   - "W. C. Kwan"
   - "F. Barez"
   - "et al."
-publication_types: ["article"]
-publication: "arXiv:2602.06652"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "EMNLP 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
