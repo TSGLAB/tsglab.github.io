@@ -15,5 +15,5 @@ publication: "ICLR 2026 Workshop on Data-Centric Foundation Models (Oral)"
 pub_type: "Workshop"
 abstract: ""
 tags:
-  - Technical Governance
+  - Technical AI Governance
 ---

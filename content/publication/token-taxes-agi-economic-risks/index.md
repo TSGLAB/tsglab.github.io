@@ -10,6 +10,6 @@ publication: "ICML 2026"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
   - ICML
 ---

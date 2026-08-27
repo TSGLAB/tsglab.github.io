@@ -15,5 +15,5 @@ publication: "Preprint"
 pub_type: "Preprint"
 abstract: ""
 tags:
-  - Technical Governance
+  - Technical AI Governance
 ---

@@ -24,10 +24,12 @@
           <img class="navbar-logo-full"
                src="{{ "media/logo_white.svg" | relURL }}"
                alt="{{ site.Title }}">
-          {{/* Icon-only (connected boxes)—shown when scrolled */}}
+          {{/* Icon-only (connected boxes)—shown when scrolled. Decorative: the
+               full logo above already carries the accessible name, so an alt here
+               would make screen readers announce the site title twice per link. */}}
           <img class="navbar-logo-icon"
                src="{{ "media/logo_icon_white.svg" | relURL }}"
-               alt="{{ site.Title }}">
+               alt="">
         </a>
       </div>
       {{end}}

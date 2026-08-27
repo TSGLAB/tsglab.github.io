@@ -9,5 +9,5 @@ publication: "SSRN 4937924"
 pub_type: "Policy"
 abstract: ""
 tags:
-  - Technical Governance
+  - Technical AI Governance
 ---

@@ -1,24 +1,28 @@
 {{- define "main" -}}
 
+{{- $ra_apply := "https://docs.google.com/forms/d/e/1FAIpQLSf6qr8cZxJhDM_1VRMbQe1o4GWJD-PE3JI31cymyrP7LZlPMw/viewform" -}}
+{{- $taig := "https://aigi.ox.ac.uk/technical-ai-governance-programme/" -}}
+
 <div class="universal-wrapper">
 <div class="vac-page">
 
   <h1 class="vac-page-heading">Vacancies</h1>
 
   <p class="vac-intro">
-    Open positions at TSG Lab are listed below. For instructions on how to get in touch —
-    including what to include in your email and subject line codes —
-    see our <a href="{{ "contact" | relURL }}" style="white-space:nowrap">Contact page</a>.
+    Current vacancies and routes for doctoral study, fellowships, research visits, and student
+    projects are listed below. Before contacting us, please read the relevant section of the
+    <a href="{{ "contact" | relURL }}" style="white-space:nowrap">Contact page</a>, which explains
+    what information to include in your enquiry.
   </p>
 
-  {{/* ── Open Positions ──────────────────────────────────────────────────── */}}
+  {{/* ── Open positions ──────────────────────────────────────────────────── */}}
   <section class="vac-section">
-    <h2 class="vac-section-heading">Open Positions</h2>
+    <h2 class="vac-section-heading">Open positions</h2>
 
     <div class="job-card">
       <div class="job-card-header">
         <span class="job-status-badge">Now Open</span>
-        <h3 class="job-title">Research Assistant—Continuous &amp; Automated Interpretability × 2</h3>
+        <h3 class="job-title">Research Assistants in Continual and Automated Interpretability (2 posts)</h3>
       </div>
       <div class="job-meta-grid">
         <div class="job-meta-item">
@@ -27,55 +31,68 @@
         </div>
         <div class="job-meta-item">
           <span class="job-meta-label">Location</span>
-          <span class="job-meta-value">Oxford, in person (remote for exceptional candidates)</span>
+          <span class="job-meta-value">Oxford, in person. Remote arrangements may be considered in exceptional cases.</span>
         </div>
         <div class="job-meta-item">
-          <span class="job-meta-label">Start</span>
+          <span class="job-meta-label">Start date</span>
           <span class="job-meta-value">As soon as possible</span>
         </div>
         <div class="job-meta-item">
-          <span class="job-meta-label">PI</span>
+          <span class="job-meta-label">Principal investigator</span>
           <span class="job-meta-value"><a href="https://fazlbarez.com" target="_blank" rel="noopener">Fazl Barez</a></span>
         </div>
       </div>
       <p class="job-description">
-        AI systems are increasingly deployed in ways that allow their behaviour to change after
-        release—through in-context learning, memory mechanisms, or post-deployment fine-tuning.
-        Most interpretability work treats models as frozen artefacts and analyses a snapshot.
-        We're interested in what happens to the internals as a model learns from experience: how
-        representations shift, which circuits are stable, and whether you can forecast where a
-        system's behaviour is headed before it gets there. The goal is automated tooling that
-        tracks these trajectories—without a human annotating every step.
+        AI systems can change after deployment through in-context learning, memory, continued
+        training, or other forms of adaptation. Most interpretability methods, however, analyse a
+        fixed model at a single point in time.
       </p>
       <p class="job-description">
-        Useful background: pretraining or post-training experience where you cared about what
-        happened internally; continual learning methods (plasticity loss, catastrophic forgetting,
-        task-boundary effects, etc.); or building automated interpretability pipelines (SAEs,
-        activation patching, circuit discovery, etc.) rather than just running existing libraries.
-        PyTorch or JAX, solid fundamentals, able to move fast.
+        This project will develop tools for studying how internal representations and circuits
+        change as a model learns from experience. We are interested in which features remain
+        stable, how different forms of adaptation alter internal mechanisms, and whether changes
+        in behaviour can be anticipated from changes inside the model. The aim is to automate this
+        analysis with minimal manual annotation.
       </p>
-      <a class="job-apply-btn"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSf6qr8cZxJhDM_1VRMbQe1o4GWJD-PE3JI31cymyrP7LZlPMw/viewform"
-         target="_blank" rel="noopener">Apply →</a>
+      <p class="job-description">
+        We are particularly interested in candidates with experience in one or more of the
+        following areas:
+      </p>
+      <ul class="job-criteria">
+        <li>Pre-training or post-training, particularly work involving internal model analysis</li>
+        <li>Continual learning, including plasticity loss, catastrophic forgetting, and task-boundary effects</li>
+        <li>Automated interpretability methods, including sparse autoencoders, activation patching, and circuit discovery</li>
+        <li>PyTorch or JAX, supported by strong machine-learning fundamentals</li>
+      </ul>
+      <p class="job-description">
+        Experience in every area is not required. Candidates should be able to work independently,
+        implement ideas carefully, and communicate research findings clearly.
+      </p>
+      <a class="job-apply-btn" href="{{ $ra_apply }}" target="_blank" rel="noopener">Apply →</a>
     </div>
+  </section>
+
+  {{/* ── Closed positions ────────────────────────────────────────────────── */}}
+  <section class="vac-section">
+    <h2 class="vac-section-heading">Closed positions</h2>
 
     <div class="job-card">
       <div class="job-card-header">
         <span class="job-status-badge job-status-closed">Closed</span>
-        <h3 class="job-title">Postdoctoral Researcher in AI &amp; Risk—Oxford Martin AIGI</h3>
+        <h3 class="job-title">Postdoctoral Researcher in AI and Risk, Oxford Martin AI Governance Initiative</h3>
       </div>
       <div class="job-meta-grid">
         <div class="job-meta-item">
-          <span class="job-meta-label">Grade &amp; Salary</span>
-          <span class="job-meta-value">Grade 8 · £49,119–£58,265 p.a.</span>
+          <span class="job-meta-label">Grade and salary</span>
+          <span class="job-meta-value">Grade 8, £49,119–£58,265 per year</span>
         </div>
         <div class="job-meta-item">
           <span class="job-meta-label">Contract</span>
-          <span class="job-meta-value">2-year fixed term</span>
+          <span class="job-meta-value">2 years, fixed term</span>
         </div>
         <div class="job-meta-item job-meta-deadline">
-          <span class="job-meta-label">Closing Date</span>
-          <span class="job-meta-value job-deadline">8 April 2026, 12:00 noon BST</span>
+          <span class="job-meta-label">Closing date</span>
+          <span class="job-meta-value job-deadline">8 April 2026 at 12 noon BST</span>
         </div>
         <div class="job-meta-item">
           <span class="job-meta-label">Location</span>
@@ -91,87 +108,86 @@
         </div>
       </div>
       <p class="job-description">
-        We have an exciting opportunity to join the Oxford Martin AI Governance Initiative as a
-        Postdoctoral Researcher in AI and Risk. The postholder will lead research on AI risk,
-        governance, and the societal impacts of advanced AI systems, combining high-quality
-        academic research with policy-facing activity and engagement with policymakers and
-        international organisations.
+        This position focused on AI risk, governance, and the societal effects of advanced AI
+        systems. The postholder was expected to conduct academic research alongside policy-facing
+        work with policymakers and international organisations.
       </p>
-      <a class="job-apply-btn"
-         href="https://www.jobs.ox.ac.uk/vacancy/185217"
-         target="_blank" rel="noopener">Apply →</a>
     </div>
-
   </section>
 
-  {{/* ── TAIG Programme ──────────────────────────────────────────────────── */}}
+  {{/* ── TAIG ────────────────────────────────────────────────────────────── */}}
   <section class="vac-section vac-taig-box">
-    <h2 class="vac-section-heading">TAIG Funded Studentships &amp; Fellowships</h2>
+    <h2 class="vac-section-heading">TAIG studentships and fellowships</h2>
     <p>
-      The <strong>Technical AI Governance (TAIG) Programme</strong> is Oxford's dedicated
-      funding vehicle for research at the intersection of technical AI safety and governance.
-      TAIG offers funded studentships and fellowships for exceptional candidates—this is one
-      of the few routes to fully funded doctoral and postdoctoral research in this space at Oxford.
+      The <strong>Technical AI Governance Programme</strong> provides funding for doctoral and
+      postdoctoral research at the intersection of technical AI safety and governance. Applicants
+      considering a DPhil or postdoctoral position with TSG Lab should review the programme's
+      eligibility requirements and application deadlines. This is particularly important for
+      overseas applicants who require support with university fees.
     </p>
-    <p>
-      If you are applying for a DPhil or postdoctoral position at TSG Lab, we strongly encourage
-      you to explore TAIG funding—particularly if you are an overseas student concerned about fees.
-    </p>
-    <a class="vac-taig-link" href="https://aigi.ox.ac.uk/technical-ai-governance-programme/" target="_blank" rel="noopener">
-      Explore the TAIG Programme →
+    <a class="vac-taig-link" href="{{ $taig }}" target="_blank" rel="noopener">
+      Explore TAIG funding →
     </a>
   </section>
 
-  {{/* ── Doctoral Programmes ─────────────────────────────────────────────── */}}
+  {{/* ── Doctoral study ──────────────────────────────────────────────────── */}}
   <section class="vac-section">
-    <h2 class="vac-section-heading">Doctoral Programmes</h2>
+    <h2 class="vac-section-heading">Doctoral study</h2>
     <p class="vac-section-intro">
-      TSG Lab accepts DPhil students through the following Oxford programmes.
-      TAIG studentships can fund any of these routes.
+      TSG Lab supervises DPhil students admitted through the following Oxford programmes:
     </p>
     <ul class="vac-programme-list">
       <li>
-        <span class="vac-programme-name">Engineering Science DPhil</span>
-        <span class="vac-programme-deadline">Deadline: early December</span>
+        <span class="vac-programme-name">DPhil in Engineering Science</span>
+        <span class="vac-programme-deadline">Application deadline usually in early December</span>
       </li>
       <li>
-        <span class="vac-programme-name">Computer Science DPhil</span>
+        <span class="vac-programme-name">DPhil in Computer Science</span>
+        <span class="vac-programme-deadline">See the programme page for the relevant deadline</span>
       </li>
       <li>
         <span class="vac-programme-name">AIMS CDT</span>
-        <span class="vac-programme-deadline">Deadline: mid January</span>
-      </li>
-      <li>
-        <span class="vac-programme-name">TAIG Funded Studentships</span>
-        <a class="vac-inline-link" href="https://aigi.ox.ac.uk/technical-ai-governance-programme/" target="_blank" rel="noopener">aigi.ox.ac.uk →</a>
+        <span class="vac-programme-deadline">Application deadline usually in mid-January</span>
       </li>
     </ul>
+    <p>
+      We can also supervise students admitted through other Oxford CDTs and departments where the
+      research is a good fit.
+    </p>
+    <p>
+      TAIG studentships may fund students admitted through any of these routes. Funding and
+      admissions requirements vary, so applicants should check the relevant programme and funding
+      pages for the year in which they intend to apply.
+    </p>
     <p class="vac-crosslink">
-      For guidance on how to apply and what to include in your email, see our
-      <a href="{{ "contact" | relURL }}">Contact page →</a>
+      For guidance on contacting a potential supervisor, see the DPhil applications section of the
+      <a href="{{ "contact" | relURL }}#cta-phd">Contact page →</a>
     </p>
   </section>
 
-  {{/* ── Other Opportunities ─────────────────────────────────────────────── */}}
+  {{/* ── Other opportunities ─────────────────────────────────────────────── */}}
   <section class="vac-section">
-    <h2 class="vac-section-heading">Other Opportunities</h2>
+    <h2 class="vac-section-heading">Other opportunities</h2>
     <ul class="vac-other-list">
       <li>
-        <span class="vac-other-role">Research Assistants</span>
-        Periodically hired for short-term projects. Two positions currently open—see above.
-        <a class="vac-crosslink-inline" href="https://docs.google.com/forms/d/e/1FAIpQLSf6qr8cZxJhDM_1VRMbQe1o4GWJD-PE3JI31cymyrP7LZlPMw/viewform" target="_blank" rel="noopener">→ Apply now</a>
+        <span class="vac-other-role">Research assistant positions</span>
+        Short-term positions are advertised on this page when available.
       </li>
       <li>
-        <span class="vac-other-role">Visiting Researchers</span>
-        Stays of 3–12 months welcomed; funding typically secured by the visitor.
-        <a class="vac-crosslink-inline" href="{{ "contact" | relURL }}">→ See Contact page</a>
+        <span class="vac-other-role">Visiting researchers</span>
+        We welcome proposals for visits of 3 to 12 months. Visitors normally secure their own funding.
       </li>
       <li>
-        <span class="vac-other-role">Oxford Students</span>
-        Part IV projects, dissertations, internships, and reading groups.
-        <a class="vac-crosslink-inline" href="{{ "contact" | relURL }}">→ See Contact page</a>
+        <span class="vac-other-role">Oxford undergraduate and master's students</span>
+        Undergraduates, students on integrated master's courses, and MSc students are welcome to
+        enquire about final-year projects, Part IV projects, MSc dissertations, internships,
+        reading groups, and smaller research projects undertaken alongside a degree.
       </li>
     </ul>
+    <p class="vac-crosslink">
+      For application and enquiry requirements, see the
+      <a href="{{ "contact" | relURL }}">Contact page →</a>
+    </p>
   </section>
 
 </div>{{/* .vac-page */}}

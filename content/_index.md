@@ -14,7 +14,9 @@ sections:
       design:
         flip: true
       text: |
-        We study how frontier AI systems work internally, build tools for effective governance, and analyse their societal impact—from the mechanisms inside neural networks to real-world outcomes.
+        TSG Lab is a research group at the University of Oxford working at the intersection of AI safety and AI governance. We study how advanced AI systems represent information, how their behaviour can be evaluated and controlled, and how their development and deployment affect institutions and society.
+
+        The Lab is based in the Department of Engineering Science and works with the Oxford Martin AI Governance Initiative.
 
 
 ---

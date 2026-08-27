@@ -60,12 +60,23 @@
 
     </div>
 
-    {{/* Legal / policy links */}}
-    <div class="tsg-footer-legal">
-      <a href="#">Legal</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
-    </div>
+    {{/* Legal / policy links.
+
+         Withheld: all three were href="#", so they read as links but went
+         nowhere. Restore this block once the pages exist, or point the hrefs at
+         the University's own notices. Markup is a real list so screen readers
+         announce three separate links, with a visible middot between them.
+
+    <nav class="tsg-footer-legal" aria-label="Legal and policy">
+      <ul>
+        <li><a href="#">Legal</a></li>
+        <li aria-hidden="true" class="tsg-footer-sep">·</li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li aria-hidden="true" class="tsg-footer-sep">·</li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </nav>
+    */}}
 
     <div class="tsg-footer-bottom">
       <p>&copy; {{ now.Year }} Technical Safety &amp; Governance Lab, University of Oxford</p>

@@ -19,6 +19,6 @@ publication: "ICML 2026 (Oral)"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
   - ICML
 ---

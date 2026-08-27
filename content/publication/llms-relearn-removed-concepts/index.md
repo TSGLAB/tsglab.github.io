@@ -10,6 +10,6 @@ publication: "ACL 2024"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Safety & Alignment
+  - AI Safety and Alignment
   - ACL/EMNLP
 ---

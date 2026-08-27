@@ -11,5 +11,5 @@ publication: "Stanford Existential Safety Journal"
 pub_type: "Journal"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
 ---

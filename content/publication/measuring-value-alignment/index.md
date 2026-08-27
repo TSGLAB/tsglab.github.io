@@ -9,6 +9,6 @@ publication: "NeurIPS 2023 Workshop"
 pub_type: "Workshop"
 abstract: ""
 tags:
-  - Safety & Alignment
+  - AI Safety and Alignment
   - NeurIPS
 ---

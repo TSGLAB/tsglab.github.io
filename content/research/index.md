@@ -6,22 +6,24 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: Research Areas
+      title: Research
       subtitle: ''
       text: |
-        TSG Lab works across four interconnected areas, united by a single question: how do we make powerful AI systems legible, reliable, and accountable? Our work moves from the internals of models to the institutions that govern them. We publish at NeurIPS, ICML, ICLR, ACL, EMNLP, FAccT, and other leading venues.
+        TSG Lab studies the technical and institutional questions raised by increasingly capable AI systems. Our research spans four areas: interpretability, AI safety and alignment, technical AI governance, and the effects of AI on society. This allows us to connect work on the mechanisms inside neural networks with work on evaluation, oversight, and deployment.
+
+        Work by members of the Lab has appeared at NeurIPS, ICML, ICLR, ACL, EMNLP, FAccT, and other peer-reviewed venues.
 
         ## Interpretability
-        Most AI systems that affect people's lives cannot explain their own reasoning. We study the internal structure of neural networks—identifying which components drive particular behaviours, diagnosing failure modes, and developing practical tools for understanding what a model is actually doing.
+        The outputs of an AI system, including its stated reasoning, do not necessarily explain how it reached a decision. We study the representations, features, and circuits inside neural networks to identify the mechanisms responsible for particular behaviours. We also develop automated methods for tracking how these mechanisms change during training and after deployment.
 
-        ## Safety & Alignment
-        A model can pass every benchmark and still behave in ways we did not intend. Behaviours can persist after fine-tuning, outputs can appear confident without being grounded, and evaluations can miss the very things they were designed to catch. We study how these gaps arise and develop methods to detect and close them.
+        ## AI Safety and Alignment
+        Tests conducted before deployment may not reveal how a system will behave in new settings. We study failure modes including deception, reward manipulation, jailbreaking, high-confidence hallucinations, and the re-emergence of behaviour after fine-tuning or unlearning. We develop evaluations and interventions to test whether safeguards continue to work when models or their environments change.
 
-        ## Technical Governance
-        Interpretability findings are only useful if they can travel beyond the lab. We develop structured, auditable methods that translate technical insights into evidence regulators, developers, and policymakers can act on—covering safety cases, evaluation standards, and accountability mechanisms.
+        ## Technical AI Governance
+        Developers, auditors, and regulators need reliable evidence about the capabilities and risks of advanced AI systems. We develop evaluation methods, auditing protocols, safety cases, and risk and reliability benchmarks. We also study how technical evidence can support regulatory oversight, verify safety claims, and clarify responsibility when systems fail.
 
-        ## Societal Impact
-        Capable AI systems reshape how decisions are made and by whom. We study how AI deployment affects individual agency, institutional power, and the broader social fabric—and what combinations of technical design and policy can preserve meaningful human oversight.
+        ## AI and Society
+        AI systems can change who holds information and decision-making power. We study how their deployment affects human agency, institutional accountability, and the concentration of power, including the risk of AI-enabled authoritarianism. We are interested in technical and policy approaches that keep consequential decisions subject to effective human oversight.
     design:
       columns: '1'
 ---

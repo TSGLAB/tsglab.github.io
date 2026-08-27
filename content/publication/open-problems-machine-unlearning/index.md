@@ -26,5 +26,5 @@ publication: "Under Review"
 pub_type: "Preprint"
 abstract: ""
 tags:
-  - Safety & Alignment
+  - AI Safety and Alignment
 ---

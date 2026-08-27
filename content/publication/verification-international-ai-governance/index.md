@@ -14,5 +14,5 @@ publication: "AI Governance Initiative, Oxford"
 pub_type: "Policy"
 abstract: ""
 tags:
-  - Technical Governance
+  - Technical AI Governance
 ---

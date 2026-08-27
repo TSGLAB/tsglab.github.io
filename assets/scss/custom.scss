@@ -539,10 +539,23 @@ a {
 
 // Legal links row (above copyright)
 .tsg-footer-legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 1.2rem;
   margin-bottom: 0.75rem;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tsg-footer-sep {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.2);
+  }
 
   a {
     font-family: 'Chivo Mono', monospace;
@@ -1867,6 +1880,16 @@ html {
   font-family: 'Chivo', sans-serif;
   font-size: 0.9rem;
   color: $mid;
+  margin-bottom: 0.9rem;
+  line-height: 1.65;
+}
+
+// Tells the reader the rows below expand -- without it the page is eight
+// collapsed headings and no instruction.
+.contact-howto {
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.85rem;
+  color: $mid;
   margin-bottom: 2.5rem;
   line-height: 1.65;
 }
@@ -1966,14 +1989,16 @@ html {
 }
 
 // ── Subject line code badge ───────────────────────────────────────────────────
+// Sits at the top of each section body: the code is the actionable part, so the
+// rule sits below it rather than above.
 .cta-code-row {
   display: flex;
   align-items: center;
   gap: 0.65rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .cta-code-label {

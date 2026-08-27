@@ -10,6 +10,6 @@ publication: "ICLR 2025 Workshop"
 pub_type: "Workshop"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
   - ICLR
 ---

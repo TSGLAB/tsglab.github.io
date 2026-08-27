@@ -12,6 +12,6 @@ publication: "ICLR 2026"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Safety & Alignment
+  - AI Safety and Alignment
   - ICLR
 ---

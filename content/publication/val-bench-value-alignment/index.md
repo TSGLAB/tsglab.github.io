@@ -10,5 +10,5 @@ publication: "arXiv:2510.05465"
 pub_type: "Preprint"
 abstract: ""
 tags:
-  - Safety & Alignment
+  - AI Safety and Alignment
 ---

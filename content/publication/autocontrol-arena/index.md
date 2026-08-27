@@ -12,6 +12,6 @@ publication: "ICML 2026"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Technical Governance
+  - Technical AI Governance
   - ICML
 ---

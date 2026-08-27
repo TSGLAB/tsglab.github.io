@@ -11,6 +11,6 @@ publication: "NeurIPS 2025"
 pub_type: "Conference"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
   - NeurIPS
 ---

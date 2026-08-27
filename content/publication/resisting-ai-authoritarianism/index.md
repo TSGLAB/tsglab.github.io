@@ -16,5 +16,5 @@ publication: "Under Review"
 pub_type: "Preprint"
 abstract: ""
 tags:
-  - Societal Impact
+  - AI and Society
 ---
