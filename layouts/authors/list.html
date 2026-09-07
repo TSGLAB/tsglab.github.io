@@ -15,7 +15,13 @@
 <section id="profile-page" class="pt-5">
   <div class="container">
 
-    {{/* ── Profile bio card ──────────────────────────────────────────────── */}}
+    {{/* ── Profile bio card ────────────────────────────────────────────────
+         Member photos are intentionally not shown anywhere on the site. The
+         theme renders an avatar only when an author's page bundle holds an
+         image matching `*avatar*`, so member portraits are stored as
+         `photo.jpg`/`photo.png` instead—present in the repo, never rendered.
+         Renaming one back to `avatar.*` would switch its photo back on.
+      ──────────────────────────────────────────────────────────────────────── */}}
     {{ if .File }}
       {{ $widget := "blocks/v1/about.html" }}
       {{ $username := (path.Base .File.Dir) }}

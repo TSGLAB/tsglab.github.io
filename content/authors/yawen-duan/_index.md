@@ -1,7 +1,7 @@
 ---
-title: Avi Semler
-first_name: Avi
-last_name: Semler
+title: Yawen Duan
+first_name: Yawen
+last_name: Duan
 superuser: false
 role: PhD Student
 organizations:
@@ -11,7 +11,7 @@ bio: PhD Student at TSG Lab, University of Oxford.
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:avi.semler@gmail.com'
+    link: 'mailto:yawen.duan.ac@gmail.com'
 highlight_name: true
 user_groups:
   - Graduate Students
