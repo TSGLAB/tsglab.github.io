@@ -17,6 +17,6 @@ social:
     link: 'https://x.com/lucasjamesirwin'
 highlight_name: true
 user_groups:
-  - Graduate Students
+  - Affiliates
 ---
 PhD Student at the University of Oxford, co-supervised with Michael Osborne & Philip Torr.

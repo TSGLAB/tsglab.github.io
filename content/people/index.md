@@ -15,7 +15,8 @@ sections:
           - Research Fellows
           - Graduate Students
           - Research Assistants
-          - Research Interns and Visitors
+          - Interns and Visitors
+          - Affiliates
           - Programme & Group Managers
           - Alumni
       sort_by: Params.last_name

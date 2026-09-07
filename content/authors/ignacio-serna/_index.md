@@ -3,7 +3,7 @@ title: Dr Ignacio Serna
 first_name: Ignacio
 last_name: Serna
 superuser: false
-role: Visting Research Fellow
+role: Visiting Researcher
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''
@@ -17,6 +17,6 @@ social:
     link: 'https://ignacioserna.github.io'
 highlight_name: true
 user_groups:
-  - Research Fellows
+  - Interns and Visitors
 ---
 Independent Researcher affiliated with the Max Planck Institute.

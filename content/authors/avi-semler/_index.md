@@ -14,6 +14,6 @@ social:
     link: 'mailto:avi.semler@gmail.com'
 highlight_name: true
 user_groups:
-  - Research Interns and Visitors
+  - Interns and Visitors
 ---
 Research Intern at TSG Lab, University of Oxford.

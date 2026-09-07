@@ -16,4 +16,4 @@ highlight_name: true
 user_groups:
   - Research Assistants
 ---
-Research Fellow at TSG Lab, University of Oxford.
+Research Assistant at TSG Lab, University of Oxford.

@@ -3,11 +3,11 @@ title: Alireza Amiri
 first_name: Alireza
 last_name: Amiri
 superuser: false
-role: Research Assistant
+role: Research Intern
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''
-bio: Research Assistant at TSG Lab, University of Oxford.
+bio: Research Intern at TSG Lab, University of Oxford.
 social:
   - icon: envelope
     icon_pack: fas
@@ -17,6 +17,6 @@ social:
     link: 'https://alireza-81.github.io'
 highlight_name: true
 user_groups:
-  - Research Assistants
+  - Interns and Visitors
 ---
-Research Assistant at TSG Lab, University of Oxford.
+Research Intern at TSG Lab, University of Oxford.
