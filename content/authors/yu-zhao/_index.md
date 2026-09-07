@@ -7,7 +7,7 @@ role: PhD Student
 organizations:
   - name: University of Edinburgh
     url: ''
-bio: PhD Student at the University of Edinburgh, co-advised with Pasquale Minervini.
+bio: PhD Student at the University of Edinburgh, co-supervised with Pasquale Minervini.
 social:
   - icon: envelope
     icon_pack: fas
@@ -19,4 +19,4 @@ highlight_name: true
 user_groups:
   - Graduate Students
 ---
-PhD Student at the University of Edinburgh, co-advised with Pasquale Minervini.
+PhD Student at the University of Edinburgh, co-supervised with Pasquale Minervini.
