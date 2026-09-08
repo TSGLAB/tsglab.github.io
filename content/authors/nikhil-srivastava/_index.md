@@ -14,6 +14,6 @@ social:
     link: 'mailto:srivastavan@berkeley.edu'
 highlight_name: true
 user_groups:
-  - Affiliates
+  - Visitors and Affiliates
 ---
 Affiliate of TSG Lab, University of Oxford.

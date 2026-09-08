@@ -25,6 +25,9 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:fazl.barez@eng.ox.ac.uk'
+  - icon: globe
+    icon_pack: fas
+    link: 'https://fazlbarez.com/'
   - icon: github
     icon_pack: fab
     link: https://github.com/fbarez

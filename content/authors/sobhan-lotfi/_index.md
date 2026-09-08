@@ -17,6 +17,6 @@ social:
     link: 'https://sobhan-lotfi.github.io/'
 highlight_name: true
 user_groups:
-  - Interns and Visitors
+  - Interns
 ---
 Research Intern at TSG Lab, University of Oxford.

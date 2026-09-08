@@ -14,12 +14,10 @@ sections:
           - Research Fellows
           - Graduate Students
           - Research Assistants
-          - Interns and Visitors
-          - Affiliates
+          - Interns
           - Programme & Group Managers
           - Alumni
-      sort_by: Params.last_name
-      sort_ascending: true
+          - Visitors and Affiliates
     design:
       show_interests: false
       show_role: true

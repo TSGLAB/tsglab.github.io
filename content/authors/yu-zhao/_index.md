@@ -4,6 +4,8 @@ first_name: Yu
 last_name: Zhao
 superuser: false
 role: PhD Student
+institute: 'Edinburgh, ELLIS, w/ Pasquale Minervini'
+institute_rank: 2
 organizations:
   - name: University of Edinburgh
     url: ''

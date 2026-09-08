@@ -4,6 +4,8 @@ first_name: Tung-Yu
 last_name: Wu
 superuser: false
 role: PhD Student
+institute: Oxford
+institute_rank: 1
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''

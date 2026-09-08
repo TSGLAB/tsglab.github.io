@@ -17,6 +17,6 @@ social:
     link: 'https://gabriele-dominici.github.io/g-dominici/'
 highlight_name: true
 user_groups:
-  - Interns and Visitors
+  - Visitors and Affiliates
 ---
 Visiting PhD Student from USI Università della Svizzera italiana.

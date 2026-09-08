@@ -14,6 +14,6 @@ social:
     link: 'mailto:zhao78740@gmail.com'
 highlight_name: true
 user_groups:
-  - Interns and Visitors
+  - Interns
 ---
 Research Intern at TSG Lab, University of Oxford.

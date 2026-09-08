@@ -1,6 +1,7 @@
 {{- define "main" -}}
 
 {{- $ra_apply := "https://docs.google.com/forms/d/e/1FAIpQLSf6qr8cZxJhDM_1VRMbQe1o4GWJD-PE3JI31cymyrP7LZlPMw/viewform" -}}
+{{- $senior_researcher_apply := "https://my.corehr.com/pls/uoxrecruit/erq_jobspec_version_4.display_form?p_company=10&p_refresh_search=Y&p_display_in_irish=N&p_process_type=&p_form_profile_detail=&p_applicant_no=&p_internal_external=E&p_recruitment_id=188495&p_display_apply_ind=Y" -}}
 {{- $taig := "https://aigi.ox.ac.uk/technical-ai-governance-programme/" -}}
 
 <div class="universal-wrapper">
@@ -22,6 +23,65 @@
     <div class="job-card">
       <div class="job-card-header">
         <span class="job-status-badge">Now Open</span>
+        <h3 class="job-title">Senior Researcher in Interpretability and AI Safety</h3>
+      </div>
+      <div class="job-meta-grid">
+        <div class="job-meta-item">
+          <span class="job-meta-label">Grade and salary</span>
+          <span class="job-meta-value">Research Grade 8, £49,119–£58,265 per year</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Contract</span>
+          <span class="job-meta-value">Fixed term, 1 year, with possibility of extension for a further year</span>
+        </div>
+        <div class="job-meta-item job-meta-deadline">
+          <span class="job-meta-label">Closing date</span>
+          <span class="job-meta-value job-deadline">22 September 2026 at 12 noon</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Location</span>
+          <span class="job-meta-value">Central Oxford, Department of Engineering Science</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Vacancy ID</span>
+          <span class="job-meta-value job-vacancy-id">188495</span>
+        </div>
+        <div class="job-meta-item">
+          <span class="job-meta-label">Contact</span>
+          <span class="job-meta-value"><a href="mailto:fazl.barez@eng.ox.ac.uk">fazl.barez@eng.ox.ac.uk</a></span>
+        </div>
+      </div>
+      <p class="job-description">
+        This role researches interpretability, evaluations, and AI safety for continuously
+        learning systems: evaluating systems whose behaviour keeps moving, and tracking, from the
+        inside, whether the structures that carry their capabilities and safety properties hold up
+        under change.
+      </p>
+      <p class="job-description">
+        We are looking for candidates with:
+      </p>
+      <ul class="job-criteria">
+        <li>A PhD in machine learning, computer science, or a related field, with several years of professional experience</li>
+        <li>A research background in at least one of: mechanistic or representational interpretability; model evaluation and benchmarking; continual or lifelong learning; or AI safety (alignment, scalable oversight, adversarial robustness)</li>
+        <li>A strong publication record at venues including NeurIPS, ICML, ICLR, ACL, EMNLP, or established AI safety forums</li>
+        <li>The ability to design and execute large-scale foundation model experiments</li>
+      </ul>
+      <p class="job-description">
+        Applications require a covering letter with a statement of research interests, a CV, and
+        two referees' details, submitted online.
+      </p>
+      <a class="job-apply-btn" href="{{ $senior_researcher_apply }}" target="_blank" rel="noopener">Apply →</a>
+    </div>
+  </section>
+
+  {{/* ── Closed positions ────────────────────────────────────────────────── */}}
+  <section class="vac-section">
+    <details class="vac-closed-details">
+    <summary class="vac-section-heading vac-closed-summary">Closed positions</summary>
+
+    <div class="job-card">
+      <div class="job-card-header">
+        <span class="job-status-badge job-status-closed">Closed</span>
         <h3 class="job-title">Research Assistants in Continual and Automated Interpretability (2 posts)</h3>
       </div>
       <div class="job-meta-grid">
@@ -48,33 +108,10 @@
         fixed model at a single point in time.
       </p>
       <p class="job-description">
-        This project will develop tools for studying how internal representations and circuits
-        change as a model learns from experience. We are interested in which features remain
-        stable, how different forms of adaptation alter internal mechanisms, and whether changes
-        in behaviour can be anticipated from changes inside the model. The aim is to automate this
-        analysis with minimal manual annotation.
+        This project developed tools for studying how internal representations and circuits
+        change as a model learns from experience.
       </p>
-      <p class="job-description">
-        We are particularly interested in candidates with experience in one or more of the
-        following areas:
-      </p>
-      <ul class="job-criteria">
-        <li>Pre-training or post-training, particularly work involving internal model analysis</li>
-        <li>Continual learning, including plasticity loss, catastrophic forgetting, and task-boundary effects</li>
-        <li>Automated interpretability methods, including sparse autoencoders, activation patching, and circuit discovery</li>
-        <li>PyTorch or JAX, supported by strong machine-learning fundamentals</li>
-      </ul>
-      <p class="job-description">
-        Experience in every area is not required. Candidates should be able to work independently,
-        implement ideas carefully, and communicate research findings clearly.
-      </p>
-      <a class="job-apply-btn" href="{{ $ra_apply }}" target="_blank" rel="noopener">Apply →</a>
     </div>
-  </section>
-
-  {{/* ── Closed positions ────────────────────────────────────────────────── */}}
-  <section class="vac-section">
-    <h2 class="vac-section-heading">Closed positions</h2>
 
     <div class="job-card">
       <div class="job-card-header">
@@ -113,6 +150,7 @@
         work with policymakers and international organisations.
       </p>
     </div>
+    </details>
   </section>
 
   {{/* ── TAIG ────────────────────────────────────────────────────────────── */}}

@@ -1578,6 +1578,19 @@ html {
   border-bottom: 1px solid rgba(0,0,0,0.08) !important;
 }
 
+.vac-closed-summary {
+  cursor: pointer;
+  list-style: revert;
+
+  &::-webkit-details-marker {
+    color: $mid;
+  }
+}
+
+.vac-closed-details[open] .vac-closed-summary {
+  margin-bottom: 1.2rem;
+}
+
 .vac-section-intro {
   font-family: 'Chivo', sans-serif;
   font-size: 0.88rem;

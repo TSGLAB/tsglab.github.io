@@ -4,6 +4,8 @@ first_name: Elias
 last_name: Kempf
 superuser: false
 role: PhD Student
+institute: 'Freiburg, ELLIS, w/ Thomas Brox'
+institute_rank: 2
 organizations:
   - name: University of Freiburg
     url: ''

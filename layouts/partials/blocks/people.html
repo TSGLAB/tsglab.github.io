@@ -7,28 +7,37 @@
 
   {{ range $block.content.user_groups }}
   {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice .) }}
-  {{ $sort_by := $block.content.sort_by | default "Params.last_name" }}
-  {{ $sort_by = partial "blox-core/functions/get_sort_by_parameter" $sort_by }}
-  {{ $query = sort $query $sort_by "asc" }}
-  {{ if $query }}
+  {{/* Sort key: institute_rank (default 9, so anyone without one just falls back to
+       first-name order) prefixed onto first_name, so e.g. Oxford (rank 1) lists before
+       ELLIS (rank 2) within a group, alphabetical within each rank. */}}
+  {{ $ranked := slice }}
+  {{ range $query }}
+    {{ $rank := .Params.institute_rank | default 9 }}
+    {{ $key := printf "%02d-%s" $rank (.Params.first_name | default .Title) }}
+    {{ $ranked = $ranked | append (dict "Page" . "Key" $key) }}
+  {{ end }}
+  {{ $ranked = sort $ranked "Key" "asc" }}
+  {{ if $ranked }}
   <div class="people-group">
     <h2 class="people-group-heading">{{ . | markdownify }}</h2>
     <ul class="people-list-items">
-      {{ range $query }}
+      {{ range $ranked }}
+      {{ $person := .Page }}
       {{ $link := "" }}
-      {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
+      {{ with site.GetPage (printf "/authors/%s" (path.Base $person.File.Dir)) }}
         {{ $link = .RelPermalink }}
       {{ end }}
       <li class="people-list-item">
-        {{ if $link }}<a href="{{ $link }}" class="people-name-link">{{ end }}{{ .Title }}{{ if $link }}</a>{{ end }}
+        {{ if $link }}<a href="{{ $link }}" class="people-name-link">{{ end }}{{ $person.Title }}{{ if $link }}</a>{{ end }}
+        {{ with $person.Params.institute }}<span class="people-institute">({{ . }})</span>{{ end }}
         {{/* Email */}}
-        {{ range .Params.social }}{{ if eq .icon "envelope" }}
+        {{ range $person.Params.social }}{{ if eq .icon "envelope" }}
           <a href="{{ .link }}" class="people-social-link">[email]</a>
         {{ end }}{{ end }}
-        {{/* First non-email, non-scholar web link */}}
+        {{/* First non-email, non-scholar, non-social-media web link */}}
         {{ $wwwLink := "" }}
-        {{ range .Params.social }}
-          {{ if and (eq $wwwLink "") (not (in (slice "envelope" "google-scholar" "graduation-cap" "graduation_cap") .icon)) }}
+        {{ range $person.Params.social }}
+          {{ if and (eq $wwwLink "") (not (in (slice "envelope" "google-scholar" "graduation-cap" "graduation_cap" "twitter" "x" "linkedin" "instagram" "facebook") .icon)) }}
             {{ $wwwLink = .link }}
           {{ end }}
         {{ end }}

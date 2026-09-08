@@ -17,6 +17,6 @@ social:
     link: 'https://ignacioserna.github.io'
 highlight_name: true
 user_groups:
-  - Interns and Visitors
+  - Visitors and Affiliates
 ---
 Independent Researcher affiliated with the Max Planck Institute.

@@ -17,6 +17,6 @@ social:
     link: 'https://alireza-81.github.io'
 highlight_name: true
 user_groups:
-  - Interns and Visitors
+  - Interns
 ---
 Research Intern at TSG Lab, University of Oxford.
