@@ -3,11 +3,13 @@ title: Alireza Amiri
 first_name: Alireza
 last_name: Amiri
 superuser: false
-role: Research Intern
+role: PhD Student
+institute: 'Oxford, w/ Varun Kanade & Jiarui Gan'
+institute_rank: 1
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''
-bio: Research Intern at TSG Lab, University of Oxford.
+bio: PhD Student at the University of Oxford, co-supervised with Varun Kanade & Jiarui Gan.
 social:
   - icon: envelope
     icon_pack: fas
@@ -17,6 +19,6 @@ social:
     link: 'https://alireza-81.github.io'
 highlight_name: true
 user_groups:
-  - Interns
+  - Graduate Students
 ---
-Research Intern at TSG Lab, University of Oxford.
+PhD Student at the University of Oxford, co-supervised with Varun Kanade & Jiarui Gan.
