@@ -6,7 +6,7 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: Research
+      title: ''
       subtitle: ''
       text: |
         Our understanding of advanced AI systems, and even our ability to measure what they can do, is still at an early stage. We often study a model after training is complete, but that misses part of the story: how did it come to learn a particular behaviour in the first place? In Don't Just "Fix it in Post" (Biderman et al., ICML 2026), we argue that a science of AI needs to study training as it happens, not only inspect the finished model. Although these two approaches can be complementary.
