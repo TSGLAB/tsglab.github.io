@@ -1,0 +1,69 @@
+# Press coverage, interviews and public commentary featuring TSG Lab researchers.
+# Newest first. `url` is optional: entries without one render unlinked.
+
+- outlet: "Oxford"
+  title: "Expert comment: Flying blind into the AI age"
+  date_display: "21 September 2026"
+  url: "https://www.ox.ac.uk/news/2026-09-21-expert-comment-flying-blind-into-the-ai-age"
+  note: "Expert comment by Maike Osborn and Fazl Barez"
+  # Title inferred from the URL slug—ox.ac.uk blocks automated fetches (403 on
+  # direct request and via archive.org), so the exact headline/standfirst
+  # wasn't verifiable. Confirm wording matches the published piece.
+
+- outlet: "France24"
+  title: "Libérées, délivrées : des IA hors de tout contrôle ?"
+  date_display: "10 September 2026"
+  url: "https://www.france24.com/fr/%C3%A9co-tech/20260910-intelligence-artificielle-controle-anthropic-claude-openai-menace-humanite-ethique"
+  note: "Fazl Barez on AI control and existential risk"
+
+- outlet: "Sky News"
+  title: "Morning Show"
+  date_display: "August 2026"
+  note: "Live television interview with Fazl Barez on safety around humanoid robots"
+
+- outlet: "The Verge"
+  title: "We’re running out of reasons to ignore AI safety"
+  date_display: "29 July 2026"
+  url: "https://www.theverge.com/ai-artificial-intelligence/972380/open-ai-hugging-face-hack-ai-safety-warning"
+  note: "Fazl Barez on specification gaming in the OpenAI/Hugging Face incident"
+
+- outlet: "The Conversation"
+  title: "AI robots can go rogue: a researcher explains how easily it happens"
+  date_display: "15 June 2026"
+  url: "https://theconversation.com/ai-robots-can-go-rogue-a-researcher-explains-how-easily-it-happens-284766"
+  note: "Written by Fazl Barez"
+
+- outlet: "The Independent"
+  title: "AI ‘could be last technology humanity ever builds’, expert warns in ‘doom timeline’"
+  date_display: "6 January 2026"
+  url: "https://www.the-independent.com/tech/artificial-intelligence/b2680671.html"
+  note: "Fazl Barez on alignment and AI timelines. Also syndicated by the Irish Independent"
+
+- outlet: "Dubai Eye 103.8 FM"
+  title: "The Agenda"
+  date_display: "2026"
+  note: "Live radio interview with Fazl Barez"
+
+- outlet: "NBC News"
+  title: "At AI’s biggest gathering, its inner workings remain a mystery"
+  date_display: "9 December 2025"
+  url: "https://www.nbcnews.com/tech/tech-news/ai-progress-surges-researchers-struggle-explain-rcna247693"
+  note: "Coverage of the $1M Martian Interpretability Prize, motivated by lab interpretability research"
+
+- outlet: "VKTR"
+  title: "New research finds AI poisoning is shockingly easy to pull off"
+  date_display: "17 November 2025"
+  url: "https://www.vktr.com/ai-ethics-law-risk/new-research-finds-ai-poisoning-is-shockingly-easy-to-pull-off/"
+  note: "Fazl Barez on PoisonBench"
+
+- outlet: "Fortune"
+  title: "AI reasoning models that can ‘think’ are more vulnerable to jailbreak attacks, new research suggests"
+  date_display: "7 November 2025"
+  url: "https://fortune.com/2025/11/07/ai-reasoning-models-more-vulnerable-jailbreak-attacks-study/"
+  note: "Coverage of Chain-of-Thought Hijacking. Also syndicated by Yahoo Tech and AOL"
+
+- outlet: "Raconteur"
+  title: "What do Trump’s $500bn Stargate initiative and regulatory cuts mean for AI safety?"
+  date_display: "23 January 2025"
+  url: "https://www.raconteur.net/technology/trump-signals-major-infrastructure-investment-deregulatory-break-on-ai"
+  note: "Fazl Barez on US AI deregulation"
