@@ -9,11 +9,14 @@
   {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice .) }}
   {{/* Sort key: institute_rank (default 9, so anyone without one just falls back to
        first-name order) prefixed onto first_name, so e.g. Oxford (rank 1) lists before
-       ELLIS (rank 2) within a group, alphabetical within each rank. */}}
+       ELLIS (rank 2) within a group, alphabetical within each rank. An optional
+       `list_order` param overrides the first-name part for manual placement within
+       a rank, without touching the real first_name (used elsewhere, e.g. sorting). */}}
   {{ $ranked := slice }}
   {{ range $query }}
     {{ $rank := .Params.institute_rank | default 9 }}
-    {{ $key := printf "%02d-%s" $rank (.Params.first_name | default .Title) }}
+    {{ $order_name := .Params.list_order | default (.Params.first_name | default .Title) }}
+    {{ $key := printf "%02d-%s" $rank $order_name }}
     {{ $ranked = $ranked | append (dict "Page" . "Key" $key) }}
   {{ end }}
   {{ $ranked = sort $ranked "Key" "asc" }}

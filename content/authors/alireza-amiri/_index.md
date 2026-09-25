@@ -6,6 +6,7 @@ superuser: false
 role: PhD Student
 institute: 'Oxford, w/ Varun Kanade & Jiarui Gan'
 institute_rank: 1
+list_order: 'Zz-Alireza' # keeps him after Yawen within the Oxford (rank 1) group
 organizations:
   - name: TSG Lab, University of Oxford
     url: ''
