@@ -1,0 +1,8 @@
+# Lab news that isn't press coverage (e.g. paper acceptances, appointments).
+# Newest first. Rendered only in the homepage "Recent News" box, never on
+# /media/ (which is press coverage only—see data/media.yaml).
+# `url` is optional: entries without one render unlinked.
+
+- outlet: "NeurIPS 2026"
+  title: "3 papers accepted"
+  date_display: "October 2026"

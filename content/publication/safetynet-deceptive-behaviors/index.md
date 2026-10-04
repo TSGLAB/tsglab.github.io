@@ -1,13 +1,14 @@
 ---
-title: "SafetyNet: Detecting Harmful Outputs in LLMs by Modeling and Monitoring Deceptive Behaviors"
-date: 2025-05-01
+title: "Beyond Black-Box Obfuscation: Mechanistic Analysis and Defense of White-Box Monitors"
+date: 2026-10-01
 authors:
   - "M. Chaudhary"
   - "F. Barez"
-publication_types: ["article"]
-publication: "arXiv:2505.14300"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "COLM 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - AI Safety and Alignment
+  - COLM
 ---

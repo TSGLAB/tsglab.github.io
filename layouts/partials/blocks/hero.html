@@ -24,8 +24,10 @@
       <div class="hero-lead">{{ . | $page.RenderString | emojify }}</div>
     {{ end }}
 
-    {{/* ── Recent News—pulls from data/media.yaml, same source as /media/ ── */}}
-    {{ $recentMedia := site.Data.media | default slice }}
+    {{/* ── Recent News—merges data/news.yaml (lab news: papers, appointments, etc.)  */}}
+    {{/* with data/media.yaml (press coverage, same source as /media/). news.yaml    */}}
+    {{/* entries only ever appear here, never on /media/, which stays press-only.    */}}
+    {{ $recentMedia := (site.Data.news | default slice) | append (site.Data.media | default slice) }}
     {{ if gt (len $recentMedia) 0 }}
     <div class="news-inline">
       <h2 class="news-heading">Recent News</h2>

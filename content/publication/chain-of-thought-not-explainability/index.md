@@ -1,6 +1,6 @@
 ---
 title: "Chain-of-Thought Is Not Explainability"
-date: 2025-02-01
+date: 2026-10-02
 authors:
   - "F. Barez"
   - "T.-Y. Wu"
@@ -12,16 +12,17 @@ authors:
   - "C. Neo"
   - "I. Lee"
   - "A. Paren"
-  - "A. Bibi"
-  - "R. Trager"
-  - "D. Fornasiere"
   - "J. Yan"
+  - "A. Bibi"
+  - "D. Fornasiere"
+  - "R. Trager"
   - "Y. Elazar"
   - "Y. Bengio"
-publication_types: ["article"]
-publication: "Under Review"
-pub_type: "Preprint"
+publication_types: ["paper-conference"]
+publication: "NeurIPS 2026"
+pub_type: "Conference"
 abstract: ""
 tags:
   - Interpretability
+  - NeurIPS
 ---
