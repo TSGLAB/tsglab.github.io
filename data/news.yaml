@@ -3,6 +3,11 @@
 # /media/ (which is press coverage only—see data/media.yaml).
 # `url` is optional: entries without one render unlinked.
 
+- outlet: "arXiv"
+  title: "Excited to announce our new paper: Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety"
+  date_display: "November 2026"
+  url: "https://arxiv.org/abs/2611.08438"
+
 - outlet: "NeurIPS 2026"
   title: "3 papers accepted"
   date_display: "October 2026"
