@@ -8,7 +8,7 @@ sections:
     content:
       title: Technical Safety & Governance Lab
       image:
-        filename: oxford_hero.jpg
+        filename: team_radcliffe_camera.jpg
       design:
         flip: true
       text: |
