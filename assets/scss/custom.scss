@@ -2000,14 +2000,6 @@ html {
   line-height: 1.65;
 }
 
-// Mailing-list callout at the foot of the contact page (reuses the events
-// callout look). The list address is long, so let it wrap on phones.
-.contact-subscribe {
-  margin-top: 3rem;
-
-  a { overflow-wrap: anywhere; }
-}
-
 // ── Collapsible sections ──────────────────────────────────────────────────────
 .contact-sections {
   display: flex;
