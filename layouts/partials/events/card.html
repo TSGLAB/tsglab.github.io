@@ -46,10 +46,13 @@
   </div>
 
   {{/* ── Join + calendar links ───────────────────────────────────────── */}}
-  {{/* The calendar link is built from gcal_start / gcal_end (UTC, e.g.
-       "20261127T150000Z") and only shown for upcoming events. */}}
+  {{/* Calendar link (upcoming events only): use calendar_url if given,
+       otherwise build one from gcal_start / gcal_end (UTC, e.g.
+       "20261127T150000Z"). */}}
   {{ $gcal := "" }}
-  {{ if and (not $muted) $e.gcal_start $e.gcal_end }}
+  {{ if and (not $muted) $e.calendar_url }}
+    {{ $gcal = $e.calendar_url }}
+  {{ else if and (not $muted) $e.gcal_start $e.gcal_end }}
     {{ $details := printf "%s (%s)" $e.speaker $e.affiliation }}
     {{ with $e.zoom_url }}{{ $details = printf "%s\n\nJoin online (Google Meet): %s" $details . }}{{ end }}
     {{ $details = printf "%s\n\nDetails: %s" $details ("event/" | absURL) }}
