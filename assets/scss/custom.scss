@@ -1173,6 +1173,7 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
 
 .evt-format-virtual   { color: $warm-brown; background: $warm-tag-bg; }
 .evt-format-in-person { color: darken($warm-brown, 8%); background: darken($warm-tag-bg, 5%); }
+.evt-format-hybrid    { color: darken($warm-brown, 4%); background: darken($warm-tag-bg, 2.5%); }
 
 .evt-badges {
   display: flex;
@@ -1235,6 +1236,24 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
 .evt-meta-sep  { color: rgba(0,0,0,0.25); }
 .evt-time-alt  { color: rgba(0,0,0,0.38); }
 
+// Join / calendar links
+.evt-join {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: -0.35rem 0 0.8rem;
+}
+
+.evt-join-link {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $warm-brown;
+
+  &:hover { color: $black; }
+}
+
 // Abstract collapse
 .evt-abstract { margin-top: 0.1rem; }
 
@@ -1248,6 +1267,9 @@ $pill-active: #C9B99A;   // active filter pill fill (warm tan)
   color: $mid;
   line-height: 1.6;
   margin: 0 0 0.5rem;
+
+  p { margin: 0 0 0.6rem; }
+  p:last-child { margin-bottom: 0; }
 }
 
 .evt-bio {
@@ -1976,6 +1998,14 @@ html {
   color: $mid;
   margin-bottom: 2.5rem;
   line-height: 1.65;
+}
+
+// Mailing-list callout at the foot of the contact page (reuses the events
+// callout look). The list address is long, so let it wrap on phones.
+.contact-subscribe {
+  margin-top: 3rem;
+
+  a { overflow-wrap: anywhere; }
 }
 
 // ── Collapsible sections ──────────────────────────────────────────────────────

@@ -13,6 +13,7 @@
         {{ $fmt := $e.format }}
         {{ $fmtLabel := "Virtual" }}
         {{ if eq $fmt "in-person" }}{{ $fmtLabel = "In-Person" }}{{ end }}
+        {{ if eq $fmt "hybrid" }}{{ $fmtLabel = "Hybrid" }}{{ end }}
         <span class="evt-format-badge evt-format-{{ $fmt }}" title="{{ $fmtLabel }}">{{ $fmtLabel }}</span>
       {{ end }}
     </div>
@@ -38,12 +39,31 @@
       {{ with $e.time_gmt }}<span class="evt-time">{{ . }}</span>{{ end }}
       {{ if and $e.time_gmt $e.time_et }}<span class="evt-time-alt"> ({{ $e.time_et }})</span>{{ end }}
     {{ end }}
+    {{ with $e.location }}
+      <span class="evt-meta-sep">·</span>
+      <span class="evt-location">{{ . }}</span>
+    {{ end }}
   </div>
 
-  {{/* ── Join link ────────────────────────────────────────────────────── */}}
-  {{ with $e.zoom_url }}
+  {{/* ── Join + calendar links ───────────────────────────────────────── */}}
+  {{/* The calendar link is built from gcal_start / gcal_end (UTC, e.g.
+       "20261127T150000Z") and only shown for upcoming events. */}}
+  {{ $gcal := "" }}
+  {{ if and (not $muted) $e.gcal_start $e.gcal_end }}
+    {{ $details := printf "%s (%s)" $e.speaker $e.affiliation }}
+    {{ with $e.zoom_url }}{{ $details = printf "%s\n\nJoin online (Google Meet): %s" $details . }}{{ end }}
+    {{ $details = printf "%s\n\nDetails: %s" $details ("event/" | absURL) }}
+    {{ $q := querify "action" "TEMPLATE" "text" (printf "TSG Lab talk: %s" $e.title) "dates" (printf "%s/%s" $e.gcal_start $e.gcal_end) "details" $details "location" ($e.location | default "") }}
+    {{ $gcal = printf "https://calendar.google.com/calendar/render?%s" $q }}
+  {{ end }}
+  {{ if or $e.zoom_url $gcal }}
     <div class="evt-join">
-      <a class="evt-join-link" href="{{ . }}" target="_blank" rel="noopener">Join (Google Meet)</a>
+      {{ with $e.zoom_url }}
+        <a class="evt-join-link" href="{{ . }}" target="_blank" rel="noopener">Join (Google Meet)</a>
+      {{ end }}
+      {{ with $gcal }}
+        <a class="evt-join-link" href="{{ . | safeURL }}" target="_blank" rel="noopener">Add to Google Calendar</a>
+      {{ end }}
     </div>
   {{ end }}
 
@@ -51,7 +71,7 @@
   {{ if $e.abstract }}
     <div class="evt-abstract">
       <div class="evt-abstract-body" style="max-height:3.2em;overflow:hidden;transition:max-height 0.35s ease;">
-        <p class="evt-abstract-text">{{ $e.abstract | markdownify }}</p>
+        <div class="evt-abstract-text">{{ $e.abstract | markdownify }}</div>
         {{ if $e.bio }}
           <div class="evt-bio">
             <p class="evt-bio-label">About the Speaker</p>

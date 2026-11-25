@@ -1,3 +1,66 @@
+- title: "Building the Field of Physical AI Safety"
+  speaker: "Bear Häon and Kaylene Stocking"
+  affiliation: "Physical AI Safety Institute (PAISI)"
+  date: "2026-11-27"
+  date_display: "Friday 27 November 2026"
+  time_gmt: "3:00 PM – 4:00 PM GMT"
+  time_et: "10:00 AM – 11:00 AM ET"
+  gcal_start: "20261127T150000Z"
+  gcal_end: "20261127T160000Z"
+  location: "Seminar Room 1, Oxford Martin School"
+  zoom_url: "https://meet.google.com/wzb-kvon-sai"
+  format: "hybrid"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    AI control of general-purpose robots has significant economic and safety implications, yet physical AI safety has received relatively little attention from AI safety researchers. Bear and Kaylene will discuss why they founded PAISI, a nonprofit research lab that aims to raise awareness and lower barriers for researchers entering the field. They’ll cover PAISI’s recent workshop at the Conference on Robot Learning and its work with MIT FutureTech on a Physical AI Risk Index.
+
+
+- title: "The Bitter Lesson of Robotics, and the Road Ahead"
+  speaker: "Jay Chooi"
+  affiliation: "Robocurve"
+  date: "2026-11-27"
+  date_display: "Friday 27 November 2026"
+  time_gmt: "4:00 PM – 5:00 PM GMT"
+  time_et: "11:00 AM – 12:00 PM ET"
+  gcal_start: "20261127T160000Z"
+  gcal_end: "20261127T170000Z"
+  location: "Seminar Room 1, Oxford Martin School"
+  zoom_url: "https://meet.google.com/wzb-kvon-sai"
+  format: "hybrid"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    Frontier language models can now control real robot arms to complete simple tasks. In Robocurve’s tests, the best score on the RoboDojo-RC Tier 1 manipulation benchmark rose from 20% to 97% in under five months, though the top-scoring system still took six minutes and cost $9.46 per trial. Jay will discuss what these trends could mean for the cost and speed of robot manipulation, how open-source tools such as Inspect Robots can help track progress, and why a model’s safety behaviour can change when it controls a robot directly. The talk will close with a discussion about which kinds of robots may become capable first and what that could mean for robotics labs and manufacturers.
+
+
+- title: "Science of Automated Science: Building a Trustworthy Ecosystem of Machine-Driven Discovery"
+  speaker: "Bálint Gyevnár"
+  affiliation: "Carnegie Mellon University"
+  date: "2026-11-30"
+  date_display: "Monday 30 November 2026"
+  time_gmt: "3:00 PM – 4:00 PM GMT"
+  time_et: "10:00 AM – 11:00 AM ET"
+  gcal_start: "20261130T150000Z"
+  gcal_end: "20261130T160000Z"
+  location: "Seminar Room 2, Oxford Martin School"
+  zoom_url: "https://meet.google.com/hcg-nsxj-cek"
+  format: "hybrid"
+  type: "Invited Talk"
+  section: "talks"
+  status: "upcoming"
+  abstract: |
+    As scientists increasingly delegate their work to automated systems, questions about authorship, the integrity of scientific evidence, and the priorities of research communities are becoming urgent. Through two case studies, Bálint will explore how the science of automated science can uncover failure modes, advance our understanding of scientific practices, and inform the design of trustworthy research infrastructure.
+
+    The first study demonstrates how adversaries can industrialize scientific fraud by poisoning openly available datasets, leading autonomous research agents to reach false conclusions in 50% of experimental runs, while detecting the poisoning in only 6% of runs. The study also introduces a data-auditing mitigation that largely prevents this attack.
+
+    The second study introduces greCAPTCHA, an automated system that assesses whether a paper’s claimed authors can verify and understand their own work. In an in-person study with 31 participants, the system distinguished authors from non-authors with an AUC of 0.90.
+
+    The talk will conclude with a discussion of urgent open questions and future directions for the science of automated science.
+
+
 - title: "Do Activation Verbalization Methods Convey Privileged Information?"
   speaker: "Millicent Li"
   affiliation: "Northeastern University"
@@ -8,7 +71,7 @@
   format: "virtual"
   type: "Invited Talk"
   section: "talks"
-  status: "upcoming"
+  status: "past"
   abstract: |
     Recent interpretability methods have proposed to translate LLM internal representations into natural language descriptions using a second verbalizer LLM. This is intended to illuminate how the target model represents and operates on inputs. But do such activation verbalization approaches actually provide privileged knowledge about the internal workings of the target model, or do they merely convey information about the inputs provided to it? We critically evaluate popular verbalization methods and datasets used in prior work and find that one can perform well on such benchmarks without access to target model internals, suggesting that these datasets are not ideal for evaluating verbalization methods. We then run controlled experiments which reveal that verbalizations often reflect the parametric knowledge of the verbalizer LLM that generated them, rather than the knowledge of the target LLM whose activations are decoded. Taken together, our results indicate a need for targeted benchmarks and experimental controls to rigorously assess whether verbalization methods provide meaningful insights into the operations of LLMs.
   bio: "" # TODO: add bio
